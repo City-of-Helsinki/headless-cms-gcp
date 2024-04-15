@@ -1,0 +1,132 @@
+version: "3.8"
+
+services:
+  hiondev:
+    image: europe-docker.pkg.dev/hiondev/hiondev/cli
+    environment:
+      - PROJECT_ID
+      - SQL_INSTANCE
+      - BUILD_TARGET
+    volumes:
+      - .:/app
+      - cloudsql:/cloudsql
+      - config:/root/.config
+    depends_on:
+      - db
+      - sql_proxy
+
+  dev:
+    extends: app.base
+    build:
+      target: dev
+      # secrets:
+      #  - composer_auth
+    environment:
+      DB_HOST: db
+      WP_REDIS_HOST: redis
+      PROXY_URL: localhost:8080
+    ports:
+      - 3000:3000
+      - 3001:3001
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+    profiles:
+      - dev
+
+  app:
+    extends: app.base
+    environment:
+      DB_HOST: db
+      WP_REDIS_HOST: redis
+    depends_on:
+      - db
+      - redis
+    profiles:
+      - app
+
+  staging:
+    extends: app.base.cloudsql
+    env_file: .env.app.staging
+    depends_on:
+      - sql_proxy
+    profiles:
+      - staging
+
+  production:
+    extends: app.base.cloudsql
+    env_file: .env.app.production
+    depends_on:
+      - sql_proxy
+    profiles:
+      - production
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+    volumes:
+      - var-lib-mysql:/var/lib/mysql
+
+  redis:
+    image: redis:7
+
+  jaeger:
+    image: jaegertracing/all-in-one
+    ports:
+      - 16686:16686
+
+  dev-trace:
+    extends: dev
+    environment:
+      OTEL_PHP_AUTOLOAD_ENABLED: true
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://jaeger:4318
+      OTEL_SERVICE_NAME: dev-trace
+
+  sql_proxy:
+    image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:latest
+    command:
+      - --unix-socket=/cloudsql
+      - ${SQL_CONNECTION:-}
+    user: root
+    volumes:
+      - cloudsql:/cloudsql
+      - config:/root/.config
+
+  app.base:
+    build:
+      target: app
+    env_file: .env.app
+    environment:
+      PORT: "8080"
+      K_SERVICE: dev
+      K_REVISION: dev-00001
+      K_CONFIGURATION: dev
+    ports:
+      - 8080:8080
+    privileged: true
+    init: true
+    volumes:
+      - config:/root/.config
+    profiles:
+      - app.base
+
+  app.base.cloudsql:
+    extends: app.base
+    environment:
+      DB_HOST: :/cloudsql/${SQL_CONNECTION:-}
+      WP_REDIS_DISABLED: true
+    volumes:
+      - cloudsql:/cloudsql
+    profiles:
+      - app.base.cloudsql
+
+volumes:
+  var-lib-mysql:
+  cloudsql:
+  config:
+# secrets:
+#  composer_auth:
+#    file: ./auth.json
