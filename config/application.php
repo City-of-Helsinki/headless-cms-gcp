@@ -41,7 +41,6 @@ if (file_exists($root_dir . '/.env')) {
 
     $dotenv->load();
 
-    $dotenv->required(['WP_HOME', 'WP_SITEURL']);
     if (!env('DATABASE_URL')) {
         $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
     }
@@ -63,8 +62,14 @@ if (!env('WP_ENVIRONMENT_TYPE') && in_array(WP_ENV, ['production', 'staging', 'd
 /**
  * URLs
  */
-Config::define('WP_HOME', env('WP_HOME'));
-Config::define('WP_SITEURL', env('WP_SITEURL'));
+if (array_key_exists('HTTP_X_FORWARDED_PROTO', $_SERVER) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+$_server_http_host_scheme = array_key_exists('HTTPS', $_SERVER) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+$_server_http_host_name   = array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : (env('WP_DEFAULT_HTTP_HOST') ?: 'localhost:8080');
+$_server_http_url         = "$_server_http_host_scheme://$_server_http_host_name";
+Config::define('WP_HOME', env('WP_HOME') ?: "$_server_http_url");
+Config::define('WP_SITEURL', env('WP_SITEURL') ?: "$_server_http_url/wp");
 
 /**
  * Custom Content Directory
