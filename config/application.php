@@ -111,6 +111,11 @@ Config::define('WP_REDIS_PORT', env('WP_REDIS_PORT') ?: '6379');
 Config::define('WP_REDIS_DATABASE', env('WP_REDIS_DATABASE') ?: '0');
 
 /**
+ * Query Monitor settings
+ */
+Config::define('QM_DISABLED', env('QM_DISABLED'));
+
+/**
  * Authentication Unique Keys and Salts
  */
 Config::define('AUTH_KEY', env('AUTH_KEY'));

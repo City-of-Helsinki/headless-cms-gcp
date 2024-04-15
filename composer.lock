@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7076f916ace84a98a05714ee5932383b",
+    "content-hash": "a6737e41e23ff1b1f3b9d7d90d1700cb",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -5457,6 +5457,24 @@
                 "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.3.5"
             },
             "time": "2023-11-10T14:28:03+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/query-monitor",
+            "version": "3.15.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/query-monitor/",
+                "reference": "tags/3.15.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.15.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/query-monitor/"
         },
         {
             "name": "wpackagist-plugin/redis-cache",
