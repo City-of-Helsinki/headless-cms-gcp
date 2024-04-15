@@ -25,3 +25,8 @@ web/.htaccess
 
 # WP-CLI
 wp-cli.local.yml
+
+# Drop-ins
+/web/app/advanced-cache.php
+/web/app/object-cache.php
+/web/app/db.php
