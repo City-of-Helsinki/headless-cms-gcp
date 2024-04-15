@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b88b410ce9fe47da9620a6cf0e1a18f3",
+    "content-hash": "7076f916ace84a98a05714ee5932383b",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -5457,6 +5457,24 @@
                 "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.3.5"
             },
             "time": "2023-11-10T14:28:03+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/redis-cache",
+            "version": "2.5.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redis-cache/",
+                "reference": "tags/2.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.5.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redis-cache/"
         },
         {
             "name": "wpackagist-theme/twentytwentyfour",
