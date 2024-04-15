@@ -47,7 +47,12 @@
     "wpackagist-theme/twentytwentyfour": "^1.0",
     "wp-cli/wp-cli-bundle": "^2.10",
     "wpackagist-plugin/redis-cache": "^2.5",
-    "wpackagist-plugin/query-monitor": "^3.15"
+    "wpackagist-plugin/query-monitor": "^3.15",
+    "open-telemetry/sdk": "^1.0",
+    "open-telemetry/opentelemetry-auto-io": "^0.0.11",
+    "open-telemetry/opentelemetry-auto-wordpress": "^0.0.15",
+    "open-telemetry/exporter-otlp": "^1.0",
+    "php-http/guzzle7-adapter": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
@@ -58,7 +63,8 @@
     "preferred-install": "dist",
     "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "php-http/discovery": true
     }
   },
   "minimum-stability": "dev",
