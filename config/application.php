@@ -151,6 +151,28 @@ Config::define('SCRIPT_DEBUG', false);
 ini_set('display_errors', '0');
 
 /**
+ * Multisite settings.
+ */
+Config::define( 'WP_ALLOW_MULTISITE', true );
+Config::define( 'MULTISITE', true );
+Config::define( 'SUBDOMAIN_INSTALL', true );
+$base = '/';
+Config::define( 'DOMAIN_CURRENT_SITE', $_server_http_host_name );
+Config::define( 'PATH_CURRENT_SITE', '/' );
+Config::define( 'SITE_ID_CURRENT_SITE', 1 );
+Config::define( 'BLOG_ID_CURRENT_SITE', 1 );
+
+Config::define( 'ADMIN_COOKIE_PATH', '/' );
+Config::define( 'COOKIE_DOMAIN', '' );
+Config::define( 'COOKIEPATH', '' );
+Config::define( 'SITECOOKIEPATH', '' );
+
+Config::define( 'AUTOMATIC_UPDATER_DISABLED', true );
+Config::define( 'DISABLE_WP_CRON', true );
+Config::define( 'DISALLOW_FILE_EDIT', true );
+Config::define( 'FS_METHOD', 'direct' );
+
+/**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */

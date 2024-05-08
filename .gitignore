@@ -22,6 +22,7 @@ web/.htaccess
 
 # Composer
 /vendor
+wp-content/*
 
 # WP-CLI
 wp-cli.local.yml
@@ -30,3 +31,26 @@ wp-cli.local.yml
 /web/app/advanced-cache.php
 /web/app/object-cache.php
 /web/app/db.php
+
+# WP-CLI database dumps should not be tracked in git
+*.sql
+*.sql.gz
+
+# Ignore OSX file system junk
+.DS_Store
+
+##
+# Don't track languages
+##
+web/app/languages/*
+!web/app/languages/.gitkeep
+
+##
+# WP Dropins
+# - Use devgeniem/better-wp-db-error for db-error.php page
+# - Use devgeniem/better-wp-install-dropin for install.php
+# - Use wpackagist-plugin/redis-cache for object-cache.php
+##
+web/app/db-error.php
+web/app/install.php
+web/app/object-cache.php

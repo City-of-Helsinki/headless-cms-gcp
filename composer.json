@@ -23,6 +23,11 @@
     "issues": "https://github.com/roots/bedrock/issues",
     "forum": "https://discourse.roots.io/category/bedrock"
   },
+  "autoload": {
+    "psr-4": {
+        "HKIH\\SportsLocations\\": "./web/app/plugins/hkih-sportslocations/src"
+    }
+  },
   "repositories": [
     {
       "type": "composer",
@@ -31,56 +36,121 @@
     },
     {
       "type": "composer",
+      "url": "https://wp-languages.github.io"
+    },
+    {
+      "type": "composer",
       "url": "https://satis.hion.dev"
     }
   ],
   "require": {
-    "php": ">=8.0",
-    "composer/installers": "^2.2",
+    "php": ">=8.1",
+    "composer/installers": "^v1.7.0",
     "vlucas/phpdotenv": "^5.5",
+    "devgeniem/acf-codifier": "^1.38.2",
+    "devgeniem/better-wp-db-error": "^1.0",
+    "devgeniem/better-wp-install-dropin": "^1.1",
+    "acf/advanced-custom-fields-pro": "^6.2.5",
+    "filebird/filebird-pro": "^6.0.7",
+    "polylang/polylang-pro": "^3.5.4",
+    "wp_all_import/wp-all-import-pro": "^4.8.5",
+    "devgeniem/wp-define-more": "^1.0",
+    "devgeniem/wp-geniem-project-bells-and-whistles": "^1.7",
+    "devgeniem/wp-geniem-roles": "^1.6.0",
+    "devgeniem/wp-sanitize-accented-uploads": "^1.2.1",
+    "koodimonni-language/core-fi": "^6.4.3",
+    "koodimonni-language/core-sv_se": "^6.4.3",
+    "koodimonni/composer-dropin-installer": "^1.4",
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "6.5.2",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
-    "wpackagist-theme/twentytwentyfour": "^1.0",
+    "rtcamp/nginx-helper": "^2.2.6",
+    "valu/wp-graphql-cache": "^0.1.0",
+    "valu/wp-graphql-polylang": "^0.6.0",
     "wp-cli/wp-cli-bundle": "^2.10",
-    "wpackagist-plugin/redis-cache": "^2.5",
+    "wpackagist-plugin/autodescription": "^5.0.4",
+    "wpackagist-plugin/duplicate-post": "^4.5",
+    "wpackagist-plugin/redis-cache": "^2.5.1",
+    "wpackagist-plugin/spatie-ray": "^1.7.5",
+    "wpackagist-plugin/stream": "^4.0.0",
+    "wpackagist-plugin/svg-support": "^2.5",
+    "wpackagist-plugin/wordpress-importer": "^0.8.2",
+    "wpackagist-plugin/wp-graphql": "1.22.1",
     "wpackagist-plugin/query-monitor": "^3.15",
-    "open-telemetry/sdk": "^1.0",
-    "open-telemetry/opentelemetry-auto-io": "^0.0.11",
-    "open-telemetry/opentelemetry-auto-wordpress": "^0.0.15",
-    "open-telemetry/exporter-otlp": "^1.0",
     "php-http/guzzle7-adapter": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
-    "roave/security-advisories": "dev-latest"
+    "rarst/wps": "^1.2",
+    "roave/security-advisories": "dev-latest",
+    "devgeniem/geniem-rules-codesniffer": "^1.0"
   },
   "config": {
+    "sort-packages": true,
+    "dropin-installer": "copy",
     "optimize-autoloader": true,
     "preferred-install": "dist",
     "allow-plugins": {
       "composer/installers": true,
       "roots/wordpress-core-installer": true,
-      "php-http/discovery": true
+      "php-http/discovery": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "koodimonni/composer-dropin-installer": true,
+      "johnpbloch/wordpress-core-installer": true
     }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "devgeniem/acf-codifier",
+        "acf/advanced-custom-fields-pro",
+        "devgeniem/wp-geniem-roles",
+        "rarst/wps",
+        "rtcamp/nginx-helper",
+        "wpackagist-plugin/spatie-ray",
+        "wpackagist-plugin/stream",
+        "wpackagist-plugin/wp-graphql"
+      ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "dropin-paths": {
+      "web/app/": [
+          "package:wpackagist-plugin/redis-cache:includes/object-cache.php",
+          "type:wordpress-dropin"
+      ],
+      "web/app/languages/": [
+          "vendor:koodimonni-language"
+      ],
+      "web/app/languages/plugins/": [
+          "vendor:koodimonni-plugin-language"
+      ],
+      "web/app/languages/themes/": [
+          "vendor:koodimonni-theme-language"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
+    "lint": "@php -d error_reporting=22527 vendor/bin/phpcs --standard=phpcs.xml web/app/ config/ -s --warning-severity=0",
+    "lint-all": "@php -d error_reporting=22527 vendor/bin/phpcs --standard=phpcs.xml web/app/ config/",
+    "lint-fix": "@php -d error_reporting=22527 vendor/bin/phpcbf --standard=phpcs.xml --basepath=. ./web/app/ ./config/",
     "setup-drop-ins": [
       "cp web/app/plugins/redis-cache/includes/object-cache.php web/app/object-cache.php",
-      "ln -fs $(pwd)/web/app/plugins/query-monitor/wp-content/db.php web/app/db.php"
+      "ln -fs $(pwd)/web/app/plugins/query-monitor/wp-content/db.php web/app/db.php",
+      "cd web/app/plugins/hkih-linkedevents && composer install",
+      "cd web/app/plugins/hkih-cpt-collection && composer install",
+      "cd web/app/plugins/hkih-cpt-translation && composer install",
+      "cd web/app/plugins/hkih-cpt-landing-page && composer install",
+      "cd web/app/plugins/hkih-cpt-contact && composer install",
+      "cd web/app/plugins/hkih-cpt-release && composer install",
+      "cd web/app/plugins/hkih-sportslocations && composer install"
     ],
     "post-install-cmd": [
         "@setup-drop-ins"

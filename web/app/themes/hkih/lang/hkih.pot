@@ -1,0 +1,149 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: HKIH\n"
+"POT-Creation-Date: 2021-03-25 15:10+0200\n"
+"PO-Revision-Date: 2021-03-25 13:03+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: lib/ACF/Attachment.php:34 lib/ACF/Page.php:35
+msgctxt "theme ACF"
+msgid "Additional Fields"
+msgstr ""
+
+#: lib/ACF/ExpiratorGroup.php:34
+msgctxt "theme ACF"
+msgid "Timed expiration"
+msgstr ""
+
+#: lib/ACF/ExpiratorGroup.php:145
+msgid "Expiration time"
+msgstr ""
+
+#: lib/ACF/Page.php:76 lib/PostType/Page.php:63
+msgid "Lead Paragraph"
+msgstr ""
+
+#: lib/ACF/Page.php:77
+msgid ""
+"A lead paragraph is the opening paragraph that summarizes its main ideas."
+msgstr ""
+
+#: lib/ACF/Page.php:80 lib/PostType/Page.php:71
+msgid "Show Child Pages"
+msgstr ""
+
+#: lib/ACF/Page.php:81
+msgid "Status flag"
+msgstr ""
+
+#: lib/ACF/Settings.php:32
+msgctxt "theme ACF"
+msgid "Site settings"
+msgstr ""
+
+#: lib/ACF/Settings.php:79
+msgid "Site Identity"
+msgstr ""
+
+#: lib/ACF/Settings.php:87
+msgid "Site Title"
+msgstr ""
+
+#. translators: %s is a link to General Settings page with text 'General Settings'
+#: lib/ACF/Settings.php:90
+#, php-format
+msgid "This can be controlled from %s"
+msgstr ""
+
+#: lib/ACF/Settings.php:94
+msgid "General Settings"
+msgstr ""
+
+#: lib/ACF/Settings.php:108
+msgid "Logo"
+msgstr ""
+
+#: lib/PostType/Attachment.php:60
+msgid "Photographer Credit"
+msgstr ""
+
+#: lib/PostType/Settings.php:58
+msgctxt "theme CPT slugs"
+msgid "settings"
+msgstr ""
+
+#: lib/PostType/Settings.php:61
+msgctxt "theme CPT"
+msgid "CPT Description"
+msgstr ""
+
+#: lib/Roles.php:126
+msgid "Headless CMS Admin"
+msgstr ""
+
+#: lib/Roles.php:165
+msgid "Headless CMS Editor"
+msgstr ""
+
+#: lib/Roles.php:201
+msgid "Headless CMS Contributor"
+msgstr ""
+
+#: lib/Roles.php:238
+msgid "Headless CMS Viewer"
+msgstr ""
+
+#: lib/SeoFrameworkGraphQLMap.php:44
+msgid ""
+"The WPGraphQL SEO Framework plugin can't be loaded. These dependencies are "
+"missing:"
+msgstr ""
+
+#: lib/SeoFrameworkGraphQLMap.php:105
+msgid "The SEO Framework settings"
+msgstr ""
+
+#: lib/SeoFrameworkGraphQLMap.php:281
+msgid "The SEO Framework data of the "
+msgstr ""
+
+#: lib/ThemeSupports.php:53
+msgid "Primary navigation"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "HKIH"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/devgeniem/client-hkih"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Helsinki Headless"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Geniem"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://geniem.fi"
+msgstr ""

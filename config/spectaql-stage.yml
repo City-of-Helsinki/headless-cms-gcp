@@ -1,0 +1,25 @@
+info:
+  title: HKIH GraphQL API Reference
+  description: Helsinki Headless. All subsites can be queried using `https://{site}.content.api.hel.fi/graphql` endpoint. Documentation generated from https://liikunta.hkih.stage.geniem.io/ other sites may differ.
+  x-hidePoweredBy: true
+
+introspection:
+  url: https://liikunta.hkih.stage.geniem.io/graphql
+
+extensions:
+  # Utilize the 'graphql-scalars' library when generating examples for scalars it supports that
+  # do not have an example already set via some other method. Usually this is a good
+  # thing to have on, but it is possible to turn it off.
+  # Default: true
+  graphqlScalarExamples: true
+
+servers:
+  - url: https://liikunta.hkih.stage.geniem.io/graphql
+    description: Production
+    production: true
+  - url: https://client-hkih.test/graphql
+    description: Local Development
+    production: false
+  - url: https://hkih.stage.geniem.io/graphql
+    description: Staging server
+    production: false

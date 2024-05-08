@@ -1,0 +1,27 @@
+{
+    "name": "client-hkih",
+    "author": "Geniem",
+    "version": "1.0.0",
+    "description": "HKI Headless",
+    "private": true,
+    "devDependencies": {
+        "@wordpress/eslint-plugin": "^2.4.0",
+        "eslint": "^5.15.2",
+        "husky": "^8.0.1",
+        "lint-staged": "^12.4.1",
+        "sass-lint": "^1.13.1",
+        "spectaql": "^1.0.9"
+    },
+    "lint-staged": {
+        "*.php": "php -d error_reporting=22527 vendor/bin/phpcs --standard=phpcs.xml",
+        "*.scss": "sass-lint -c .sass-lint.yml -v -i 'node_modules/**/*.scss'",
+        "*.js": "eslint -c .eslintrc.json"
+    },
+    "scripts": {
+        "generate-api-docs": "npx spectaql config/spectaql.yml -t web/static/api-graphql",
+        "generate-api-docs-stage": "npx spectaql config/spectaql-stage.yml -t web/static/api-graphql-stage",
+        "lint-js": "eslint -c ./.eslintrc.json ./web/app/themes/**/assets",
+        "lint-scss": "sass-lint -c ./.sass-lint.yml -v",
+        "prepare": "husky install"
+    }
+}
