@@ -75,6 +75,10 @@ class BreadCrumbSettingsTab extends Tab {
     public static function generate_page_choices() {
         $settings_page_id = filter_input( INPUT_GET, 'post', FILTER_SANITIZE_NUMBER_INT );
 
+        if ( ! function_exists( 'pll_get_post_language' ) ) {
+            return;
+        }
+
         $args = [
             'post_type'      => PostType\Page::SLUG,
             'post_status'    => 'publish',
