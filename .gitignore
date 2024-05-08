@@ -1,6 +1,7 @@
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
+!web/app/plugins/hkih-*
 web/app/mu-plugins/*/
 web/app/themes/twentytwentyfour/
 web/app/upgrade
@@ -53,4 +54,3 @@ web/app/languages/*
 ##
 web/app/db-error.php
 web/app/install.php
-web/app/object-cache.php
