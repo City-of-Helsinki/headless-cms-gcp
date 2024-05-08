@@ -1,6 +1,7 @@
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
+!web/app/plugins/hkih-*
 web/app/mu-plugins/*/
 !web/app/mu-plugins/*.php
 web/app/themes/twentytwentyfour/
