@@ -1,0 +1,30 @@
+{
+    "name": "devgeniem/hkih-cpt-contact",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "description": "Contact CPT",
+    "homepage": "http://geniem.com",
+    "authors": [
+        {
+            "name": "Ville Viklund",
+            "email": "ville.viklund@geniem.com",
+            "homepage": "https://github.com/ville6000"
+        }
+    ],
+    "minimum-stability": "dev",
+    "keywords": [
+        "wordpress", "wp", "plugin"
+    ],
+    "require": {
+        "php": ">=7.4",
+        "composer/installers": ">=v1.7.0"
+    },
+    "autoload": {
+        "psr-4": {"HKIH\\CPT\\Contact\\": "src/"}
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
