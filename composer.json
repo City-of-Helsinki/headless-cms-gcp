@@ -143,19 +143,26 @@
     "lint-fix": "@php -d error_reporting=22527 vendor/bin/phpcbf --standard=phpcs.xml --basepath=. ./web/app/ ./config/",
     "setup-drop-ins": [
       "cp web/app/plugins/redis-cache/includes/object-cache.php web/app/object-cache.php",
-      "ln -fs $(pwd)/web/app/plugins/query-monitor/wp-content/db.php web/app/db.php",
-      "cd web/app/plugins/hkih-linkedevents && composer install",
-      "cd web/app/plugins/hkih-cpt-collection && composer install",
-      "cd web/app/plugins/hkih-cpt-translation && composer install",
-      "cd web/app/plugins/hkih-cpt-landing-page && composer install",
-      "cd web/app/plugins/hkih-cpt-contact && composer install",
-      "cd web/app/plugins/hkih-cpt-release && composer install",
-      "cd web/app/plugins/hkih-sportslocations && composer install"
+      "ln -fs $(pwd)/web/app/plugins/query-monitor/wp-content/db.php web/app/db.php"
     ],
     "post-install-cmd": [
+        "@composer install --working-dir web/app/plugins/hkih-linkedevents",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-collection",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-translation",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-landing-page",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-contact",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-release",
+        "@composer install --working-dir web/app/plugins/hkih-sportslocations",
         "@setup-drop-ins"
     ],
     "post-update-cmd": [
+        "@composer install --working-dir web/app/plugins/hkih-linkedevents",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-collection",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-translation",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-landing-page",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-contact",
+        "@composer install --working-dir web/app/plugins/hkih-cpt-release",
+        "@composer install --working-dir web/app/plugins/hkih-sportslocations",
         "@setup-drop-ins"
     ]
   }
