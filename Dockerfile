@@ -57,6 +57,8 @@ FROM node:${NODE_VERSION} AS theme-npm-1
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-linkedevents/
 COPY ${PLUGINSPATH}/hkih-linkedevents/package.json .
+COPY ${PLUGINSPATH}/hkih-linkedevents/webpack.config.js .
+COPY ${PLUGINSPATH}/hkih-linkedevents/.eslintrc.json .
 RUN npm i --no-audit
 RUN npm run build
 
