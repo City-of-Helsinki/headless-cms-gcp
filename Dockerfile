@@ -55,15 +55,15 @@ RUN rm -rf /root/.composer
 
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-linkedevents/
-COPY ${PLUGINSPATH}/package.json .
-COPY ${PLUGINSPATH}/package-lock.json .
+COPY ${PLUGINSPATH}/hkih-linkedevents/package.json .
+COPY ${PLUGINSPATH}/hkih-linkedevents/package-lock.json .
 RUN npm ci --no-audit
 RUN npm run build
 
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-sportslocations/
-COPY ${PLUGINSPATH}/package.json .
-COPY ${PLUGINSPATH}/package-lock.json .
+COPY ${PLUGINSPATH}/hkih-sportslocations/package.json .
+COPY ${PLUGINSPATH}/hkih-sportslocations/package-lock.json .
 RUN npm ci --no-audit
 RUN npm run build
 
