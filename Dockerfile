@@ -56,13 +56,13 @@ RUN rm -rf /root/.composer
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-linkedevents/
 COPY ${PLUGINSPATH}/hkih-linkedevents/package.json .
-RUN npm ci --no-audit
+RUN npm i --no-audit
 RUN npm run build
 
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-sportslocations/
 COPY ${PLUGINSPATH}/hkih-sportslocations/package.json .
-RUN npm ci --no-audit
+RUN npm i --no-audit
 RUN npm run build
 
 FROM base as app
