@@ -30,9 +30,9 @@ RUN apk --no-cache add python3 \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
 
 FROM node:${NODE_VERSION} AS theme-npm-1
+COPY .eslintrc.json /app/
 ARG THEMEPATH_1
 WORKDIR /app/${THEMEPATH_1}
-COPY .eslintrc.json .
 COPY ${THEMEPATH_1}/package.json .
 COPY ${THEMEPATH_1}/package-lock.json .
 RUN npm ci --no-audit
