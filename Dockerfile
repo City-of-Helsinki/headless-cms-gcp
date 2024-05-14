@@ -1,7 +1,9 @@
 ARG ALPINE_VERSION="3.18"
 ARG PHP_VERSION="8.2"
 ARG GCSFUSE_VERSION="1.2.0"
-ARG THEMEPATH_1="web/app/themes/xyz"
+ARG NODE_VERSION="14"
+ARG THEMEPATH_1="web/app/themes/hkih"
+ARG PLUGINSPATH="web/app/plugins"
 
 FROM golang:alpine${ALPINE_VERSION} AS gcsfuse
 ARG GCSFUSE_VERSION
@@ -27,16 +29,15 @@ RUN apk --no-cache add python3 \
   build-base libc6-compat autoconf automake libtool \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
 
-# FROM dev AS theme-npm-1
-# ARG THEMEPATH_1
-# WORKDIR /app/${THEMEPATH_1}
-# COPY ${THEMEPATH_1}/package.json .
-# COPY ${THEMEPATH_1}/package-lock.json .
-# RUN npm ci --no-audit
-# COPY ${THEMEPATH_1}/assets assets
-# COPY ${THEMEPATH_1}/webpack.config.js .
-# COPY ${THEMEPATH_1}/postcss.config.js .
-# RUN npm run build
+FROM node:${NODE_VERSION} AS theme-npm-1
+ARG THEMEPATH_1
+WORKDIR /app/${THEMEPATH_1}
+COPY ${THEMEPATH_1}/package.json .
+COPY ${THEMEPATH_1}/package-lock.json .
+RUN npm ci --no-audit
+COPY ${THEMEPATH_1}/assets assets
+COPY ${THEMEPATH_1}/webpack.config.js .
+RUN npm run build
 
 FROM dev as root-composer
 ARG THEMEPATH_1
@@ -48,8 +49,22 @@ RUN composer install --prefer-dist --no-dev --no-scripts
 COPY . .
 RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
-# COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
+COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
 RUN rm -rf /root/.composer
+
+ARG PLUGINSPATH
+WORKDIR /app/${PLUGINSPATH}/hkih-linkedevents/
+COPY ${PLUGINSPATH}/package.json .
+COPY ${PLUGINSPATH}/package-lock.json .
+RUN npm ci --no-audit
+RUN npm run build
+
+ARG PLUGINSPATH
+WORKDIR /app/${PLUGINSPATH}/hkih-sportslocations/
+COPY ${PLUGINSPATH}/package.json .
+COPY ${PLUGINSPATH}/package-lock.json .
+RUN npm ci --no-audit
+RUN npm run build
 
 FROM base as app
 COPY --from=root-composer /app /app
