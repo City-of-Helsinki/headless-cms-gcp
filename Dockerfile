@@ -67,6 +67,9 @@ FROM node:${NODE_VERSION} AS theme-npm-1
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-sportslocations/
 COPY ${PLUGINSPATH}/hkih-sportslocations/package.json .
+COPY ${PLUGINSPATH}/hkih-sportslocations/webpack.config.js .
+COPY ${PLUGINSPATH}/hkih-sportslocations/.eslintrc.json .
+COPY ${PLUGINSPATH}/hkih-sportslocations/assets assets
 RUN npm i --no-audit
 RUN npm run build
 
