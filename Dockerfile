@@ -53,12 +53,14 @@ RUN composer dump-autoload --no-dev --optimize
 COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
 RUN rm -rf /root/.composer
 
+FROM node:${NODE_VERSION} AS theme-npm-1
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-linkedevents/
 COPY ${PLUGINSPATH}/hkih-linkedevents/package.json .
 RUN npm i --no-audit
 RUN npm run build
 
+FROM node:${NODE_VERSION} AS theme-npm-1
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-sportslocations/
 COPY ${PLUGINSPATH}/hkih-sportslocations/package.json .
