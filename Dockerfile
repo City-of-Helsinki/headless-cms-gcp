@@ -59,6 +59,7 @@ WORKDIR /app/${PLUGINSPATH}/hkih-linkedevents/
 COPY ${PLUGINSPATH}/hkih-linkedevents/package.json .
 COPY ${PLUGINSPATH}/hkih-linkedevents/webpack.config.js .
 COPY ${PLUGINSPATH}/hkih-linkedevents/.eslintrc.json .
+COPY ${THEMEPATH_1}/hkih-linkedevents/assets/ ./assets/
 RUN npm i --no-audit
 RUN npm run build
 
