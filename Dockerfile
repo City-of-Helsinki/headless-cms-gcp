@@ -2,8 +2,8 @@ ARG ALPINE_VERSION="3.18"
 ARG PHP_VERSION="8.2"
 ARG GCSFUSE_VERSION="1.2.0"
 ARG NODE_VERSION="14"
-ARG THEMEPATH_1="web/app/themes/hkih"
-ARG PLUGINSPATH="web/app/plugins"
+ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
+ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
 
 FROM golang:alpine${ALPINE_VERSION} AS gcsfuse
 ARG GCSFUSE_VERSION
@@ -40,6 +40,28 @@ COPY ${THEMEPATH_1}/assets assets
 COPY ${THEMEPATH_1}/webpack.config.js .
 RUN npm run build
 
+FROM node:${NODE_VERSION} AS plugin-npm-1
+ARG PLUGINPATH_1
+WORKDIR /app/${PLUGINPATH_1}
+COPY ${PLUGINPATH_1}/package.json .
+# COPY ${PLUGINPATH_1}/package-lock.json .
+RUN npm ci --no-audit
+COPY ${PLUGINPATH_1}/assets assets
+COPY ${PLUGINPATH_1}/webpack.config.js .
+COPY ${PLUGINPATH_1}/.eslintrc.json .
+RUN npm run build
+
+FROM node:${NODE_VERSION} AS plugin-npm-2
+ARG PLUGINPATH_2
+WORKDIR /app/${PLUGINPATH_2}
+COPY ${PLUGINPATH_2}/package.json .
+# COPY ${PLUGINPATH_2}/package-lock.json .
+RUN npm ci --no-audit
+COPY ${PLUGINPATH_2}/assets assets
+COPY ${PLUGINPATH_2}/webpack.config.js .
+COPY ${PLUGINPATH_2}/.eslintrc.json .
+RUN npm run build
+
 FROM dev as root-composer
 ARG THEMEPATH_1
 WORKDIR /app
@@ -51,29 +73,9 @@ COPY . .
 RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
 COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
+COPY --from=plugin-npm-1 /app/${PLUGINPATH_1}/assets ${PLUGINPATH_1}/assets
+COPY --from=plugin-npm-2 /app/${PLUGINPATH_2}/assets ${PLUGINPATH_2}/assets
 RUN rm -rf /root/.composer
-
-FROM node:${NODE_VERSION} AS theme-npm-plugin-1
-ARG PLUGINSPATH
-WORKDIR /app/${PLUGINSPATH}/hkih-linkedevents/
-COPY ${PLUGINSPATH}/hkih-linkedevents/assets assets
-COPY ${PLUGINSPATH}/hkih-linkedevents/package.json .
-COPY ${PLUGINSPATH}/hkih-linkedevents/webpack.config.js .
-COPY ${PLUGINSPATH}/hkih-linkedevents/.eslintrc.json .
-RUN npm i --no-audit
-RUN npm run build
-COPY --from=theme-npm-plugin-1 /app/${PLUGINSPATH}/assets ${PLUGINSPATH}/assets
-
-FROM node:${NODE_VERSION} AS theme-npm-plugin-2
-ARG PLUGINSPATH
-WORKDIR /app/${PLUGINSPATH}/hkih-sportslocations/
-COPY ${PLUGINSPATH}/hkih-sportslocations/assets assets
-COPY ${PLUGINSPATH}/hkih-sportslocations/package.json .
-COPY ${PLUGINSPATH}/hkih-sportslocations/webpack.config.js .
-COPY ${PLUGINSPATH}/hkih-sportslocations/.eslintrc.json .
-RUN npm i --no-audit
-RUN npm run build
-COPY --from=theme-npm-plugin-2 /app/${PLUGINSPATH}/assets ${PLUGINSPATH}/assets
 
 FROM base as app
 COPY --from=root-composer /app /app
