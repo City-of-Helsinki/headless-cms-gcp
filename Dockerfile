@@ -53,7 +53,7 @@ RUN composer dump-autoload --no-dev --optimize
 COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
 RUN rm -rf /root/.composer
 
-FROM node:${NODE_VERSION} AS theme-npm-1
+FROM node:${NODE_VERSION} AS theme-npm-plugin-1
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-linkedevents/
 COPY ${PLUGINSPATH}/hkih-linkedevents/assets assets
@@ -62,8 +62,9 @@ COPY ${PLUGINSPATH}/hkih-linkedevents/webpack.config.js .
 COPY ${PLUGINSPATH}/hkih-linkedevents/.eslintrc.json .
 RUN npm i --no-audit
 RUN npm run build
+COPY --from=theme-npm-plugin-1 /app/${PLUGINSPATH}/assets ${PLUGINSPATH}/assets
 
-FROM node:${NODE_VERSION} AS theme-npm-1
+FROM node:${NODE_VERSION} AS theme-npm-plugin-2
 ARG PLUGINSPATH
 WORKDIR /app/${PLUGINSPATH}/hkih-sportslocations/
 COPY ${PLUGINSPATH}/hkih-sportslocations/assets assets
@@ -72,6 +73,7 @@ COPY ${PLUGINSPATH}/hkih-sportslocations/webpack.config.js .
 COPY ${PLUGINSPATH}/hkih-sportslocations/.eslintrc.json .
 RUN npm i --no-audit
 RUN npm run build
+COPY --from=theme-npm-plugin-2 /app/${PLUGINSPATH}/assets ${PLUGINSPATH}/assets
 
 FROM base as app
 COPY --from=root-composer /app /app
