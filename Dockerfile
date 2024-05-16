@@ -2,6 +2,7 @@ ARG ALPINE_VERSION="3.18"
 ARG PHP_VERSION="8.2"
 ARG GCSFUSE_VERSION="1.2.0"
 ARG NODE_VERSION="14"
+ARG THEMEPATH_1="web/app/themes/hkih"
 ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
 ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
 
