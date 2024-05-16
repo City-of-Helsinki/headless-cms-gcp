@@ -74,7 +74,9 @@ COPY . .
 RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
 COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
+ARG PLUGINPATH_1
 COPY --from=plugin-npm-1 /app/${PLUGINPATH_1}/assets ${PLUGINPATH_1}/assets
+ARG PLUGINPATH_2
 COPY --from=plugin-npm-2 /app/${PLUGINPATH_2}/assets ${PLUGINPATH_2}/assets
 RUN rm -rf /root/.composer
 
