@@ -57,7 +57,7 @@ ARG PLUGINPATH_2
 WORKDIR /app/${PLUGINPATH_2}
 COPY ${PLUGINPATH_2}/package.json .
 # COPY ${PLUGINPATH_2}/package-lock.json .
-RUN npm ci --no-audit
+RUN npm i --no-audit
 COPY ${PLUGINPATH_2}/assets assets
 COPY ${PLUGINPATH_2}/webpack.config.js .
 COPY ${PLUGINPATH_2}/.eslintrc.json .
