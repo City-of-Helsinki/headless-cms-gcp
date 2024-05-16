@@ -36,7 +36,7 @@ ARG THEMEPATH_1
 WORKDIR /app/${THEMEPATH_1}
 COPY ${THEMEPATH_1}/package.json .
 COPY ${THEMEPATH_1}/package-lock.json .
-RUN npm ci --no-audit
+RUN npm i --no-audit
 COPY ${THEMEPATH_1}/assets assets
 COPY ${THEMEPATH_1}/webpack.config.js .
 RUN npm run build
@@ -46,7 +46,7 @@ ARG PLUGINPATH_1
 WORKDIR /app/${PLUGINPATH_1}
 COPY ${PLUGINPATH_1}/package.json .
 # COPY ${PLUGINPATH_1}/package-lock.json .
-RUN npm ci --no-audit
+RUN npm i --no-audit
 COPY ${PLUGINPATH_1}/assets assets
 COPY ${PLUGINPATH_1}/webpack.config.js .
 COPY ${PLUGINPATH_1}/.eslintrc.json .
