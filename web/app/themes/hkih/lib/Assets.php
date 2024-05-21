@@ -82,8 +82,8 @@ class Assets implements Interfaces\Controller {
                               : $search_results_link;
 
         $data = [
-            'externalUrl'       => $external_url,
             'searchResultsLink' => $search_results_link,
+            'adminajax'         => admin_url( 'admin-ajax.php' ),
         ];
 
         \wp_localize_script( 'admin-js', 'adminData', $data );

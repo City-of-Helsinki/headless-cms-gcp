@@ -181,6 +181,10 @@ Config::define( 'REVALIDATE_TOKEN_PRODUCTION_LIIKUNTA', env( 'REVALIDATE_TOKEN_P
 Config::define( 'REVALIDATE_TOKEN_PRODUCTION_TAPAHTUMAT', env( 'REVALIDATE_TOKEN_PRODUCTION_TAPAHTUMAT' ) );
 Config::define( 'REVALIDATE_TOKEN_PRODUCTION_HARRASTUKSET', env( 'REVALIDATE_TOKEN_PRODUCTION_HARRASTUKSET' ) );
 
+// GRAPHQL JWT AUTH SECRET KEY.
+Config::define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', env( 'GRAPHQL_JWT_AUTH_SECRET_KEY' ) );
+
+
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
