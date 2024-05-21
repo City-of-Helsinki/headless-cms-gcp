@@ -172,6 +172,9 @@ Config::define( 'DISABLE_WP_CRON', true );
 Config::define( 'DISALLOW_FILE_EDIT', true );
 Config::define( 'FS_METHOD', 'direct' );
 
+// GRAPHQL JWT AUTH SECRET KEY.
+Config::define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', env( 'GRAPHQL_JWT_AUTH_SECRET_KEY' ) );
+
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes

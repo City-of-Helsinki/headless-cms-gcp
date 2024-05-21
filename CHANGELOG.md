@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- HKIH-160: Preview feature.
+
 ## [Released]
 
 ## [1.19.0] - 2024-05-08
