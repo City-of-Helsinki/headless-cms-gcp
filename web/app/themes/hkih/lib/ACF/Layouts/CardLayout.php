@@ -94,7 +94,8 @@ class CardLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_choices( [
                     'left'            => __( 'Left', 'hkih' ),
                     'right'           => __( 'Right', 'hkih' ),
-                    'center'          => __( 'Center', 'hkih' ),
+                    'center-left'     => __( 'Center left', 'hkih' ),
+                    'center-right'    => __( 'Center right', 'hkih' ),
                     'delimited-left'  => __( 'Delimited Left', 'hkih' ),
                     'delimited-right' => __( 'Delimited Right', 'hkih' ),
                 ] )

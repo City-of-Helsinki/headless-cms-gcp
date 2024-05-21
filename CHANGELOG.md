@@ -13,6 +13,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - HKIH-162: Publishpress Revisions Pro plugin.
 - HKIH-207: Redirect urls to site settings.
 - HKIH-184: WPO 365 login.
+- HKIH-210: Alignment values to CardLayout.
 
 ## [Released]
 
