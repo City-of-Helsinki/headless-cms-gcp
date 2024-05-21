@@ -103,11 +103,12 @@ class StepsLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_wrapper_width( 100 )
                 ->set_instructions( $this->strings['title']['instructions'] );
 
-            $description_field = ( new Field\Textarea( $this->strings['description']['label'] ) )
+            $description_field = ( new Field\Wysiwyg( $this->strings['description']['label'] ) )
                 ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
+                ->disable_media_upload()
+                ->set_toolbar( 'basic' )
                 ->set_wrapper_width( 100 )
-                ->set_rows( 4 )
                 ->set_instructions( $this->strings['description']['instructions'] );
 
             $type_field = ( new Field\Radio( $this->strings['type']['label'] ) )
@@ -130,9 +131,11 @@ class StepsLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_layout( 'block' )
                 ->set_instructions( $this->strings['steps']['instructions'] );
 
-            $step_title_field = ( new Field\Text( $this->strings['step_title']['label'] ) )
+            $step_title_field = ( new Field\Wysiwyg( $this->strings['step_title']['label'] ) )
                 ->set_key( "{$key}_step_title" )
                 ->set_name( 'step_title' )
+                ->disable_media_upload()
+                ->set_toolbar( 'light' )
                 ->set_required()
                 ->set_wrapper_width( 100 )
                 ->set_instructions( $this->strings['step_title']['instructions'] );
