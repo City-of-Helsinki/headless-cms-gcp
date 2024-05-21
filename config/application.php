@@ -186,6 +186,11 @@ Config::define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', env( 'GRAPHQL_JWT_AUTH_SECRET_KEY
 
 
 /**
+ * WPO365 options
+ */
+define( 'WPO_MU_USE_SUBSITE_OPTIONS', env( 'WPO_MU_USE_SUBSITE_OPTIONS' ) ?? true );
+
+/**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */

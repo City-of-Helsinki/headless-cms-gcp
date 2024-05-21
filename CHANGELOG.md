@@ -12,6 +12,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - HKIH-172: TinyMCE table plugin and custom styles.
 - HKIH-162: Publishpress Revisions Pro plugin.
 - HKIH-207: Redirect urls to site settings.
+- HKIH-184: WPO 365 login.
+
 ## [Released]
 
 ## [1.19.0] - 2024-05-08

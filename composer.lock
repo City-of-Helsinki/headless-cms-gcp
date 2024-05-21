@@ -5,10 +5,14 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "79cb32c933a9e78659d3d8b44b02f64f",
 =======
     "content-hash": "58ba8762a028c16ba875f0407ebda9ea",
 >>>>>>> HKIH-162
+=======
+    "content-hash": "a35c36721d9471423b822f016947021e",
+>>>>>>> HKIH-184
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -7095,6 +7099,34 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-graphql/"
+        },
+        {
+            "name": "wpackagist-plugin/wpo365-login",
+            "version": "27.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wpo365-login/",
+                "reference": "tags/27.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wpo365-login.27.2.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wpo365-login/"
+        },
+        {
+            "name": "wpo365/wpo365-login-premium",
+            "version": "26.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://satis.hion.dev/dist/wpo365/wpo365-login-premium/wpo365-wpo365-login-premium-26.0.tar",
+                "shasum": "4ed8c6b0a273c10441829b56a7b845ad6d8ee759"
+            },
+            "type": "wordpress-plugin"
         }
     ],
     "packages-dev": [
