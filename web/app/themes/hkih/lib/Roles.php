@@ -236,11 +236,12 @@ class Roles implements Interfaces\Controller {
             $collection_caps,
             $this->caps_posts,
             [
-                'read'          => true,
-                'upload_files'  => true,
-                'publish_pages' => false,
-                'edit_pages'    => false,
-                'read_setting'  => false,
+                'read'                 => true,
+                'upload_files'         => true,
+                'publish_pages'        => false,
+                'edit_pages'           => true,
+                'read_setting'         => false,
+                'list_published_pages' => true,
             ],
         );
 
