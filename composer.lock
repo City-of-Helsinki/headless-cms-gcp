@@ -4,15 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "content-hash": "79cb32c933a9e78659d3d8b44b02f64f",
-=======
-    "content-hash": "58ba8762a028c16ba875f0407ebda9ea",
->>>>>>> HKIH-162
-=======
     "content-hash": "a35c36721d9471423b822f016947021e",
->>>>>>> HKIH-184
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
