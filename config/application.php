@@ -172,6 +172,15 @@ Config::define( 'DISABLE_WP_CRON', true );
 Config::define( 'DISALLOW_FILE_EDIT', true );
 Config::define( 'FS_METHOD', 'direct' );
 
+// Kuva unified api url used in LocationSearch plugin.
+Config::define( 'KUVA_UNIFIED_API', env( 'KUVA_UNIFIED_API' ) );
+
+// Revalidate tokens.
+Config::define( 'REVALIDATE_TOKEN_TESTING', env( 'REVALIDATE_TOKEN_TESTING' ) );
+Config::define( 'REVALIDATE_TOKEN_PRODUCTION_LIIKUNTA', env( 'REVALIDATE_TOKEN_PRODUCTION_LIIKUNTA' ) );
+Config::define( 'REVALIDATE_TOKEN_PRODUCTION_TAPAHTUMAT', env( 'REVALIDATE_TOKEN_PRODUCTION_TAPAHTUMAT' ) );
+Config::define( 'REVALIDATE_TOKEN_PRODUCTION_HARRASTUKSET', env( 'REVALIDATE_TOKEN_PRODUCTION_HARRASTUKSET' ) );
+
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
