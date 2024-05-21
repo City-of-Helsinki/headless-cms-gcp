@@ -54,6 +54,7 @@ class Settings {
                 new SettingsTabs\DefaultImagesSettingsTab( '', $field_group->get_key() ),
                 new SettingsTabs\CustomAdminStylesTab( '', $field_group->get_key() ),
                 new SettingsTabs\BreadCrumbSettingsTab( '', $field_group->get_key() ),
+                new SettingsTabs\RedirectSettingsTab( '', $field_group->get_key() ),
             ];
 
             $field_group->set_fields(

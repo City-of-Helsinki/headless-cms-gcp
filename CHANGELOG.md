@@ -11,7 +11,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - HKIH-171: Change description field from textarea to Wysiwyg in Steps module.
 - HKIH-172: TinyMCE table plugin and custom styles.
 - HKIH-162: Publishpress Revisions Pro plugin.
-
+- HKIH-207: Redirect urls to site settings.
 ## [Released]
 
 ## [1.19.0] - 2024-05-08
