@@ -61,6 +61,7 @@
     "oscarotero/env": "^2.1",
     "php-http/guzzle7-adapter": "^1.0",
     "polylang/polylang-pro": "^3.5.4",
+    "publishpress/publishpress-revisions-pro": "^3.5",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "6.5.2",

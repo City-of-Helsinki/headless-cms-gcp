@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "79cb32c933a9e78659d3d8b44b02f64f",
+=======
+    "content-hash": "58ba8762a028c16ba875f0407ebda9ea",
+>>>>>>> HKIH-162
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -2681,6 +2685,16 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.0"
             },
             "time": "2021-07-14T16:46:02+00:00"
+        },
+        {
+            "name": "publishpress/publishpress-revisions-pro",
+            "version": "3.5.6",
+            "dist": {
+                "type": "tar",
+                "url": "https://satis.hion.dev/dist/publishpress/publishpress-revisions-pro/publishpress-publishpress-revisions-pro-3.5.6.tar",
+                "shasum": "7ed8f64060a4d98b334f0dfa9df94a153d11329b"
+            },
+            "type": "wordpress-plugin"
         },
         {
             "name": "ralouphie/getallheaders",
