@@ -173,6 +173,11 @@ Config::define( 'DISALLOW_FILE_EDIT', true );
 Config::define( 'FS_METHOD', 'direct' );
 
 /**
+ * WPO365 options
+ */
+define( 'WPO_MU_USE_SUBSITE_OPTIONS', env( 'WPO_MU_USE_SUBSITE_OPTIONS' ) ?? true );
+
+/**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */
