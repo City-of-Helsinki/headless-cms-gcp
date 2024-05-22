@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HKIH\n"
-"POT-Creation-Date: 2024-04-09 13:38+0300\n"
+"POT-Creation-Date: 2023-12-14 15:27+0200\n"
 "PO-Revision-Date: 2021-03-25 13:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -34,14 +34,6 @@ msgstr ""
 
 #: lib/ACF/ExpiratorGroup.php:145
 msgid "Expiration time"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/BreadCrumbSettingsTab.php:32
-msgid "Breadcrumbs"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/BreadCrumbSettingsTab.php:51
-msgid "Hide selected pages from breadcrumbs"
 msgstr ""
 
 #: lib/ACF/Fields/Settings/DefaultImagesSettingsTab.php:127
@@ -113,22 +105,10 @@ msgid "Client Url"
 msgstr ""
 
 #: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:85
-msgid "Revalidate Url (production)"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:89
-msgid "Revalidate Url (staging)"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:93
-msgid "Revalidate Url (testing)"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:97
 msgid "LinkedEvents base url overwrite"
 msgstr ""
 
-#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:170
+#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:149
 msgid "Site Settings"
 msgstr ""
 
@@ -226,7 +206,7 @@ msgstr ""
 #. translators: %s is layout name
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:254
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:258
-#: lib/ACF/Layouts/ArticlesLayout.php:243 lib/ACF/Layouts/CardLayout.php:192
+#: lib/ACF/Layouts/ArticlesLayout.php:243 lib/ACF/Layouts/CardLayout.php:191
 #: lib/ACF/Layouts/CardsLayout.php:211 lib/ACF/Layouts/ContentLayout.php:143
 #: lib/ACF/Layouts/ImageGalleryLayout.php:150
 #: lib/ACF/Layouts/ImageLayout.php:199 lib/ACF/Layouts/LinkListLayout.php:214
@@ -239,6 +219,11 @@ msgstr ""
 
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:44
 msgid "Articles Carousel"
+msgstr ""
+
+#: lib/ACF/Layouts/ArticlesCarouselLayout.php:84
+#: lib/ACF/Layouts/ArticlesLayout.php:76 lib/ACF/Layouts/PagesLayout.php:66
+msgid "Url of Show all -link"
 msgstr ""
 
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:250
@@ -281,18 +266,14 @@ msgid "Right"
 msgstr ""
 
 #: lib/ACF/Layouts/CardLayout.php:97
-msgid "Center left"
+msgid "Center"
 msgstr ""
 
 #: lib/ACF/Layouts/CardLayout.php:98
-msgid "Center right"
-msgstr ""
-
-#: lib/ACF/Layouts/CardLayout.php:99
 msgid "Delimited Left"
 msgstr ""
 
-#: lib/ACF/Layouts/CardLayout.php:100
+#: lib/ACF/Layouts/CardLayout.php:99
 msgid "Delimited Right"
 msgstr ""
 
@@ -518,8 +499,8 @@ msgstr ""
 msgid "Wave"
 msgstr ""
 
-#: lib/ACF/Page.php:258 lib/ACF/Post.php:209 lib/PostType/Page.php:74
-#: lib/PostType/Post.php:72
+#: lib/ACF/Page.php:258 lib/ACF/Post.php:209 lib/PostType/Page.php:70
+#: lib/PostType/Post.php:67
 msgid "Lead Paragraph"
 msgstr ""
 
@@ -528,7 +509,7 @@ msgid ""
 "A lead paragraph is the opening paragraph that summarizes its main ideas."
 msgstr ""
 
-#: lib/ACF/Page.php:262 lib/PostType/Page.php:80
+#: lib/ACF/Page.php:262 lib/PostType/Page.php:76
 msgid "Show Child Pages"
 msgstr ""
 
@@ -561,7 +542,7 @@ msgstr ""
 msgid "Pages carousel"
 msgstr ""
 
-#: lib/ACF/Post.php:213 lib/PostType/Post.php:80
+#: lib/ACF/Post.php:213 lib/PostType/Post.php:75
 msgid "Hide Published Date"
 msgstr ""
 
@@ -570,11 +551,11 @@ msgctxt "theme ACF"
 msgid "Site settings"
 msgstr ""
 
-#: lib/CustomGraphqlSchemas.php:46
+#: lib/CustomGraphqlSchemas.php:41
 msgid "Get page object by template"
 msgstr ""
 
-#: lib/CustomGraphqlSchemas.php:59
+#: lib/CustomGraphqlSchemas.php:54
 msgid "Returns ID of page that uses the given template"
 msgstr ""
 
@@ -582,48 +563,32 @@ msgstr ""
 msgid "Photographer Credit"
 msgstr ""
 
-#: lib/PostType/Page.php:85
+#: lib/PostType/Page.php:81
 msgid "Hero field"
 msgstr ""
 
-#: lib/PostType/Page.php:89
+#: lib/PostType/Page.php:85
 msgid "The title of the hero"
 msgstr ""
 
-#: lib/PostType/Page.php:93
+#: lib/PostType/Page.php:89
 msgid "The desctiption of the hero"
 msgstr ""
 
-#: lib/PostType/Page.php:97 lib/PostType/Page.php:101
+#: lib/PostType/Page.php:93 lib/PostType/Page.php:97
 msgid "The background color of the hero"
 msgstr ""
 
-#: lib/PostType/Page.php:105
+#: lib/PostType/Page.php:101
 msgid "The title of the hero link"
 msgstr ""
 
-#: lib/PostType/Page.php:109
+#: lib/PostType/Page.php:105
 msgid "The wave motif of the hero"
 msgstr ""
 
-#: lib/PostType/Page.php:116
+#: lib/PostType/Page.php:112
 msgid "Hero fields"
-msgstr ""
-
-#: lib/PostType/Page.php:130
-msgid "Breadcumb field"
-msgstr ""
-
-#: lib/PostType/Page.php:134
-msgid "The title of the page"
-msgstr ""
-
-#: lib/PostType/Page.php:138
-msgid "The link of the page."
-msgstr ""
-
-#: lib/PostType/Page.php:145 lib/PostType/Post.php:88
-msgid "Breadcrumb fields"
 msgstr ""
 
 #: lib/PostType/Settings.php:58

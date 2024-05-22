@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HKIH\n"
-"POT-Creation-Date: 2024-04-09 13:38+0300\n"
-"PO-Revision-Date: 2024-04-09 13:39+0300\n"
+"POT-Creation-Date: 2023-12-14 15:27+0200\n"
+"PO-Revision-Date: 2023-12-14 15:28+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -36,57 +36,47 @@ msgstr "Ajastettu vanheneminen"
 msgid "Expiration time"
 msgstr "Vanhentumisaika"
 
-#: lib/ACF/Fields/Settings/BreadCrumbSettingsTab.php:32
-msgid "Breadcrumbs"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/BreadCrumbSettingsTab.php:51
-msgid "Hide selected pages from breadcrumbs"
-msgstr ""
-
 #: lib/ACF/Fields/Settings/DefaultImagesSettingsTab.php:127
 msgid ""
 "Default images of different post types. Returns url of image of queried post "
 "type. Values come from Sivuston Asetukset -> Oletuskuvat."
-msgstr ""
+msgstr "Oletuskuva"
 
 #: lib/ACF/Fields/Settings/DefaultImagesSettingsTab.php:132
 msgid "Default Images"
-msgstr ""
+msgstr "Oletuskuvat"
 
 #: lib/ACF/Fields/Settings/NotificationSettingsTab.php:208
 msgid "Describe what a CustomType is"
-msgstr ""
+msgstr "Selitä mikä CustomType on"
 
 #: lib/ACF/Fields/Settings/NotificationSettingsTab.php:212
-#, fuzzy
-#| msgid "Expiration time"
 msgid "Notification title"
-msgstr "Vanhentumisaika"
+msgstr "Ilmoituksen otsikko"
 
 #: lib/ACF/Fields/Settings/NotificationSettingsTab.php:216
 msgid "Notification content"
-msgstr ""
+msgstr "Ilmoituksen sisältö"
 
 #: lib/ACF/Fields/Settings/NotificationSettingsTab.php:220
 msgid "Notification link text"
-msgstr ""
+msgstr "Ilmoitus linkin teksti"
 
 #: lib/ACF/Fields/Settings/NotificationSettingsTab.php:224
 msgid "Notification link url"
-msgstr ""
+msgstr "Ilmoitus linkin url"
 
 #: lib/ACF/Fields/Settings/NotificationSettingsTab.php:228
 msgid "Notification level"
-msgstr ""
+msgstr "Ilmoituksen tärkeys"
 
 #: lib/ACF/Fields/Settings/NotificationSettingsTab.php:232
 msgid "Notification start date"
-msgstr ""
+msgstr "Ilmoituksen aloituspäivä"
 
 #: lib/ACF/Fields/Settings/NotificationSettingsTab.php:236
 msgid "Notification end date"
-msgstr ""
+msgstr "Ilmoituksen päättymispäivä"
 
 #: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:30
 msgid "Site Identity"
@@ -112,34 +102,19 @@ msgstr "Logo"
 
 #: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:81
 msgid "Client Url"
-msgstr ""
+msgstr "Käyttöliittymän url"
 
 #: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:85
-msgid "Revalidate Url (production)"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:89
-msgid "Revalidate Url (staging)"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:93
-msgid "Revalidate Url (testing)"
-msgstr ""
-
-#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:97
 msgid "LinkedEvents base url overwrite"
-msgstr ""
+msgstr "LinkedEvents oletus url osoitteen ylikirjoitus"
 
-#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:170
-#, fuzzy
-#| msgctxt "theme ACF"
-#| msgid "Site settings"
+#: lib/ACF/Fields/Settings/SiteIdentitySettingsTab.php:149
 msgid "Site Settings"
 msgstr "Sivuston asetukset"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:44
 msgid "Article highlights"
-msgstr ""
+msgstr "Artikkelinosto"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:52
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:52
@@ -149,8 +124,6 @@ msgstr ""
 #: lib/ACF/Layouts/SocialMediaFeedLayout.php:49
 #: lib/ACF/Layouts/StepsLayout.php:50 lib/ACF/Page.php:121
 #: lib/ACF/PagesCarouselLayout.php:50
-#, fuzzy
-#| msgid "Site Title"
 msgid "Title"
 msgstr "Sivuston otsikko"
 
@@ -161,7 +134,7 @@ msgstr "Sivuston otsikko"
 #: lib/ACF/Layouts/SocialMediaFeedLayout.php:52
 #: lib/ACF/PagesCarouselLayout.php:54
 msgid "Anchor"
-msgstr ""
+msgstr "Ankkuri"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:60
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:60
@@ -170,39 +143,39 @@ msgstr ""
 #: lib/ACF/Layouts/LinkListLayout.php:62 lib/ACF/Layouts/PagesLayout.php:62
 #: lib/ACF/PagesCarouselLayout.php:62
 msgid "Background Color"
-msgstr ""
+msgstr "Taustaväri"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:64
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:64
 #: lib/ACF/Layouts/ArticlesLayout.php:64
 msgid "Category"
-msgstr ""
+msgstr "Kategoria"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:68
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:68
 #: lib/ACF/Layouts/ArticlesLayout.php:68 lib/ACF/Layouts/ArticlesLayout.php:72
 msgid "Tag"
-msgstr ""
+msgstr "Tagi"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:72
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:72
 msgid "Amount of articles to list"
-msgstr ""
+msgstr "Valitse montako artikkelia näytetään"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:76
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:76
 #: lib/ACF/Layouts/ArticlesLayout.php:44 lib/ACF/Layouts/ArticlesLayout.php:80
 msgid "Articles"
-msgstr ""
+msgstr "Artikkelit"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:80
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:80
 msgid "Show more link"
-msgstr ""
+msgstr "Näytä lisää linkki"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:84
 msgid "Article list offset"
-msgstr ""
+msgstr "Artikkelilistan offset"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:122
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:122
@@ -210,7 +183,7 @@ msgstr ""
 #: lib/ACF/Layouts/LinkListLayout.php:116 lib/ACF/Layouts/PagesLayout.php:115
 #: lib/ACF/PagesCarouselLayout.php:111
 msgid "White"
-msgstr ""
+msgstr "Valkoinen"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:123
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:123
@@ -218,7 +191,7 @@ msgstr ""
 #: lib/ACF/Layouts/LinkListLayout.php:117 lib/ACF/Layouts/PagesLayout.php:116
 #: lib/ACF/PagesCarouselLayout.php:112
 msgid "Light"
-msgstr ""
+msgstr "Vaalea"
 
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:124
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:124
@@ -226,12 +199,12 @@ msgstr ""
 #: lib/ACF/Layouts/LinkListLayout.php:118 lib/ACF/Layouts/PagesLayout.php:117
 #: lib/ACF/PagesCarouselLayout.php:113
 msgid "Dark"
-msgstr ""
+msgstr "Tumma"
 
 #. translators: %s is layout name
 #: lib/ACF/Layouts/ArticleHighlightsLayout.php:254
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:258
-#: lib/ACF/Layouts/ArticlesLayout.php:243 lib/ACF/Layouts/CardLayout.php:192
+#: lib/ACF/Layouts/ArticlesLayout.php:243 lib/ACF/Layouts/CardLayout.php:191
 #: lib/ACF/Layouts/CardsLayout.php:211 lib/ACF/Layouts/ContentLayout.php:143
 #: lib/ACF/Layouts/ImageGalleryLayout.php:150
 #: lib/ACF/Layouts/ImageLayout.php:199 lib/ACF/Layouts/LinkListLayout.php:214
@@ -240,300 +213,291 @@ msgstr ""
 #: lib/ACF/Layouts/StepsLayout.php:222 lib/ACF/PagesCarouselLayout.php:189
 #, php-format
 msgid "Layout: %s"
-msgstr ""
+msgstr "Layout: %s"
 
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:44
 msgid "Articles Carousel"
-msgstr ""
+msgstr "Artikkeli karuselli"
+
+#: lib/ACF/Layouts/ArticlesCarouselLayout.php:84
+#: lib/ACF/Layouts/ArticlesLayout.php:76 lib/ACF/Layouts/PagesLayout.php:66
+msgid "Url of Show all -link"
+msgstr "Näytä lisää -linkki"
 
 #: lib/ACF/Layouts/ArticlesCarouselLayout.php:250
 #: lib/ACF/Layouts/ArticlesLayout.php:225 lib/ACF/Layouts/PagesLayout.php:187
 msgid "Show all -link"
-msgstr ""
+msgstr "Näytä lisää linkki"
 
 #: lib/ACF/Layouts/CardLayout.php:41
 msgid "Card"
-msgstr ""
+msgstr "Kortti"
 
 #: lib/ACF/Layouts/CardLayout.php:49 lib/ACF/Layouts/CardLayout.php:86
 #: lib/ACF/Layouts/ImageLayout.php:41 lib/ACF/Layouts/ImageLayout.php:49
 #: lib/ACF/Layouts/ImageLayout.php:163
 msgid "Image"
-msgstr ""
+msgstr "Kuva"
 
 #: lib/ACF/Layouts/CardLayout.php:52
 msgid "Alignment"
-msgstr ""
+msgstr "Tasaus"
 
 #: lib/ACF/Layouts/CardLayout.php:58 lib/ACF/Layouts/CardsLayout.php:61
 #: lib/ACF/Layouts/LinkListLayout.php:54 lib/ACF/Layouts/PagesLayout.php:58
 #: lib/ACF/Layouts/StepsLayout.php:54 lib/ACF/Page.php:125
 #: lib/ACF/PagesCarouselLayout.php:58
-#, fuzzy
-#| msgctxt "theme CPT"
-#| msgid "CPT Description"
 msgid "Description"
-msgstr "CPT-kuvaus"
+msgstr "Kuvaus"
 
 #: lib/ACF/Layouts/CardLayout.php:61 lib/ACF/Layouts/CardsLayout.php:65
 #: lib/ACF/Layouts/LinkListLayout.php:70 lib/ACF/Page.php:133
 msgid "Link"
-msgstr ""
+msgstr "Linkki"
 
 #: lib/ACF/Layouts/CardLayout.php:95
 msgid "Left"
-msgstr ""
+msgstr "Vasen"
 
 #: lib/ACF/Layouts/CardLayout.php:96
 msgid "Right"
-msgstr ""
+msgstr "Oikea"
 
 #: lib/ACF/Layouts/CardLayout.php:97
-msgid "Center left"
-msgstr "Keskitetty vasemmalle"
+msgid "Center"
+msgstr "Keskitetty"
 
 #: lib/ACF/Layouts/CardLayout.php:98
-msgid "Center right"
-msgstr "Keskitetty oikealle"
+msgid "Delimited Left"
+msgstr "Rajattu vasemmalle"
 
 #: lib/ACF/Layouts/CardLayout.php:99
-msgid "Delimited Left"
-msgstr ""
-
-#: lib/ACF/Layouts/CardLayout.php:100
 msgid "Delimited Right"
-msgstr ""
+msgstr "Rajattu oikealle"
 
 #: lib/ACF/Layouts/CardsLayout.php:41 lib/ACF/Layouts/CardsLayout.php:49
 msgid "Cards"
-msgstr ""
+msgstr "Ikoni kortti"
 
 #: lib/ACF/Layouts/CardsLayout.php:53
 msgid "Icon"
-msgstr ""
+msgstr "Ikoni"
 
 #: lib/ACF/Layouts/CardsLayout.php:182
 msgid "Card field"
-msgstr ""
+msgstr "Kortin kenttä"
 
 #: lib/ACF/Layouts/ContentLayout.php:42 lib/ACF/Layouts/ContentLayout.php:53
 msgid "Content"
-msgstr ""
+msgstr "Sisältö"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:42
 msgid "Image gallery"
-msgstr ""
+msgstr "Kuvagalleria"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:50
 msgid "Gallery"
-msgstr ""
+msgstr "Galleria"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:53
 msgid "Per row"
-msgstr ""
+msgstr "Per rivi"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:114
 msgid "Gallery Image"
-msgstr ""
+msgstr "Galleriakuva"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:118
 #: lib/ACF/Layouts/ImageLayout.php:167
 msgid "Title of the image"
-msgstr ""
+msgstr "Kuvan otsikko"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:122
 #: lib/ACF/Layouts/ImageLayout.php:171
 msgid "Caption of the image"
-msgstr ""
+msgstr "Kuvan lainaus"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:126
 #: lib/ACF/Layouts/ImageLayout.php:175
 msgid "Description of the image"
-msgstr ""
+msgstr "Kuvaus"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:130
 #: lib/ACF/Layouts/ImageLayout.php:179
 msgid "The url of the thumbnail image"
-msgstr ""
+msgstr "Kuvan URL-osoite"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:134
 #: lib/ACF/Layouts/ImageLayout.php:183
 msgid "The url of the medium image"
-msgstr ""
+msgstr "Kuvan (medium) URL-osoite"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:138
 #: lib/ACF/Layouts/ImageLayout.php:187
 msgid "The url of the medium large image"
-msgstr ""
+msgstr "Kuvan (medium large) URL-osoite"
 
 #: lib/ACF/Layouts/ImageGalleryLayout.php:142
 #: lib/ACF/Layouts/ImageLayout.php:191
 msgid "The url of the large image"
-msgstr ""
+msgstr "Kuvan (large) URL-osoite"
 
 #: lib/ACF/Layouts/ImageLayout.php:52
 msgid "Border"
-msgstr ""
+msgstr "Reunus"
 
 #: lib/ACF/Layouts/ImageLayout.php:55
 msgid "Lightbox"
-msgstr ""
+msgstr "Lightbox"
 
 #: lib/ACF/Layouts/ImageLayout.php:58
-#, fuzzy
-#| msgid "Photographer Credit"
 msgid "Photographer name (overwrite)"
-msgstr "Valokuvaajan tiedot"
+msgstr "Valokuvaajan nimi (ylikirjoitus)"
 
 #: lib/ACF/Layouts/ImageLayout.php:61
 msgid "Show on lightbox"
-msgstr ""
+msgstr "Näytä lighboxissa"
 
 #: lib/ACF/Layouts/ImageLayout.php:242
 msgid "Set photographers name to image or overwrite it by filling this field."
-msgstr ""
+msgstr "Aseta kuvaajan nimi kuvalle tai korvaa se täyttämällä tämä kenttä."
 
 #: lib/ACF/Layouts/LinkListLayout.php:42
 msgid "Link List"
-msgstr ""
+msgstr "Linkki lista"
 
 #: lib/ACF/Layouts/LinkListLayout.php:66
 msgid "Links"
-msgstr ""
+msgstr "Linkit"
 
 #: lib/ACF/Layouts/LinkListLayout.php:194
 msgid "Link field"
-msgstr ""
+msgstr "Linkin kenttä"
 
 #: lib/ACF/Layouts/LinkListLayout.php:198
 msgid "The url of the link"
-msgstr ""
+msgstr "Linkin URL osoite"
 
 #: lib/ACF/Layouts/LinkListLayout.php:202
 msgid "The title of the link"
-msgstr ""
+msgstr "Linkin otsikko"
 
 #: lib/ACF/Layouts/LinkListLayout.php:206
 msgid "The target of the link"
-msgstr ""
+msgstr "Linkin kohde"
 
 #: lib/ACF/Layouts/PagesLayout.php:42 lib/ACF/Layouts/PagesLayout.php:70
 #: lib/ACF/PagesCarouselLayout.php:66
 msgid "Pages"
-msgstr ""
+msgstr "Sivut"
 
 #: lib/ACF/Layouts/SocialMediaFeedLayout.php:41
 msgid "Social Media Feed"
-msgstr ""
+msgstr "Sosiaalisen median fiidi"
 
 #: lib/ACF/Layouts/SocialMediaFeedLayout.php:55
 msgid "Script"
-msgstr ""
+msgstr "Scripti"
 
 #: lib/ACF/Layouts/StepsLayout.php:42 lib/ACF/Layouts/StepsLayout.php:70
 msgid "Steps"
-msgstr ""
+msgstr "Vaiheistus"
 
 #: lib/ACF/Layouts/StepsLayout.php:58
 msgid "Type"
-msgstr ""
+msgstr "Tyyppi"
 
 #: lib/ACF/Layouts/StepsLayout.php:61
 msgid "Bullets"
-msgstr ""
+msgstr "Luettelomerkit"
 
 #: lib/ACF/Layouts/StepsLayout.php:62
 msgid "Numbers"
-msgstr ""
+msgstr "Numerot"
 
 #: lib/ACF/Layouts/StepsLayout.php:66
 msgid "Color"
-msgstr ""
+msgstr "Väri"
 
 #: lib/ACF/Layouts/StepsLayout.php:74
-#, fuzzy
-#| msgid "Site Title"
 msgid "Step title"
-msgstr "Sivuston otsikko"
+msgstr "Vaiheen otsikko"
 
 #: lib/ACF/Layouts/StepsLayout.php:78
 msgid "Step content"
-msgstr ""
+msgstr "Vaiheen sisältö"
 
 #: lib/ACF/Layouts/StepsLayout.php:206
 msgid "Step field"
-msgstr ""
+msgstr "Vaiheen kenttä"
 
 #: lib/ACF/Layouts/StepsLayout.php:210
 msgid "The title of the step"
-msgstr ""
+msgstr "Vaiheen otsikko"
 
 #: lib/ACF/Layouts/StepsLayout.php:214
 msgid "The content of the step"
-msgstr ""
+msgstr "Vaiheen sisältö"
 
 #: lib/ACF/Page.php:80
 msgctxt "theme ACF"
 msgid "Hero"
-msgstr ""
+msgstr "Hero"
 
 #: lib/ACF/Page.php:122
 msgid "Insert title"
-msgstr ""
+msgstr "Lisää otsikko"
 
 #: lib/ACF/Page.php:126
-#, fuzzy
-#| msgctxt "theme CPT"
-#| msgid "CPT Description"
 msgid "Insert description"
-msgstr "CPT-kuvaus"
+msgstr "Lisää kuvaus"
 
 #: lib/ACF/Page.php:129
 msgid "Background color"
-msgstr ""
+msgstr "Taustaväri"
 
 #: lib/ACF/Page.php:130
 msgid "Choose background color"
-msgstr ""
+msgstr "Valitse taustaväri"
 
 #: lib/ACF/Page.php:134
 msgid "Choose link"
-msgstr ""
+msgstr "Valitse linkki"
 
 #: lib/ACF/Page.php:137
 msgid "Wave motif"
-msgstr ""
+msgstr "Koro"
 
 #: lib/ACF/Page.php:138
 msgid "Choose wave motif"
-msgstr ""
+msgstr "Valitse koro"
 
 #: lib/ACF/Page.php:178
 msgid "Calm"
-msgstr ""
+msgstr "Tyyni"
 
 #: lib/ACF/Page.php:179
 msgid "Basic"
-msgstr ""
+msgstr "Perus"
 
 #: lib/ACF/Page.php:180
 msgid "Pulse"
-msgstr ""
+msgstr "Pulssi"
 
 #: lib/ACF/Page.php:181
 msgid "Beat"
-msgstr ""
+msgstr "Syke"
 
 #: lib/ACF/Page.php:182
 msgid "Storm"
-msgstr ""
+msgstr "Myrsky"
 
 #: lib/ACF/Page.php:183
 msgid "Wave"
-msgstr ""
+msgstr "Aalto"
 
-#: lib/ACF/Page.php:258 lib/ACF/Post.php:209 lib/PostType/Page.php:74
-#: lib/PostType/Post.php:72
+#: lib/ACF/Page.php:258 lib/ACF/Post.php:209 lib/PostType/Page.php:70
+#: lib/PostType/Post.php:67
 msgid "Lead Paragraph"
 msgstr "Ingressi"
 
@@ -542,7 +506,7 @@ msgid ""
 "A lead paragraph is the opening paragraph that summarizes its main ideas."
 msgstr "Ingressi on aloituskappale joka toimii idean yhteenvetona."
 
-#: lib/ACF/Page.php:262 lib/PostType/Page.php:80
+#: lib/ACF/Page.php:262 lib/PostType/Page.php:76
 msgid "Show Child Pages"
 msgstr "Näytä alisivut"
 
@@ -553,97 +517,81 @@ msgstr "Tilalippu"
 #: lib/ACF/Page.php:266 lib/ACF/Page.php:297 lib/ACF/Post.php:217
 #: lib/ACF/Post.php:254
 msgid "Modules"
-msgstr ""
+msgstr "Moduuli"
 
 #: lib/ACF/Page.php:267 lib/ACF/Post.php:218
 msgid "Add content modules"
-msgstr ""
+msgstr "Lisää moduuli"
 
 #: lib/ACF/Page.php:270 lib/ACF/Post.php:221
 msgid "Sidebar Modules"
-msgstr ""
+msgstr "Sivupalkin moduuli"
 
 #: lib/ACF/Page.php:271 lib/ACF/Post.php:222
 msgid "Add sidebar modules"
-msgstr ""
+msgstr "Lisää sivupalkin moduuli"
 
 #: lib/ACF/Page.php:356 lib/ACF/Post.php:317
 msgid "Sidebar"
-msgstr ""
+msgstr "Sivupalkki"
 
 #: lib/ACF/PagesCarouselLayout.php:42
 msgid "Pages carousel"
-msgstr ""
+msgstr "Sivut karuselli"
 
-#: lib/ACF/Post.php:213 lib/PostType/Post.php:80
+#: lib/ACF/Post.php:213 lib/PostType/Post.php:75
 msgid "Hide Published Date"
-msgstr ""
+msgstr "Piilota julkaisupäivämäärä"
 
 #: lib/ACF/Settings.php:32
 msgctxt "theme ACF"
 msgid "Site settings"
 msgstr "Sivuston asetukset"
 
-#: lib/CustomGraphqlSchemas.php:46
+#: lib/CustomGraphqlSchemas.php:41
 msgid "Get page object by template"
-msgstr ""
+msgstr "Hae sivuobjekti sivupohjan mukaan"
 
-#: lib/CustomGraphqlSchemas.php:59
+#: lib/CustomGraphqlSchemas.php:54
 msgid "Returns ID of page that uses the given template"
-msgstr ""
+msgstr "Palauttaa sivun ID:n, joka käyttää annettua sivupohjaa"
 
 #: lib/PostType/Attachment.php:60
 msgid "Photographer Credit"
 msgstr "Valokuvaajan tiedot"
 
-#: lib/PostType/Page.php:85
+#: lib/PostType/Page.php:81
 msgid "Hero field"
-msgstr ""
+msgstr "Hero kenttä"
+
+#: lib/PostType/Page.php:85
+msgid "The title of the hero"
+msgstr "Hero otsikko"
 
 #: lib/PostType/Page.php:89
-msgid "The title of the hero"
-msgstr ""
-
-#: lib/PostType/Page.php:93
 msgid "The desctiption of the hero"
-msgstr ""
+msgstr "Hero sisältö"
 
-#: lib/PostType/Page.php:97 lib/PostType/Page.php:101
+#: lib/PostType/Page.php:93 lib/PostType/Page.php:97
 msgid "The background color of the hero"
-msgstr ""
+msgstr "Hero taustaväri"
+
+#: lib/PostType/Page.php:101
+msgid "The title of the hero link"
+msgstr "Hero linkin otsikko"
 
 #: lib/PostType/Page.php:105
-msgid "The title of the hero link"
-msgstr ""
-
-#: lib/PostType/Page.php:109
 msgid "The wave motif of the hero"
-msgstr ""
+msgstr "Heron koro"
 
-#: lib/PostType/Page.php:116
+#: lib/PostType/Page.php:112
 msgid "Hero fields"
-msgstr ""
-
-#: lib/PostType/Page.php:130
-msgid "Breadcumb field"
-msgstr ""
-
-#: lib/PostType/Page.php:134
-msgid "The title of the page"
-msgstr ""
-
-#: lib/PostType/Page.php:138
-msgid "The link of the page."
-msgstr ""
-
-#: lib/PostType/Page.php:145 lib/PostType/Post.php:88
-msgid "Breadcrumb fields"
-msgstr ""
+msgstr "Hero kentät"
 
 #: lib/PostType/Settings.php:58
 msgctxt "theme CPT slugs"
 msgid "settings"
-msgstr "settings"
+msgstr "asetukset"
 
 #: lib/PostType/Settings.php:61
 msgctxt "theme CPT"
@@ -687,20 +635,16 @@ msgid "Primary navigation"
 msgstr "Päävalikko"
 
 #: lib/ThemeSupports.php:73
-#, fuzzy
-#| msgid "Primary navigation"
 msgid "Secondary navigation"
-msgstr "Päävalikko"
+msgstr "Toissijainen valikko"
 
 #: lib/ThemeSupports.php:74
-#, fuzzy
-#| msgid "Primary navigation"
 msgid "Tertiary navigation"
-msgstr "Päävalikko"
+msgstr "Kolmannen tason navigointi"
 
 #: lib/Utils.php:190
 msgid "List of modules"
-msgstr ""
+msgstr "Moduuli listaus"
 
 #. Theme Name of the plugin/theme
 msgid "HKIH"
