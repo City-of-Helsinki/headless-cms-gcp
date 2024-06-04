@@ -39,6 +39,18 @@ class Admin implements Interfaces\Controller {
                 [ \FileBird\Classes\Review::getInstance(), 'give_review' ]
             );
         }
+
+        // Replace default upload directory.
+        \add_filter( 'upload_dir', function ( array $uploads ) {
+            $replace = '/sites/' . get_current_blog_id();
+
+            $uploads['path']    = str_replace( $replace, '', $uploads['path'] );
+            $uploads['url']     = str_replace( $replace, '', $uploads['url'] );
+            $uploads['basedir'] = str_replace( $replace, '', $uploads['basedir'] );
+            $uploads['baseurl'] = str_replace( $replace, '', $uploads['baseurl'] );
+
+            return $uploads;
+        });
     }
 
     /**
