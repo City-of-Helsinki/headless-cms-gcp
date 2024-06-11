@@ -7,8 +7,11 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- HKIH-162: Publishpress Revisions Pro plugin.
 ## [Released]
+
+## [1.20.0] - 2024-06-07
+
+- HKIH-162: Publishpress Revisions Pro plugin.
 
 ## [1.19.0] - 2024-05-08
 
