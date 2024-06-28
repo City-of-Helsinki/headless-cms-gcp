@@ -7,6 +7,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- HKIH-222: Enable html entity decoding.
 ## [Released]
 
 ## [1.20.0] - 2024-06-07
