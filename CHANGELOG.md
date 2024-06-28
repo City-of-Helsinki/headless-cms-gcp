@@ -7,6 +7,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 - HKIH-160: Preview feature.
 - HKIH-171: Change description field from textarea to Wysiwyg in Steps module.
 - HKIH-172: TinyMCE table plugin and custom styles.
@@ -15,6 +16,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - HKIH-184: WPO 365 login.
 - HKIH-210: Alignment values to CardLayout.
 - HKIH-221: Adds fallback for SEO titles and descriptions.
+- HKIH-222: Enable html entity decoding.
 
 ## [Released]
 
