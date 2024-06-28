@@ -71,6 +71,13 @@ class SeoFrameworkGraphQLMap implements Interfaces\Controller {
             'graphql_register_types',
             \Closure::fromCallable( [ $this, 'add_the_seo_framework_fields' ] )
         );
+
+        // Fixes decoding when default separator is in use.
+        \add_action(
+            'the_seo_framework_title_separator', function( $separator ) {
+                return html_entity_decode( $separator );
+            }
+        );
     }
 
     /**
@@ -150,7 +157,9 @@ class SeoFrameworkGraphQLMap implements Interfaces\Controller {
             'title'                => [
                 'meta_key'    => '_genesis_title',
                 'seo_cb'      => function ( $post_id, $context ) use ( $tsf ) { // phpcs:ignore
-                    return $tsf->get_title( $post_id );
+                    $title = $this->get_overwrite_title( $post_id, '_genesis_title', $tsf );
+
+                    return $title ?? $tsf->get_title( $post_id );;
                 },
                 'type'        => 'String',
                 'description' => 'SEO Title',
@@ -158,7 +167,9 @@ class SeoFrameworkGraphQLMap implements Interfaces\Controller {
             'description'          => [
                 'meta_key'    => '_genesis_description',
                 'seo_cb'      => function ( $post_id, $context ) use ( $tsf ) { // phpcs:ignore
-                    return $tsf->get_description( $post_id );
+                    $description = $this->get_overwrite_description( $post_id, '_genesis_description' );
+
+                    return $description ?? $tsf->get_description( $post_id );
                 },
                 'type'        => 'String',
                 'description' => 'SEO Description',
@@ -193,14 +204,16 @@ class SeoFrameworkGraphQLMap implements Interfaces\Controller {
                 'type'        => 'String',
                 'description' => 'Open Graph title',
                 'seo_cb'      => function ( $post_id, $context ) use ( $tsf ) { // phpcs:ignore
-                    return $tsf->get_open_graph_title( $post_id );
+                    $title = $this->get_overwrite_title( $post_id, '_open_graph_title', $tsf );
+                    return $title ?? $tsf->get_open_graph_title( $post_id );
                 },
             ],
             'openGraphDescription' => [
                 'type'        => 'String',
                 'description' => 'Open Graph description',
                 'seo_cb'      => function ( $post_id, $context ) use ( $tsf ) { // phpcs:ignore
-                    return $tsf->get_open_graph_description( $post_id );
+                    $description = $this->get_overwrite_description( $post_id, '_open_graph_description' );
+                    return $description ?? $tsf->get_open_graph_description( $post_id );
                 },
             ],
             'openGraphType'        => [
@@ -214,14 +227,16 @@ class SeoFrameworkGraphQLMap implements Interfaces\Controller {
                 'type'        => 'String',
                 'description' => 'Twitter title',
                 'seo_cb'      => function ( $post_id, $context ) use ( $tsf ) { // phpcs:ignore
-                    return $tsf->get_twitter_title( $post_id );
+                    $title = $this->get_overwrite_title( $post_id, '_twitter_title', $tsf );
+                    return $title ?? $tsf->get_twitter_title( $post_id );
                 },
             ],
             'twitterDescription'   => [
                 'type'        => 'String',
                 'description' => 'Twitter description',
                 'seo_cb'      => function ( $post_id, $context ) use ( $tsf ) { // phpcs:ignore
-                    return $tsf->get_twitter_description( $post_id );
+                    $description = $this->get_overwrite_description( $post_id, '_twitter_description' );
+                    return $description ?? $tsf->get_twitter_description( $post_id );
                 },
             ],
             'removeSiteTitle'      => [
@@ -294,5 +309,42 @@ class SeoFrameworkGraphQLMap implements Interfaces\Controller {
                 },
             ] );
         }
+    }
+
+    /**
+     * Check overwrite title
+     *
+     * @param string $meta_field Field to check.
+     *
+     * @return string
+     */
+    private function get_overwrite_title( $post_id, $meta_field, $tsf ) : string {
+        $title     = \get_post_meta( $post_id, $meta_field )[0] ?? '';
+        $site_name = \get_bloginfo( 'name' );
+
+        // Fallback.
+        if ( empty( $title ) ) {
+            $title = \get_post_meta( $post_id, '_genesis_title' )[0] ?? '';
+        }
+
+        return sprintf('%s %s %s', $title, $tsf->get_separator(), $site_name);
+    }
+
+    /**
+     * Check overwrite description
+     *
+     * @param string $meta_field Field to check.
+     *
+     * @return string
+     */
+    private function get_overwrite_description( $post_id, $meta_field ) : string {
+        $description = \get_post_meta( $post_id, $meta_field )[0] ?? '';
+
+        // Fallback.
+        if ( empty( $description ) ) {
+            $description = \get_post_meta( $post_id, '_genesis_description' )[0] ?? '';
+        }
+
+        return $description;
     }
 }

@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- HKIH-221: Adds fallback for SEO titles and descriptions.
+
 ## [Released]
 
 ## [1.20.0] - 2024-06-07
