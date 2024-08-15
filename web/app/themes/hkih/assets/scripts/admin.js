@@ -1,10 +1,10 @@
-( function( $, _ ) {
+( function( $ ) {
     const { adminajax } = adminData; // eslint-disable-line
 
-    $( 'body' ).on( 'click', '.block-editor-post-preview__button-toggle', function() {
+    $( 'body' ).on( 'click', '.editor-preview-dropdown__toggle', function() {
         // hide preview dropdown
         $( this ).removeAttr( 'aria-haspopup aria-expanded' );
-        $( '.block-editor-post-preview__dropdown-content' ).hide();
+        $( '.components-dropdown__content' ).hide();
 
         $.ajax( {
             type: 'get',
@@ -18,7 +18,7 @@
                 }
 
                 if ( ! response.success ) {
-                    let error = `<div class="components-notice-list">
+                    const error = `<div class="components-notice-list">
                         <div class="components-notice is-error">
                             <div class="components-notice__content">${ response.data }</div>
                         </div>
