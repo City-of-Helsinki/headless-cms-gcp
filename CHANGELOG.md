@@ -7,10 +7,12 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [Released]
+
+## [1.21.0] - 2024-08-15
+
 - HKIH-210: Alignment values to CardLayout.
 - HKIH-160: Preview feature.
-
-## [Released]
 
 ## [1.20.0] - 2024-06-07
 
