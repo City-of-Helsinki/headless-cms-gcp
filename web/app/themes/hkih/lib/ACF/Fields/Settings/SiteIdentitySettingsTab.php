@@ -106,6 +106,11 @@ class SiteIdentitySettingsTab extends Tab {
                 ->set_name( 'linked_events_base_url' )
                 ->set_instructions( 'Default is: https://api.hel.fi/linkedevents/v1' );
 
+            $preview_url = ( new Field\URL( __( 'Preview URL', 'hkih' ) ) )
+                ->set_key( $key . '_preview_url' )
+                ->set_name( 'preview_url' )
+                ->set_instructions( 'Params will be appended to url ?&uri={$uri}&token={$token}' );
+
             $this->add_fields( apply_filters(
                 'hkih_theme_settings_identity', [
                     $site_name,
@@ -116,6 +121,7 @@ class SiteIdentitySettingsTab extends Tab {
                     $revalidate_url_staging,
                     $revalidate_url_testing,
                     $linked_events_base_url,
+                    $preview_url,
                 ],
                 $key
             ) );

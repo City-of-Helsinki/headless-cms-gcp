@@ -72,6 +72,7 @@
     "valu/wp-graphql-polylang": "^0.6.0",
     "vlucas/phpdotenv": "^5.5",
     "wp-cli/wp-cli-bundle": "^2.10",
+    "wp-graphql/wp-graphql-jwt-authentication": "^0.7.0",
     "wp_all_import/wp-all-import-pro": "^4.8.5",
     "wpackagist-plugin/autodescription": "^5.0.4",
     "wpackagist-plugin/duplicate-post": "^4.5",

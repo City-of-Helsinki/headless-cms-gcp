@@ -81,6 +81,7 @@ class ThemeController {
             'CustomGraphqlSchemas'   => new CustomGraphqlSchemas(),
             'DynamicUpdate'          => new DynamicUpdate(),
             'WaveMotifs'             => new WaveMotifs(),
+            'PreviewController'      => new PreviewController(),
         ];
 
         array_walk( $this->classes, function ( $instance ) {
