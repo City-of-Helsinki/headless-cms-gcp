@@ -53,8 +53,9 @@ class PreviewController implements Interfaces\Controller {
         }
 
         $preview_action = \add_query_arg( [
-            'uri'    => $uri,
-            'secret' => Auth::get_token( \wp_get_current_user() )
+            'uri'     => $uri,
+            'post_id' => $post_id,
+            'secret'  => Auth::get_token( \wp_get_current_user() )
         ], $preview_url );
 
         $response = sprintf( '<form action="%s" method="post" target="_blank"></form>', $preview_action );

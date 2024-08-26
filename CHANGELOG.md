@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- CSD-1329: Add post_id to preview link.
+
 ## [Released]
 
 ## [1.21.0] - 2024-08-15
