@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- HKIH-184: WPO 365 login.
+
 ## [Released]
 
 ## [1.21.0] - 2024-08-15
