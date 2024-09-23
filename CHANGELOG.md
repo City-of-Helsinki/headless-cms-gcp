@@ -20,6 +20,14 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Released]
 
+## [1.23.0] - 2024-09-23
+
+- HKIH-207: Redirect urls to site settings.
+
+## [1.22.0] - 2024-09-15
+
+- HKIH-184: WPO 365 login.
+
 ## [1.21.0] - 2024-08-15
 
 - HKIH-210: Alignment values to CardLayout.

@@ -175,7 +175,7 @@ class SiteIdentitySettingsTab extends Tab {
                     $redirects = \Geniem\Theme\Settings::get_setting( 'redirects', $lang ) ?? [];
 
                     if ( empty( $redirects ) ) {
-                        return [];
+                        return '';
                     }
 
                     $redirects = array_map( function ( $redirect ) {

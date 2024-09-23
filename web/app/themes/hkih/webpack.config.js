@@ -1,23 +1,17 @@
 const path = require( 'path' );
 const webpack = require( 'webpack' );
-const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
 
 // Check for production mode.
 const isProduction = process.env.NODE_ENV === 'production';
 
-// Project root folder.
-const wpProjectPath = `${ path.resolve( __dirname, '..', '..', '..', '..' ) }`;
-
-// Local development server URL.
-const wpProjectUrl = 'https://client-hkih.test';
-
 // Theme paths.
 const themeName = path.basename( __dirname );
-const themePath = `/web/app/themes/${ themeName }`;
 const themePublicPath = `/app/themes/${ themeName }/assets/dist/`;
-const themeFullPath = `${ wpProjectPath }${ themePath }`;
+const themeFullPath = `${ path.resolve( __dirname ) }`;
+
+// Entries
 const themeEditorEntry = `${ themeFullPath }/assets/scripts/editor.js`;
 const themeAdminEntry = `${ themeFullPath }/assets/scripts/admin.js`;
 const themeOutput = `${ themeFullPath }/assets/dist`;
@@ -26,26 +20,11 @@ const themeOutput = `${ themeFullPath }/assets/dist`;
 const allModules = {
     rules: [
         {
-            enforce: 'pre',
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'eslint-loader',
-                options: {
-                    configFile: `${ wpProjectPath }/.eslintrc.json`,
-                    fix: false,
-                    failOnWarning: false,
-                    failOnError: true,
-                },
-            },
-        },
-        {
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: {
-
                     // Do not use the .babelrc configuration file.
                     babelrc: false,
 
@@ -55,8 +34,10 @@ const allModules = {
                     // Enable latest JavaScript features.
                     presets: [ '@babel/preset-env' ],
 
-                    // Enable dynamic imports.
-                    plugins: [ '@babel/plugin-syntax-dynamic-import' ],
+                    plugins: [
+                        '@babel/plugin-syntax-dynamic-import', // Enable dynamic imports.
+                        '@babel/plugin-syntax-top-level-await', // Enable await functions on js context top level (in addition to async functions)
+                    ],
                 },
             },
         },
@@ -84,6 +65,32 @@ const allModules = {
                 },
             ],
         },
+        {
+            test: /\.(gif|jpe?g|png|svg)(\?[a-z0-9=\.]+)?$/,
+            exclude: [ /assets\/fonts/, /assets\/icons/, /node_modules/ ],
+            type: 'asset/resource',
+            use: [
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                        // Disable imagemin for development build.
+                        disable: ! isProduction,
+                        mozjpeg: {
+                            quality: 70,
+                        },
+                        optipng: {
+                            enabled: false,
+                        },
+                        pngquant: {
+                            quality: [ 0.7, 0.7 ],
+                        },
+                        gifsicle: {
+                            interlaced: false,
+                        },
+                    },
+                },
+            ],
+        },
     ],
 };
 
@@ -103,10 +110,10 @@ const allOptimizations = {
 
 // All plugins to use.
 const allPlugins = [
-
     // Convert JS to CSS.
     new MiniCssExtractPlugin( {
         filename: '[name].css',
+        chunkFilename: '[name]-[contenthash].css',
     } ),
 
     // Provide jQuery instance for all modules.
@@ -118,12 +125,9 @@ const allPlugins = [
 // Use only for production build.
 if ( isProduction ) {
     allOptimizations.minimizer = [
-
         // Optimize for production build.
         new TerserPlugin( {
-            cache: true,
             parallel: true,
-            sourceMap: true,
             terserOptions: {
                 output: {
                     comments: false,
@@ -135,22 +139,23 @@ if ( isProduction ) {
             },
         } ),
     ];
-
-    // Delete distribution folder for production build.
-    allPlugins.push( new CleanWebpackPlugin() );
 }
+
+const experiments = {
+    topLevelAwait: true,
+};
 
 module.exports = [
     {
         entry: {
-            editor: [ themeEditorEntry ],
             admin: [ themeAdminEntry ],
+            editor: [ themeEditorEntry ],
         },
-
         output: {
             path: themeOutput,
             publicPath: themePublicPath,
             filename: '[name].js',
+            clean: true,
         },
 
         module: allModules,
@@ -159,13 +164,14 @@ module.exports = [
 
         plugins: allPlugins,
 
-        externals: {
+        experiments,
 
-            // Set jQuery to be an external resource.
+        externals: {
+        // Set jQuery to be an external resource.
             jquery: 'jQuery',
         },
 
         // Disable source maps for production build.
-        devtool: isProduction ? '' : 'inline-source-map',
+        devtool: isProduction ? undefined : 'source-map',
     },
 ];

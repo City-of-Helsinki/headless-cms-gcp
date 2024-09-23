@@ -159,6 +159,7 @@ class ApiClient {
      * @return Keyword[]|false
      */
     public function get_all_keywords() {
+        return [];
         $cache_key = 'all-keywords';
         $keywords  = wp_cache_get( $cache_key, static::CACHE_GROUP );
 
@@ -213,6 +214,7 @@ class ApiClient {
      * @return Place[]|false
      */
     public function get_all_places() {
+        return [];
         $cache_key = 'all-places';
         $keywords  = wp_cache_get( $cache_key, static::CACHE_GROUP );
 

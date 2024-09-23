@@ -43,15 +43,15 @@ class RedirectSettingsTab extends Tab {
     public function sub_fields( $key ) {
 
         $strings = [
-            'tab'                           => __( 'Redirects', 'hkih' ),
-            'redirects'  => [
+            'tab'               => __( 'Redirects', 'hkih' ),
+            'redirects'         => [
                 'label'        => __( 'Redirects', 'hkih' ),
                 'instructions' => '',
             ],
-            'redirect_from_uri'                => [
+            'redirect_from_uri' => [
                 'label'        => __( 'Redirect from', 'hkih' ),
             ],
-            'redirect_to_uri'      => [
+            'redirect_to_uri'   => [
                 'label'        => __( 'Redirect to', 'hkih' ),
             ],
         ];
