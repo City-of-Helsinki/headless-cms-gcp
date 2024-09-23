@@ -7,6 +7,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- HKIH-207: Redirect urls to site settings.
 ## [Released]
 
 ## [1.22.0] - 2024-09-15

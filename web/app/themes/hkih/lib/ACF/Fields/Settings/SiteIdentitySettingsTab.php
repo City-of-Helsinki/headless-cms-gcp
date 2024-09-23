@@ -168,6 +168,25 @@ class SiteIdentitySettingsTab extends Tab {
                     return $logo ?? '';
                 },
             ],
+            'redirects'     => [
+                'type'        => 'String',
+                'description' => 'Redirects',
+                'callback'    => function ( $lang = '' ) {
+                    $redirects = \Geniem\Theme\Settings::get_setting( 'redirects', $lang ) ?? [];
+
+                    if ( empty( $redirects ) ) {
+                        return '';
+                    }
+
+                    $redirects = array_map( function ( $redirect ) {
+                        return [
+                            $redirect['redirect_from_uri'] => $redirect['redirect_to_uri']
+                        ];
+                    }, $redirects );
+
+                    return json_encode( $redirects, JSON_UNESCAPED_SLASHES );
+                },
+            ],
         ];
 
         $setting_fields = apply_filters(
