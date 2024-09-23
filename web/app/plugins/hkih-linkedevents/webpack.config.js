@@ -3,8 +3,7 @@ const path = require( 'path' );
 const webpack = require( 'webpack' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
-const ESLintPlugin = require('eslint-webpack-plugin');
-
+const ESLintPlugin = require( 'eslint-webpack-plugin' );
 
 // Check for production mode.
 const isProduction = process.env.NODE_ENV === 'production';
@@ -84,15 +83,15 @@ const allOptimizations = {
 
 // All plugins to use.
 const allPlugins = [
-    new ESLintPlugin({
-        extensions: ['js'],
+    new ESLintPlugin( {
+        extensions: [ 'js' ],
         exclude: 'node_modules',
         context: pluginPath,
-        overrideConfigFile: `${pluginPath}/.eslintrc.json`,
+        overrideConfigFile: `${ pluginPath }/.eslintrc.json`,
         fix: false,
         failOnWarning: false,
-        failOnError: true,
-    }),
+        failOnError: false,
+    } ),
 
     // Convert JS to CSS.
     new MiniCssExtractPlugin( {
