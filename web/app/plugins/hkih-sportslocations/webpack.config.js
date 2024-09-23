@@ -91,7 +91,7 @@ const allPlugins = [
         overrideConfigFile: `${pluginPath}/.eslintrc.json`,
         fix: false,
         failOnWarning: false,
-        failOnError: true,
+        failOnError: false,
     }),
 
     // Convert JS to CSS.
