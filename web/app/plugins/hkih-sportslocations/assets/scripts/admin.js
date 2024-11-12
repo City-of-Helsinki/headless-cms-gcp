@@ -231,8 +231,8 @@
 
         onClickAdd( e, $el ) {
 
-            const max = parseInt( this.get( 'max' ).toString(), 10 );
-            const amountOfSelectedEvents = parseInt( $el.closest( '.choices' ).next().find( 'li' ).length, 10 ) + 1;
+            const max = parseInt( this.get( 'max' ).toString(), 20 );
+            const amountOfSelectedEvents = parseInt( $el.closest( '.choices' ).next().find( 'li' ).length, 20 ) + 1;
 
             // can be added?
             if ( $el.hasClass( 'disabled' ) ) {
