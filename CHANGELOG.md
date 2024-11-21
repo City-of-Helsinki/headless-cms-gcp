@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- CSD-1677: Nginx settings for /uploads/
+
 ## [Released]
 
 ## [1.23.0] - 2024-09-23
