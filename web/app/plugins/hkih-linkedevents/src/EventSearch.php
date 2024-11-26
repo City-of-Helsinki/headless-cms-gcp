@@ -33,6 +33,7 @@ class EventSearch {
             'sort'             => 'end_time',
             'super_event_type' => 'umbrella,none',
             'language'         => Localization::get_current_language(),
+            'page_size'        => 50,
         ];
 
         foreach ( $ajax_params as $key => $value ) {
