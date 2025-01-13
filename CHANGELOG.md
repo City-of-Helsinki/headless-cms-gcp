@@ -7,9 +7,11 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- CSD-1607: Increase results amount of the Event and Location search modules.
-
 ## [Released]
+
+## [1.24.0] - 2025-01-13
+
+- CSD-1607: Increase results amount of the Event and Location search modules.
 
 ## [1.23.0] - 2024-09-23
 
