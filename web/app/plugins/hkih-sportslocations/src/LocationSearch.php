@@ -69,7 +69,7 @@ class LocationSearch {
      */
     public static function build_query( string $search = '' ) : string {
         $query = '
-            { unifiedSearch(index: location, ontologyTreeIdOrSets: [551], text: "%s") {
+            { unifiedSearch(index: location, ontologyTreeIdOrSets: [551], text: "%s", first: 50) {
                 edges { node { venue { meta { id } name { fi sv en } } } }
             } }
         ';
