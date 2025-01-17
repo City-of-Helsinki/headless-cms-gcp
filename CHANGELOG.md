@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- CSD-1855: Support setting WP_REDIS_TIMEOUT and WP_REDIS_READ_TIMEOUT via environment variables.
+
 ## [Released]
 
 ## [1.24.0] - 2025-01-13
