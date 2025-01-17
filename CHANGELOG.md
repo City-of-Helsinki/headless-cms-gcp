@@ -7,6 +7,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- CSD-1855: Support setting WP_REDIS_TIMEOUT and WP_REDIS_READ_TIMEOUT via environment variables.
 - HKIH-160: Preview feature.
 - HKIH-171: Change description field from textarea to Wysiwyg in Steps module.
 - HKIH-172: TinyMCE table plugin and custom styles.
@@ -21,6 +22,10 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - CSD-1607: Increase results amount of the Event and Location search modules.
 
 ## [Released]
+
+## [1.24.0] - 2025-01-13
+
+- CSD-1607: Increase results amount of the Event and Location search modules.
 
 ## [1.23.0] - 2024-09-23
 
