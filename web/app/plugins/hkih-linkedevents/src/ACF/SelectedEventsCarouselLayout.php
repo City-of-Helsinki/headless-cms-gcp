@@ -84,20 +84,20 @@ class SelectedEventsCarouselLayout extends EventSearchLayout {
 
         try {
             $event_selector = ( new Fields\AcfCodifierRestRelationship( $this->strings['event_selector']['label'] ) )
-                ->set_key( "${key}_selected_events" )
+                ->set_key( "{$key}_selected_events" )
                 ->set_name( 'selected_events' )
                 ->update_value( fn( $values, $post_id, $field, $raw ) => $raw )
                 ->set_instructions( $this->strings['event_selector']['instructions'] );
 
             $amount_of_cards_field = ( new Field\Number( $this->strings['amount_of_cards']['label'] ) )
-                ->set_key( "${key}_amount_of_cards" )
+                ->set_key( "{$key}_amount_of_cards" )
                 ->set_name( 'amount_of_cards' )
                 ->set_wrapper_width( 50 )
                 ->add_wrapper_class( 'no-search' )
                 ->set_instructions( $this->strings['amount_of_cards']['instructions'] );
 
             $events_nearby_field = ( new Field\TrueFalse( $this->strings['events_nearby']['label'] ) )
-                ->set_key( "${key}_events_nearby" )
+                ->set_key( "{$key}_events_nearby" )
                 ->set_name( 'events_nearby' )
                 ->set_default_value( false )
                 ->use_ui()
@@ -106,7 +106,7 @@ class SelectedEventsCarouselLayout extends EventSearchLayout {
                 ->set_instructions( $this->strings['events_nearby']['instructions'] );
 
             $amount_of_cards_per_row_field = ( new Field\Radio( $this->strings['amount_of_cards_per_row']['label'] ) )
-                ->set_key( "${key}_amount_of_cards_per_row" )
+                ->set_key( "{$key}_amount_of_cards_per_row" )
                 ->set_name( 'amount_of_cards_per_row' )
                 ->set_wrapper_width( 50 )
                 ->set_choices( [
@@ -117,7 +117,7 @@ class SelectedEventsCarouselLayout extends EventSearchLayout {
                 ->set_instructions( $this->strings['amount_of_cards_per_row']['instructions'] );
 
             $show_all_link_field = ( new Field\URL( $this->strings['show_all_link']['label'] ) )
-                ->set_key( "${key}_show_all_link" )
+                ->set_key( "{$key}_show_all_link" )
                 ->set_name( 'show_all_link' )
                 ->add_wrapper_class( 'no-search' )
                 ->set_wrapper_width( 50 )

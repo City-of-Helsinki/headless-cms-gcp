@@ -188,35 +188,35 @@ class Collection {
             $field_group->add_rule_group( $this->get_rule_group() );
 
             $show_on_front_page = ( new Field\TrueFalse( __( 'Show on front page', 'hkih-cpt-collection' ) ) )
-                ->set_key( "${key}_show_on_front_page" )
+                ->set_key( "{$key}_show_on_front_page" )
                 ->set_name( 'show_on_front_page' )
                 ->use_ui()
                 ->set_wrapper_width( 50 );
 
             $image = ( new Field\Image( __( 'Image', 'hkih-cpt-collection' ) ) )
-                ->set_key( "${key}_image" )
+                ->set_key( "{$key}_image" )
                 ->set_name( 'image' )
                 ->set_wrapper_width( 50 );
 
             $background_color = ( new Field\Select( __( 'Background Color', 'hkih-cpt-collection' ) ) )
-                ->set_key( "${key}_background_color" )
+                ->set_key( "{$key}_background_color" )
                 ->set_name( 'background_color' )
                 ->set_choices( apply_filters( 'hkih_hds_brand_colors', [] ) )
                 ->set_wrapper_width( 50 );
 
             $description = ( new Field\Textarea( __( 'Description', 'hkih-cpt-collection' ) ) )
-                ->set_key( "${key}_description" )
+                ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->set_new_lines( 'wpautop' )
                 ->set_rows( 4 );
 
             $url_slug = ( new Field\Text( __( 'URL slug', 'hkih-cpt-collection' ) ) )
-                ->set_key( "${key}_url_slug" )
+                ->set_key( "{$key}_url_slug" )
                 ->set_name( 'url_slug' )
                 ->set_wrapper_width( 50 );
 
             $modules = ( new Field\FlexibleContent( __( 'Modules', 'hkih-cpt-collection' ) ) )
-                ->set_key( "${key}_modules" )
+                ->set_key( "{$key}_modules" )
                 ->set_name( 'modules' );
 
             $modules = apply_filters(

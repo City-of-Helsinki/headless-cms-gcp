@@ -93,24 +93,24 @@ class NotificationSettingsTab extends Tab {
 
         try {
             $title = ( new Field\Text( $strings['title']['label'] ) )
-                ->set_key( "${key}_notification_title" )
+                ->set_key( "{$key}_notification_title" )
                 ->set_name( 'notification_title' )
                 ->set_instructions( $strings['title']['instructions'] );
 
             $content = ( new Field\Textarea( $strings['content']['label'] ) )
-                ->set_key( "${key}_notification_content" )
+                ->set_key( "{$key}_notification_content" )
                 ->set_name( 'notification_content' )
                 ->set_new_lines( 'wpautop' )
                 ->set_instructions( $strings['content']['instructions'] );
 
             $link = ( new Field\Link( $strings['link']['label'] ) )
-                ->set_key( "${key}_notification_link" )
+                ->set_key( "{$key}_notification_link" )
                 ->set_name( 'notification_link' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $strings['link']['instructions'] );
 
             $level = ( new Field\Select( $strings['level']['label'] ) )
-                ->set_key( "${key}_notification_level" )
+                ->set_key( "{$key}_notification_level" )
                 ->set_name( 'notification_level' )
                 ->set_choices( $strings['level']['choices'] )
                 ->use_ui()
@@ -118,7 +118,7 @@ class NotificationSettingsTab extends Tab {
                 ->set_instructions( $strings['level']['instructions'] );
 
             $start_date = ( new Field\DatePicker( $strings['start_date']['label'] ) )
-                ->set_key( "${key}_notification_start_date" )
+                ->set_key( "{$key}_notification_start_date" )
                 ->set_name( 'notification_start_date' )
                 ->set_display_format( 'd.m.Y' )
                 ->set_return_format( 'c' )
@@ -126,7 +126,7 @@ class NotificationSettingsTab extends Tab {
                 ->set_instructions( $strings['start_date']['instructions'] );
 
             $end_date = ( new Field\DatePicker( $strings['end_date']['label'] ) )
-                ->set_key( "${key}_notification_end_date" )
+                ->set_key( "{$key}_notification_end_date" )
                 ->set_name( 'notification_end_date' )
                 ->set_display_format( 'd.m.Y' )
                 ->set_return_format( 'c' )

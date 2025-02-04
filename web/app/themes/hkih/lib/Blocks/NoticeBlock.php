@@ -86,13 +86,13 @@ class NoticeBlock extends BaseBlock {
                 ->set_instructions( $strings['title']['instructions'] );
 
             $description_field = ( new Wysiwyg( $strings['description']['label'] ) )
-                ->set_key( "${key}_description" )
+                ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->disable_media_upload()
                 ->set_instructions( $strings['description']['instructions'] );
 
             $icon_field = ( new Select( $strings['icon']['label'] ) )
-                ->set_key( "${key}_icon" )
+                ->set_key( "{$key}_icon" )
                 ->set_name( 'icon' )
                 ->set_choices( [
                     'angle-down'                   => 'Angle Down',

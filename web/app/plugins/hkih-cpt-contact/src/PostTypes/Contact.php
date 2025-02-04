@@ -181,21 +181,21 @@ class Contact {
             $field_group->add_rule_group( $this->get_rule_group() );
 
             $first_name = ( new Field\Text( __( 'First name', 'hkih-cpt-contact' ) ) )
-                ->set_key( "${key}_first_name" )
+                ->set_key( "{$key}_first_name" )
                 ->set_name( 'first_name' )
                 ->set_wrapper_width( 50 );
 
             $last_name = ( new Field\Text( __( 'Last name', 'hkih-cpt-contact' ) ) )
-                ->set_key( "${key}_last_name" )
+                ->set_key( "{$key}_last_name" )
                 ->set_name( 'last_name' )
                 ->set_wrapper_width( 50 );
 
             $title = ( new Field\Text( __( 'Job title', 'hkih-cpt-contact' ) ) )
-                ->set_key( "${key}_job_title" )
+                ->set_key( "{$key}_job_title" )
                 ->set_name( 'job_title' );
 
             $description = ( new Field\Textarea( __( 'Description', 'hkih-cpt-contact' ) ) )
-                ->set_key( "${key}_description" )
+                ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->set_new_lines( 'wpautop' )
                 ->set_rows( 4 );

@@ -207,13 +207,13 @@ class Translation {
         $translations_group->add_rule_group( $this->get_rule_group() );
 
         $repeater = ( new Field\Repeater( $s['repeater']['title'] ) )
-            ->set_key( "${key}_repeater" )
+            ->set_key( "{$key}_repeater" )
             ->set_layout( 'block' )
             ->set_name( 'translations' )
             ->hide_label();
 
         $group_title = ( new Field\Text( $s['group_title']['title'] ) )
-            ->set_key( "${key}_group_title" )
+            ->set_key( "{$key}_group_title" )
             ->set_name( 'group_title' )
             ->set_wrapper_width( 50 )
             ->set_instructions( $s['group_title']['help'] );
@@ -221,7 +221,7 @@ class Translation {
         $repeater->add_field( $group_title );
 
         $translation_key = ( new Field\Text( $s['t_key']['title'] ) )
-            ->set_key( "${key}_translation_key" )
+            ->set_key( "{$key}_translation_key" )
             ->set_name( 'translation_key' )
             ->set_instructions( $s['t_key']['help'] )
             ->set_placeholder( 'translation.key.for.ui' )
@@ -242,7 +242,7 @@ class Translation {
         if ( ! empty( $languages ) ) {
             foreach ( $languages as $lang ) {
                 $translation = ( new Field\Textarea( sprintf( $s['t_val']['title'], $lang ) ) )
-                    ->set_key( "${key}_translation_{$lang}" )
+                    ->set_key( "{$key}_translation_{$lang}" )
                     ->set_name( "translation_{$lang}" )
                     ->set_wrapper_width( $lang_wrapper_width )
                     ->set_new_lines( 'wpautop' )

@@ -77,7 +77,7 @@ class EventSearchCarouselLayout extends EventSearchLayout {
 
         try {
             $order_newest_first_field = ( new Field\TrueFalse( $this->strings['order_newest_first']['label'] ) )
-                ->set_key( "${key}_order_newest_first" )
+                ->set_key( "{$key}_order_newest_first" )
                 ->set_name( 'order_newest_first' )
                 ->set_default_value( false )
                 ->use_ui()
@@ -86,14 +86,14 @@ class EventSearchCarouselLayout extends EventSearchLayout {
                 ->set_instructions( $this->strings['order_newest_first']['instructions'] );
 
             $amount_of_cards_field = ( new Field\Number( $this->strings['amount_of_cards']['label'] ) )
-                ->set_key( "${key}_amount_of_cards" )
+                ->set_key( "{$key}_amount_of_cards" )
                 ->set_name( 'amount_of_cards' )
                 ->set_wrapper_width( 33 )
                 ->add_wrapper_class( 'no-search' )
                 ->set_instructions( $this->strings['amount_of_cards']['instructions'] );
 
             $events_nearby_field = ( new Field\TrueFalse( $this->strings['events_nearby']['label'] ) )
-                ->set_key( "${key}_events_nearby" )
+                ->set_key( "{$key}_events_nearby" )
                 ->set_name( 'events_nearby' )
                 ->set_default_value( false )
                 ->use_ui()

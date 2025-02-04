@@ -90,13 +90,13 @@ class LinkListLayout extends \Geniem\ACF\Field\Flexible\Layout {
 
         try {
             $title_field = ( new Field\Text( $this->strings['title']['label'] ) )
-                ->set_key( "${key}_title" )
+                ->set_key( "{$key}_title" )
                 ->set_name( 'title' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['title']['instructions'] );
 
             $description_field = ( new Field\Textarea( $this->strings['description']['label'] ) )
-                ->set_key( "${key}_description" )
+                ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->set_wrapper_width( 50 )
                 ->set_rows( 4 )
@@ -104,13 +104,13 @@ class LinkListLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_instructions( $this->strings['description']['instructions'] );
 
             $anchor_field = ( new Field\Text( $this->strings['anchor']['label'] ) )
-                ->set_key( "${key}_anchor" )
+                ->set_key( "{$key}_anchor" )
                 ->set_name( 'anchor' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['anchor']['instructions'] );
 
             $background_color_field = ( new Field\Select( $this->strings['background_color']['label'] ) )
-                ->set_key( "${key}_background_color" )
+                ->set_key( "{$key}_background_color" )
                 ->set_name( 'background_color' )
                 ->set_choices( [
                     'white' => __( 'White', 'hkih' ),
@@ -122,12 +122,12 @@ class LinkListLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_instructions( $this->strings['background_color']['instructions'] );
 
             $links_field = ( new Field\Repeater( $this->strings['links']['label'] ) )
-                ->set_key( "${key}_links" )
+                ->set_key( "{$key}_links" )
                 ->set_name( 'links' )
                 ->set_instructions( $this->strings['links']['instructions'] );
 
             $link_field = ( new Field\Link( $this->strings['link']['label'] ) )
-                ->set_key( "${key}_link" )
+                ->set_key( "{$key}_link" )
                 ->set_name( 'link' )
                 ->set_instructions( $this->strings['link']['instructions'] );
 
