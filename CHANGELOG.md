@@ -8,7 +8,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 - CSD-1855-2: Add devgeniem/wp-gcp-cache-headers plugin.
-  - Remove old plugins
+  - Update WP and plugins.
+  - Remove old plugins.
 - CSD-1855: Support setting WP_REDIS_TIMEOUT and WP_REDIS_READ_TIMEOUT via environment variables.
 - HKIH-160: Preview feature.
 - HKIH-171: Change description field from textarea to Wysiwyg in Steps module.
