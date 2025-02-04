@@ -76,19 +76,19 @@ class ContactLayout extends \Geniem\ACF\Field\Flexible\Layout {
 
         try {
             $title_field = ( new Field\Text( $this->strings['title']['label'] ) )
-                ->set_key( "${key}_title" )
+                ->set_key( "{$key}_title" )
                 ->set_name( 'title' )
                 ->set_instructions( $this->strings['title']['instructions'] );
 
             $description_field = ( new Field\Textarea( $this->strings['description']['label'] ) )
-                ->set_key( "${key}_description" )
+                ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->set_new_lines( 'wpautop' )
                 ->set_rows( 4 )
                 ->set_instructions( $this->strings['description']['instructions'] );
 
             $contacts_field = ( new Field\Relationship( $this->strings['contacts']['label'] ) )
-                ->set_key( "${key}_contacts" )
+                ->set_key( "{$key}_contacts" )
                 ->set_name( 'contacts' )
                 ->set_post_types( [ Contact::get_post_type() ] )
                 ->set_filters( [ 'search' ] )

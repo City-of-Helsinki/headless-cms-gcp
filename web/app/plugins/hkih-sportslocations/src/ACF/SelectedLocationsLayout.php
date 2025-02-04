@@ -83,7 +83,7 @@ class SelectedLocationsLayout extends Field\Flexible\Layout {
 
         try {
             $title_field = ( new Field\Text( $this->strings['title']['label'] ) )
-                ->set_key( "${key}_title" )
+                ->set_key( "{$key}_title" )
                 ->set_name( 'title' )
                 ->set_default_value( 'TODO: Default value' )
                 ->set_wrapper_width( 80 )
@@ -91,7 +91,7 @@ class SelectedLocationsLayout extends Field\Flexible\Layout {
 
             if ( function_exists( 'pll_default_language' ) ) {
                 $language_field = ( new Field\Text( $this->strings['language']['label'] ) )
-                    ->set_key( "${key}_language" )
+                    ->set_key( "{$key}_language" )
                     ->set_name( 'language' )
                     ->set_default_value( pll_default_language() )
                     ->set_wrapper_width( 20 )
@@ -100,13 +100,13 @@ class SelectedLocationsLayout extends Field\Flexible\Layout {
             }
 
             $search_field = ( new Field\Text( $this->strings['search']['label'] ) )
-                ->set_key( "${key}_search" )
+                ->set_key( "{$key}_search" )
                 ->set_name( 'search' )
                 ->set_wrapper_width( 80 )
                 ->set_instructions( $this->strings['search']['instructions'] );
 
             $result_count_field = ( new Field\Text( $this->strings['result_count']['label'] ) )
-                ->set_key( "${key}_result_count" )
+                ->set_key( "{$key}_result_count" )
                 ->set_name( 'result_count' )
                 ->set_readonly()
                 ->set_wrapper_width( 20 )
@@ -115,7 +115,7 @@ class SelectedLocationsLayout extends Field\Flexible\Layout {
             $location_selector = ( new Fields\AcfCodifierLocationRestRelationship(
                 $this->strings['location_selector']['label']
             ) )
-                ->set_key( "${key}_selected_locations" )
+                ->set_key( "{$key}_selected_locations" )
                 ->set_name( 'selected_locations' )
                 ->update_value( fn( $values, $post_id, $field, $raw ) => $raw )
                 ->set_instructions( $this->strings['location_selector']['instructions'] );

@@ -104,19 +104,19 @@ class ArticleHighlightsLayout extends \Geniem\ACF\Field\Flexible\Layout {
 
         try {
             $title_field = ( new Field\Text( $this->strings['title']['label'] ) )
-                ->set_key( "${key}_title" )
+                ->set_key( "{$key}_title" )
                 ->set_name( 'title' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['title']['instructions'] );
 
             $anchor_field = ( new Field\Text( $this->strings['anchor']['label'] ) )
-                ->set_key( "${key}_anchor" )
+                ->set_key( "{$key}_anchor" )
                 ->set_name( 'anchor' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['anchor']['instructions'] );
 
             $background_color_field = ( new Field\Select( $this->strings['background_color']['label'] ) )
-                ->set_key( "${key}_background_color" )
+                ->set_key( "{$key}_background_color" )
                 ->set_name( 'background_color' )
                 ->set_choices( [
                     'white' => __( 'White', 'hkih' ),
@@ -128,7 +128,7 @@ class ArticleHighlightsLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_instructions( $this->strings['background_color']['instructions'] );
 
             $category_field = ( new Field\Taxonomy( $this->strings['category']['label'] ) )
-                ->set_key( "${key}_category" )
+                ->set_key( "{$key}_category" )
                 ->set_name( 'category' )
                 ->set_taxonomy( Category::SLUG )
                 ->allow_null()
@@ -137,7 +137,7 @@ class ArticleHighlightsLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_instructions( $this->strings['category']['instructions'] );
 
             $tag_field = ( new Field\Taxonomy( $this->strings['tag']['label'] ) )
-                ->set_key( "${key}_tag" )
+                ->set_key( "{$key}_tag" )
                 ->set_name( 'tag' )
                 ->set_taxonomy( PostTag::SLUG )
                 ->allow_null()
@@ -146,27 +146,27 @@ class ArticleHighlightsLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_instructions( $this->strings['tag']['instructions'] );
 
             $limit_field = ( new Field\Number( $this->strings['limit']['label'] ) )
-                ->set_key( "${key}_limit" )
+                ->set_key( "{$key}_limit" )
                 ->set_name( 'limit' )
                 ->set_default_value( 6 )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['limit']['instructions'] );
 
             $articles_field = ( new Field\Relationship( $this->strings['articles']['label'] ) )
-                ->set_key( "${key}_articles" )
+                ->set_key( "{$key}_articles" )
                 ->set_name( 'articles' )
                 ->set_post_types( [ Post::SLUG ] )
                 ->set_filters( [ 'search' ] )
                 ->set_instructions( $this->strings['articles']['instructions'] );
 
             $show_more_field = ( new Field\Link( $this->strings['show_more']['label'] ) )
-                ->set_key( "${key}_show_more" )
+                ->set_key( "{$key}_show_more" )
                 ->set_name( 'show_more' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['show_more']['instructions'] );
 
             $offset_field = ( new Field\Number( $this->strings['offset']['label'] ) )
-                ->set_key( "${key}_offset" )
+                ->set_key( "{$key}_offset" )
                 ->set_name( 'offset' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['offset']['instructions'] );

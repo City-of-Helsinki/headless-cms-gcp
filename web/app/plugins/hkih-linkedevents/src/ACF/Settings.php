@@ -86,17 +86,17 @@ class Settings {
             $tab->set_placement( 'left' );
 
             $event_keywords = ( new Field\Repeater( $strings['event_keywords']['label'] ) )
-                ->set_key( "${key}_event_keywords" )
+                ->set_key( "{$key}_event_keywords" )
                 ->set_name( 'event_keywords' )
                 ->set_instructions( $strings['event_keywords']['instructions'] );
 
             $event_keyword_group_text = ( new Field\Text( $strings['event_keyword_group_text']['label'] ) )
-                ->set_key( "${key}_event_keyword_group_text" )
+                ->set_key( "{$key}_event_keyword_group_text" )
                 ->set_name( 'event_keyword_group_text' )
                 ->set_instructions( $strings['event_keyword_group_text']['instructions'] );
 
             $event_keyword_group_keywords = ( new Field\Select( $strings['event_keyword_group_keywords']['label'] ) )
-                ->set_key( "${key}_event_keyword_group_keywords" )
+                ->set_key( "{$key}_event_keyword_group_keywords" )
                 ->set_name( 'event_keyword_group_keywords' )
                 ->use_ui()
                 ->allow_multiple()
@@ -111,17 +111,17 @@ class Settings {
             $tab->add_field( $event_keywords );
 
             $course_keywords = ( new Field\Repeater( $strings['course_keywords']['label'] ) )
-                ->set_key( "${key}_course_keywords" )
+                ->set_key( "{$key}_course_keywords" )
                 ->set_name( 'course_keywords' )
                 ->set_instructions( $strings['course_keywords']['instructions'] );
 
             $course_keyword_group_text = ( new Field\Text( $strings['course_keyword_group_text']['label'] ) )
-                ->set_key( "${key}_course_keyword_group_text" )
+                ->set_key( "{$key}_course_keyword_group_text" )
                 ->set_name( 'course_keyword_group_text' )
                 ->set_instructions( $strings['course_keyword_group_text']['instructions'] );
 
             $course_keyword_group_keywords = ( new Field\Select( $strings['course_keyword_group_keywords']['label'] ) )
-                ->set_key( "${key}_course_keyword_group_keywords" )
+                ->set_key( "{$key}_course_keyword_group_keywords" )
                 ->set_name( 'course_keyword_group_keywords' )
                 ->use_ui()
                 ->allow_multiple()
@@ -136,7 +136,7 @@ class Settings {
             $tab->add_field( $course_keywords );
 
             $event_search_carousel_search_url = ( new Field\Text( $strings['event_search_carousel_search_url']['label'] ) )
-                ->set_key( "${key}_event_search_carousel_search_url" )
+                ->set_key( "{$key}_event_search_carousel_search_url" )
                 ->set_name( 'event_search_carousel_search_url' )
                 ->set_instructions( $strings['event_search_carousel_search_url']['instructions'] );
 

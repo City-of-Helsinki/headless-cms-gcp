@@ -90,26 +90,26 @@ class PagesLayout extends \Geniem\ACF\Field\Flexible\Layout {
 
         try {
             $title_field = ( new Field\Text( $this->strings['title']['label'] ) )
-                ->set_key( "${key}_title" )
+                ->set_key( "{$key}_title" )
                 ->set_name( 'title' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['title']['instructions'] );
 
             $anchor_field = ( new Field\Text( $this->strings['anchor']['label'] ) )
-                ->set_key( "${key}_anchor" )
+                ->set_key( "{$key}_anchor" )
                 ->set_name( 'anchor' )
                 ->set_wrapper_width( 50 )
                 ->set_instructions( $this->strings['anchor']['instructions'] );
 
             $description_field = ( new Field\Textarea( $this->strings['description']['label'] ) )
-                ->set_key( "${key}_description" )
+                ->set_key( "{$key}_description" )
                 ->set_name( 'description' )
                 ->set_wrapper_width( 50 )
                 ->set_rows( 2 )
                 ->set_instructions( $this->strings['description']['instructions'] );
 
             $background_color_field = ( new Field\Select( $this->strings['background_color']['label'] ) )
-                ->set_key( "${key}_background_color" )
+                ->set_key( "{$key}_background_color" )
                 ->set_name( 'background_color' )
                 ->set_choices( [
                     'white' => __( 'White', 'hkih' ),
@@ -121,13 +121,13 @@ class PagesLayout extends \Geniem\ACF\Field\Flexible\Layout {
                 ->set_instructions( $this->strings['background_color']['instructions'] );
 
             $show_all_link_field = ( new Field\URL( $this->strings['show_all_link']['label'] ) )
-                ->set_key( "${key}_show_all_link" )
+                ->set_key( "{$key}_show_all_link" )
                 ->set_name( 'show_all_link' )
                 ->add_wrapper_class( 'no-search' )
                 ->set_instructions( $this->strings['show_all_link']['instructions'] );
 
             $pages_field = ( new Field\Relationship( $this->strings['pages']['label'] ) )
-                ->set_key( "${key}_pages" )
+                ->set_key( "{$key}_pages" )
                 ->set_name( 'pages' )
                 ->set_post_types( [ Page::SLUG ] )
                 ->set_filters( [ 'search' ] )

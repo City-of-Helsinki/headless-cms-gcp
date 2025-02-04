@@ -66,7 +66,7 @@ class SelectedEventsLayout extends EventSearchLayout {
 
         try {
             $event_selector = ( new Fields\AcfCodifierRestRelationship( $this->strings['event_selector']['label'] ) )
-                ->set_key( "${key}_selected_events" )
+                ->set_key( "{$key}_selected_events" )
                 ->set_name( 'selected_events' )
                 ->update_value( fn( $values, $post_id, $field, $raw ) => $raw )
                 ->set_instructions( $this->strings['event_selector']['instructions'] );
@@ -75,7 +75,7 @@ class SelectedEventsLayout extends EventSearchLayout {
 
 
             $show_all_link_field = ( new Field\URL( $this->strings['show_all_link']['label'] ) )
-                ->set_key( "${key}_show_all_link" )
+                ->set_key( "{$key}_show_all_link" )
                 ->set_name( 'show_all_link' )
                 ->add_wrapper_class( 'no-search' )
                 ->set_instructions( $this->strings['show_all_link']['instructions'] );

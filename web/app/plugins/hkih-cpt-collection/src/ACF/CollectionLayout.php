@@ -70,7 +70,7 @@ class CollectionLayout extends Field\Flexible\Layout {
 
         try {
             $collection_field = ( new Field\PostObject( $this->strings['collection']['label'] ) )
-                ->set_key( "${key}_collection" )
+                ->set_key( "{$key}_collection" )
                 ->set_name( 'collection' )
                 ->set_post_types( [ Collection::get_post_type() ] )
                 ->set_instructions( $this->strings['collection']['instructions'] );
