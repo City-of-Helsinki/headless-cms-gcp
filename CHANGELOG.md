@@ -8,7 +8,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 - CSD-1855-2: Add devgeniem/wp-gcp-cache-headers plugin.
-  - Remove old plugins
+  - Update WP and plugins.
+  - Remove old plugins.
 
 ## [Released]
 
