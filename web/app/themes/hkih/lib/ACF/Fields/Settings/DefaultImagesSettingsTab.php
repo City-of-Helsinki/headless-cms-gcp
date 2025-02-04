@@ -80,7 +80,7 @@ class DefaultImagesSettingsTab extends Tab {
             $images = [];
             foreach ( $strings['images'] as $image_key => $image ) {
                 $new_image = ( new Field\Image( $image['label'] ) )
-                    ->set_key( "{$key}_images_${image_key}" )
+                    ->set_key( "{$key}_images_{$image_key}" )
                     ->set_name( "{$image_key}_image" )
                     ->set_return_format( 'id' );
                 $images[]  = $new_image;
@@ -107,7 +107,7 @@ class DefaultImagesSettingsTab extends Tab {
         foreach ( $strings['images'] as $image_key => $image ) {
             $fields[ $image_key ] = [
                 'type'        => 'String',
-                'description' => "Attachment URL for ${image_key} image",
+                'description' => "Attachment URL for {$image_key} image",
                 'callback'    => function ( $lang = '' ) use ( $image_key ) {
                     $logo_id = \Geniem\Theme\Settings::get_setting( "{$image_key}_image", $lang ) ?? false;
                     $logo    = wp_get_attachment_image_url( $logo_id, 'full' );

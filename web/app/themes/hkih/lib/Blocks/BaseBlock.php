@@ -32,6 +32,13 @@ class BaseBlock {
     protected $description = '';
 
     /**
+     * The block title.
+     *
+     * @var string
+     */
+    protected $title = '';
+
+    /**
      * The block category. Used in WP block navigation.
      *
      * @var string
