@@ -11,6 +11,20 @@ namespace Geniem\Theme\ACF;
 class ClientLinksModify {
 
     /**
+     * Home url string.
+     *
+     * @var string
+     */
+    public string $home_url;
+
+    /**
+     * Client url string.
+     *
+     * @var string
+     */
+    public string $client_url;
+
+    /**
      * Construct the class.
      */
     public function __construct() {
