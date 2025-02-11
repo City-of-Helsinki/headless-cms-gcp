@@ -130,7 +130,7 @@
         "wpackagist-plugin/wp-graphql"
       ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/themes/hkih/": ["devgeniem/hkih-theme"]
     },
     "dropin-paths": {
       "web/app/": [
