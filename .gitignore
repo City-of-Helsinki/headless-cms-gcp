@@ -10,7 +10,7 @@ web/app/uploads/*
 web/app/cache/*
 
 # HKIH Themes
-web/app/themes/hkih-*
+web/app/themes/hkih*
 web/app/plugins/hkih-*
 web/app/mu-plugins/hkih-*
 

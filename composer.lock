@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "994532419093e99b948bb4593fbb9793",
+    "content-hash": "f72fb9abf7a4dcd2c252994465cd960f",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -944,7 +944,7 @@
         },
         {
             "name": "devgeniem/hkih-cpt-collection",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-cpt-collection.git",
@@ -960,7 +960,6 @@
                 "composer/installers": ">=v1.7.0",
                 "php": ">=7.4"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "psr-4": {
@@ -987,13 +986,13 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/hkih-cpt-collection/issues",
-                "source": "https://github.com/devgeniem/hkih-cpt-collection/tree/main"
+                "source": "https://github.com/devgeniem/hkih-cpt-collection/tree/1.0.0"
             },
             "time": "2025-02-11T10:53:59+00:00"
         },
         {
             "name": "devgeniem/hkih-cpt-contact",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-cpt-contact.git",
@@ -1009,7 +1008,6 @@
                 "composer/installers": ">=v1.7.0",
                 "php": ">=7.4"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "psr-4": {
@@ -1036,13 +1034,13 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/hkih-cpt-contact/issues",
-                "source": "https://github.com/devgeniem/hkih-cpt-contact/tree/main"
+                "source": "https://github.com/devgeniem/hkih-cpt-contact/tree/1.0.0"
             },
             "time": "2025-02-11T10:57:08+00:00"
         },
         {
             "name": "devgeniem/hkih-cpt-landing-page",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-cpt-landing-page.git",
@@ -1058,7 +1056,6 @@
                 "composer/installers": ">=v1.7.0",
                 "php": ">=7.1"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "psr-4": {
@@ -1085,13 +1082,13 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/hkih-cpt-landing-page/issues",
-                "source": "https://github.com/devgeniem/hkih-cpt-landing-page/tree/main"
+                "source": "https://github.com/devgeniem/hkih-cpt-landing-page/tree/1.0.0"
             },
             "time": "2025-02-11T10:59:15+00:00"
         },
         {
             "name": "devgeniem/hkih-cpt-release",
-            "version": "dev-main",
+            "version": "dev-staging",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-cpt-release.git",
@@ -1107,7 +1104,6 @@
                 "composer/installers": ">=v1.7.0",
                 "php": ">=7.1"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "psr-4": {
@@ -1140,7 +1136,7 @@
         },
         {
             "name": "devgeniem/hkih-cpt-translation",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-cpt-translation.git",
@@ -1156,7 +1152,6 @@
                 "composer/installers": ">=v1.7.0",
                 "php": ">=7.3|^8"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "psr-4": {
@@ -1183,13 +1178,13 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/hkih-cpt-translation/issues",
-                "source": "https://github.com/devgeniem/hkih-cpt-translation/tree/main"
+                "source": "https://github.com/devgeniem/hkih-cpt-translation/tree/1.0.0"
             },
             "time": "2025-02-11T11:04:07+00:00"
         },
         {
             "name": "devgeniem/hkih-linkedevents",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-linkedevents.git",
@@ -1205,7 +1200,6 @@
                 "composer/installers": ">=v1.7.0",
                 "php": ">=7.4"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "psr-4": {
@@ -1233,13 +1227,13 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/hkih-linkedevents/issues",
-                "source": "https://github.com/devgeniem/hkih-linkedevents/tree/main"
+                "source": "https://github.com/devgeniem/hkih-linkedevents/tree/1.0.0"
             },
             "time": "2025-02-11T11:06:09+00:00"
         },
         {
             "name": "devgeniem/hkih-sportslocations",
-            "version": "dev-main",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-sportslocations.git",
@@ -1259,7 +1253,6 @@
             "require-dev": {
                 "roave/security-advisories": "dev-latest"
             },
-            "default-branch": true,
             "type": "wordpress-plugin",
             "autoload": {
                 "psr-4": {
@@ -1287,7 +1280,7 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/hkih-sportslocations/issues",
-                "source": "https://github.com/devgeniem/hkih-sportslocations/tree/main"
+                "source": "https://github.com/devgeniem/hkih-sportslocations/tree/1.0.0"
             },
             "time": "2025-02-11T11:08:47+00:00"
         },
@@ -8922,6 +8915,14 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "devgeniem/hkih-cpt-collection": 20,
+        "devgeniem/hkih-cpt-contact": 20,
+        "devgeniem/hkih-cpt-landing-page": 20,
+        "devgeniem/hkih-cpt-release": 20,
+        "devgeniem/hkih-cpt-translation": 20,
+        "devgeniem/hkih-linkedevents": 20,
+        "devgeniem/hkih-sportslocations": 20,
+        "devgeniem/hkih-theme": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
