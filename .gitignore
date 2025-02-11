@@ -1,3 +1,8 @@
+# HKIH Themes
+web/app/themes/hkih-*
+web/app/plugins/hkih-*
+web/app/mu-plugins/hkih-*
+
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
