@@ -6,6 +6,7 @@ steps:
       - --destination=$_IMAGE_NAME:$_IMAGE_TAG
       - --cache=true
       - --cache-ttl=24h
+      - --build-arg=SERVICE_NAME=$_SERVICE_NAME
     # secretEnv:
     #   - COMPOSER_AUTH
 
