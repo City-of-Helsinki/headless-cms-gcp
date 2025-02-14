@@ -5,9 +5,7 @@ ARG NODE_VERSION="20"
 ARG THEMEPATH_1="web/app/themes/hkih"
 ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
 ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
-
-ARG SERVICE_NAME
-RUN echo "Building service: ${SERVICE_NAME}"
+ARG SERVICE_NAME=$SERVICE_NAME
 
 FROM golang:alpine${ALPINE_VERSION} AS gcsfuse
 ARG GCSFUSE_VERSION
@@ -32,6 +30,32 @@ RUN apk --no-cache add nodejs npm
 RUN apk --no-cache add python3 \
   build-base libc6-compat autoconf automake libtool \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
+
+FROM dev as root-composer
+ARG THEMEPATH_1
+WORKDIR /app
+COPY composer.json .
+COPY composer.lock .
+# RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
+RUN composer install --prefer-dist --no-dev --no-scripts
+
+ARG SERVICE_NAME
+RUN echo "Building service: ${SERVICE_NAME}"
+
+RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
+    composer update devgeniem/hkih-theme:dev-staging && \
+    composer update devgeniem/hkih-cpt-collection:dev-staging && \
+    composer update devgeniem/hkih-cpt-contact:dev-staging && \
+    composer update devgeniem/hkih-cpt-landing-page:dev-staging && \
+    composer update devgeniem/hkih-cpt-release:dev-staging && \
+    composer update devgeniem/hkih-cpt-translation:dev-staging && \
+    composer update devgeniem/hkih-linkedevents:dev-staging && \
+    composer update devgeniem/hkih-sportslocations:dev-staging; \
+fi
+
+COPY . .
+RUN composer run-script post-install-cmd
+RUN composer dump-autoload --no-dev --optimize
 
 FROM node:${NODE_VERSION} AS theme-npm-1
 COPY .eslintrc.json /app/
@@ -65,32 +89,6 @@ COPY ${PLUGINPATH_2}/assets assets
 COPY ${PLUGINPATH_2}/webpack.config.js .
 COPY ${PLUGINPATH_2}/.eslintrc.json .
 RUN npm run build
-
-FROM dev as root-composer
-ARG THEMEPATH_1
-WORKDIR /app
-COPY composer.json .
-COPY composer.lock .
-# RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
-RUN composer install --prefer-dist --no-dev --no-scripts
-
-ARG SERVICE_NAME
-RUN echo "Building service: ${SERVICE_NAME}"
-
-RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
-    composer update devgeniem/hkih-theme:dev-staging && \
-    composer update devgeniem/hkih-cpt-collection:dev-staging && \
-    composer update devgeniem/hkih-cpt-contact:dev-staging && \
-    composer update devgeniem/hkih-cpt-landing-page:dev-staging && \
-    composer update devgeniem/hkih-cpt-release:dev-staging && \
-    composer update devgeniem/hkih-cpt-translation:dev-staging && \
-    composer update devgeniem/hkih-linkedevents:dev-staging && \
-    composer update devgeniem/hkih-sportslocations:dev-staging; \
-fi
-
-COPY . .
-RUN composer run-script post-install-cmd
-RUN composer dump-autoload --no-dev --optimize
 
 COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
 ARG PLUGINPATH_1
