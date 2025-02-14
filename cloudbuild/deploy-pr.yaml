@@ -5,6 +5,7 @@ steps:
       - build
       - --tag=$_IMAGE_NAME:$_REVISION_SUFFIX
       - --tag=$_IMAGE_NAME:$_IMAGE_TAG
+      - --build-arg=SERVICE_NAME=$_SERVICE_NAME
       - .
 
   - id: push image
