@@ -41,28 +41,6 @@ COPY ${THEMEPATH_1}/assets assets
 COPY ${THEMEPATH_1}/webpack.config.js .
 RUN npm run build
 
-FROM node:${NODE_VERSION} AS plugin-npm-1
-ARG PLUGINPATH_1
-WORKDIR /app/${PLUGINPATH_1}
-COPY ${PLUGINPATH_1}/package.json .
-# COPY ${PLUGINPATH_1}/package-lock.json .
-RUN npm i --no-audit
-COPY ${PLUGINPATH_1}/assets assets
-COPY ${PLUGINPATH_1}/webpack.config.js .
-COPY ${PLUGINPATH_1}/.eslintrc.json .
-RUN npm run build
-
-FROM node:${NODE_VERSION} AS plugin-npm-2
-ARG PLUGINPATH_2
-WORKDIR /app/${PLUGINPATH_2}
-COPY ${PLUGINPATH_2}/package.json .
-# COPY ${PLUGINPATH_2}/package-lock.json .
-RUN npm i --no-audit
-COPY ${PLUGINPATH_2}/assets assets
-COPY ${PLUGINPATH_2}/webpack.config.js .
-COPY ${PLUGINPATH_2}/.eslintrc.json .
-RUN npm run build
-
 FROM dev as root-composer
 ARG THEMEPATH_1
 WORKDIR /app
@@ -88,6 +66,29 @@ RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
 COPY . .
 RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
+
+FROM node:${NODE_VERSION} AS plugin-npm-1
+ARG PLUGINPATH_1
+WORKDIR /app/${PLUGINPATH_1}
+COPY ${PLUGINPATH_1}/package.json .
+# COPY ${PLUGINPATH_1}/package-lock.json .
+RUN npm i --no-audit
+COPY ${PLUGINPATH_1}/assets assets
+COPY ${PLUGINPATH_1}/webpack.config.js .
+COPY ${PLUGINPATH_1}/.eslintrc.json .
+RUN npm run build
+
+FROM node:${NODE_VERSION} AS plugin-npm-2
+ARG PLUGINPATH_2
+WORKDIR /app/${PLUGINPATH_2}
+COPY ${PLUGINPATH_2}/package.json .
+# COPY ${PLUGINPATH_2}/package-lock.json .
+RUN npm i --no-audit
+COPY ${PLUGINPATH_2}/assets assets
+COPY ${PLUGINPATH_2}/webpack.config.js .
+COPY ${PLUGINPATH_2}/.eslintrc.json .
+RUN npm run build
+
 COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
 ARG PLUGINPATH_1
 COPY --from=plugin-npm-1 /app/${PLUGINPATH_1}/assets ${PLUGINPATH_1}/assets
