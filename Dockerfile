@@ -5,7 +5,7 @@ ARG NODE_VERSION="20"
 ARG THEMEPATH_1="web/app/themes/hkih"
 ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
 ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
-ARG SERVICE_NAME=$SERVICE_NAME
+ARG SERVICE_NAME
 
 FROM golang:alpine${ALPINE_VERSION} AS gcsfuse
 ARG GCSFUSE_VERSION
