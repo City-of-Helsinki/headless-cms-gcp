@@ -70,6 +70,21 @@ COPY composer.json .
 COPY composer.lock .
 # RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
 RUN composer install --prefer-dist --no-dev --no-scripts
+
+ARG SERVICE_NAME
+RUN echo "Building service: ${SERVICE_NAME}"
+
+RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
+      RUN composer update devgeniem/hkih-theme:dev-staging \
+      RUN composer update devgeniem/hkih-cpt-collection:dev-staging \
+      RUN composer update devgeniem/hkih-cpt-contact:dev-staging \
+      RUN composer update devgeniem/hkih-cpt-landing-page:dev-staging \
+      RUN composer update devgeniem/hkih-cpt-release:dev-staging \
+      RUN composer update devgeniem/hkih-cpt-translation:dev-staging \
+      RUN composer update devgeniem/hkih-linkedevents:dev-staging \
+      RUN composer update devgeniem/hkih-sportslocations:dev-staging \
+    fi
+
 COPY . .
 RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
