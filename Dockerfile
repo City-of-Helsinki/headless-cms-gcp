@@ -30,17 +30,6 @@ RUN apk --no-cache add python3 \
   build-base libc6-compat autoconf automake libtool \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
 
-FROM node:${NODE_VERSION} AS theme-npm-1
-COPY .eslintrc.json /app/
-ARG THEMEPATH_1
-WORKDIR /app/${THEMEPATH_1}
-COPY ${THEMEPATH_1}/package.json .
-COPY ${THEMEPATH_1}/package-lock.json .
-RUN npm i --no-audit
-COPY ${THEMEPATH_1}/assets assets
-COPY ${THEMEPATH_1}/webpack.config.js .
-RUN npm run build
-
 FROM dev as root-composer
 ARG THEMEPATH_1
 WORKDIR /app
@@ -66,6 +55,17 @@ RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
 COPY . .
 RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
+
+FROM node:${NODE_VERSION} AS theme-npm-1
+COPY .eslintrc.json /app/
+ARG THEMEPATH_1
+WORKDIR /app/${THEMEPATH_1}
+COPY ${THEMEPATH_1}/package.json .
+COPY ${THEMEPATH_1}/package-lock.json .
+RUN npm i --no-audit
+COPY ${THEMEPATH_1}/assets assets
+COPY ${THEMEPATH_1}/webpack.config.js .
+RUN npm run build
 
 FROM node:${NODE_VERSION} AS plugin-npm-1
 ARG PLUGINPATH_1
