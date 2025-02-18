@@ -30,6 +30,19 @@ RUN apk --no-cache add python3 \
   build-base libc6-compat autoconf automake libtool \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
 
+FROM dev as root-composer
+ARG THEMEPATH_1
+WORKDIR /app
+COPY composer.json .
+COPY composer.lock .
+# RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
+RUN composer install --prefer-dist --no-dev --no-scripts
+COPY . .
+RUN composer run-script post-install-cmd
+RUN composer dump-autoload --no-dev --optimize
+RUN SERVICE_NAME={$SERVICE_NAME} /app/config/update-plugins.sh
+RUN rm -rf /root/.composer
+
 FROM node:${NODE_VERSION} AS theme-npm-1
 COPY .eslintrc.json /app/
 ARG THEMEPATH_1
@@ -63,37 +76,11 @@ COPY ${PLUGINPATH_2}/webpack.config.js .
 COPY ${PLUGINPATH_2}/.eslintrc.json .
 RUN npm run build
 
-FROM dev as root-composer
+FROM base as app
+COPY --from=root-composer /app /app
 ARG THEMEPATH_1
-WORKDIR /app
-COPY composer.json .
-COPY composer.lock .
-# RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
-RUN composer install --prefer-dist --no-dev --no-scripts
-
-ARG SERVICE_NAME
-RUN echo "Building service: ${SERVICE_NAME}"
-
-RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
-      RUN composer update devgeniem/hkih-theme:dev-staging \
-      RUN composer update devgeniem/hkih-cpt-collection:dev-staging \
-      RUN composer update devgeniem/hkih-cpt-contact:dev-staging \
-      RUN composer update devgeniem/hkih-cpt-landing-page:dev-staging \
-      RUN composer update devgeniem/hkih-cpt-release:dev-staging \
-      RUN composer update devgeniem/hkih-cpt-translation:dev-staging \
-      RUN composer update devgeniem/hkih-linkedevents:dev-staging \
-      RUN composer update devgeniem/hkih-sportslocations:dev-staging \
-    fi
-
-COPY . .
-RUN composer run-script post-install-cmd
-RUN composer dump-autoload --no-dev --optimize
 COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
 ARG PLUGINPATH_1
 COPY --from=plugin-npm-1 /app/${PLUGINPATH_1}/assets ${PLUGINPATH_1}/assets
 ARG PLUGINPATH_2
 COPY --from=plugin-npm-2 /app/${PLUGINPATH_2}/assets ${PLUGINPATH_2}/assets
-RUN rm -rf /root/.composer
-
-FROM base as app
-COPY --from=root-composer /app /app
