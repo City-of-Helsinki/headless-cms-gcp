@@ -1,10 +1,11 @@
 ARG ALPINE_VERSION="3.18"
 ARG PHP_VERSION="8.2"
 ARG GCSFUSE_VERSION="1.2.0"
-ARG NODE_VERSION="14"
+ARG NODE_VERSION="20"
 ARG THEMEPATH_1="web/app/themes/hkih"
 ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
 ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
+ARG SERVICE_NAME
 
 FROM golang:alpine${ALPINE_VERSION} AS gcsfuse
 ARG GCSFUSE_VERSION
@@ -37,11 +38,23 @@ COPY composer.json .
 COPY composer.lock .
 # RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
 RUN composer install --prefer-dist --no-dev --no-scripts
+ARG SERVICE_NAME
+RUN echo "Building service: ${SERVICE_NAME}"
+
+RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
+    composer update devgeniem/hkih-theme:dev-staging && \
+    composer update devgeniem/hkih-cpt-collection:dev-staging && \
+    composer update devgeniem/hkih-cpt-contact:dev-staging && \
+    composer update devgeniem/hkih-cpt-landing-page:dev-staging && \
+    composer update devgeniem/hkih-cpt-release:dev-staging && \
+    composer update devgeniem/hkih-cpt-translation:dev-staging && \
+    composer update devgeniem/hkih-linkedevents:dev-staging && \
+    composer update devgeniem/hkih-sportslocations:dev-staging; \
+fi
+
 COPY . .
 RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
-RUN SERVICE_NAME={$SERVICE_NAME} /app/config/update-plugins.sh
-RUN rm -rf /root/.composer
 
 FROM node:${NODE_VERSION} AS theme-npm-1
 COPY .eslintrc.json /app/
@@ -84,3 +97,4 @@ ARG PLUGINPATH_1
 COPY --from=plugin-npm-1 /app/${PLUGINPATH_1}/assets ${PLUGINPATH_1}/assets
 ARG PLUGINPATH_2
 COPY --from=plugin-npm-2 /app/${PLUGINPATH_2}/assets ${PLUGINPATH_2}/assets
+RUN rm -rf /root/.composer
