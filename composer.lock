@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f72fb9abf7a4dcd2c252994465cd960f",
+    "content-hash": "13e8490dcea86f9c4f709a8cba4df394",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -1180,16 +1180,16 @@
         },
         {
             "name": "devgeniem/hkih-linkedevents",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-linkedevents.git",
-                "reference": "671712a53f78f5abde63d5a2ab191ab0968eb44f"
+                "reference": "b3f3f54f896d27bf8e3c4f4be8cec873e5d74f44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/hkih-linkedevents/zipball/671712a53f78f5abde63d5a2ab191ab0968eb44f",
-                "reference": "671712a53f78f5abde63d5a2ab191ab0968eb44f",
+                "url": "https://api.github.com/repos/devgeniem/hkih-linkedevents/zipball/b3f3f54f896d27bf8e3c4f4be8cec873e5d74f44",
+                "reference": "b3f3f54f896d27bf8e3c4f4be8cec873e5d74f44",
                 "shasum": ""
             },
             "require": {
@@ -1223,22 +1223,22 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/hkih-linkedevents/issues",
-                "source": "https://github.com/devgeniem/hkih-linkedevents/tree/1.0.0"
+                "source": "https://github.com/devgeniem/hkih-linkedevents/tree/1.0.2"
             },
-            "time": "2025-02-11T11:06:09+00:00"
+            "time": "2025-03-06T14:16:20+00:00"
         },
         {
             "name": "devgeniem/hkih-sportslocations",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-sportslocations.git",
-                "reference": "cd2832f39473e13f65de8caaf5b1089adbd2fddc"
+                "reference": "0b52f717b05f59990c01921c0427ce2dc3ac7a1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/hkih-sportslocations/zipball/cd2832f39473e13f65de8caaf5b1089adbd2fddc",
-                "reference": "cd2832f39473e13f65de8caaf5b1089adbd2fddc",
+                "url": "https://api.github.com/repos/devgeniem/hkih-sportslocations/zipball/0b52f717b05f59990c01921c0427ce2dc3ac7a1e",
+                "reference": "0b52f717b05f59990c01921c0427ce2dc3ac7a1e",
                 "shasum": ""
             },
             "require": {
@@ -1276,9 +1276,9 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/hkih-sportslocations/issues",
-                "source": "https://github.com/devgeniem/hkih-sportslocations/tree/1.0.0"
+                "source": "https://github.com/devgeniem/hkih-sportslocations/tree/1.0.1"
             },
-            "time": "2025-02-11T11:08:47+00:00"
+            "time": "2025-03-06T14:13:43+00:00"
         },
         {
             "name": "devgeniem/hkih-theme",
@@ -1286,12 +1286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/hkih-theme.git",
-                "reference": "696887798029d636973f310316bb59a7df4802c8"
+                "reference": "ea97308087fa8ebc73b9002ffc0f1a38ab149622"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/hkih-theme/zipball/696887798029d636973f310316bb59a7df4802c8",
-                "reference": "696887798029d636973f310316bb59a7df4802c8",
+                "url": "https://api.github.com/repos/devgeniem/hkih-theme/zipball/ea97308087fa8ebc73b9002ffc0f1a38ab149622",
+                "reference": "ea97308087fa8ebc73b9002ffc0f1a38ab149622",
                 "shasum": ""
             },
             "require": {
@@ -1321,7 +1321,7 @@
                 "issues": "https://github.com/devgeniem/hkih-theme/issues",
                 "source": "https://github.com/devgeniem/hkih-theme/tree/1.0.1"
             },
-            "time": "2025-02-11T12:21:17+00:00"
+            "time": "2025-03-06T14:32:05+00:00"
         },
         {
             "name": "devgeniem/wp-define-more",
