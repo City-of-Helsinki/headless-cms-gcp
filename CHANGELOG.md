@@ -9,6 +9,10 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Released]
 
+## [1.26.0] - 2025-03-06
+
+- HKIH-185-node: Node 20 upgrade.
+
 ## [1.25.0] - 2025-01-17
 
 - CSD-1855: Support setting WP_REDIS_TIMEOUT and WP_REDIS_READ_TIMEOUT via environment variables.
