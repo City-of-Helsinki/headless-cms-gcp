@@ -5,12 +5,12 @@
     "description": "HKI Headless",
     "private": true,
     "devDependencies": {
-        "@wordpress/eslint-plugin": "^2.4.0",
-        "eslint": "^5.15.2",
-        "husky": "^8.0.1",
-        "lint-staged": "^12.4.1",
+        "@wordpress/eslint-plugin": "^21.1.2",
+        "eslint": "^8.0.0",
+        "husky": "^9.1.6",
+        "lint-staged": "^15.2.10",
         "sass-lint": "^1.13.1",
-        "spectaql": "^1.0.9"
+        "spectaql": "^3.0.2"
     },
     "lint-staged": {
         "*.php": "php -d error_reporting=22527 vendor/bin/phpcs --standard=phpcs.xml",

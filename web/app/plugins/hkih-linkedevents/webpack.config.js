@@ -1,42 +1,30 @@
-
+/* eslint-disable comma-dangle */
 const path = require( 'path' );
 const webpack = require( 'webpack' );
-const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
+const ESLintPlugin = require( 'eslint-webpack-plugin' );
+
+// Check for production mode.
+const isProduction = process.env.NODE_ENV === 'production';
 
 // Plugin root folder.
-const pluginPath = `${path.resolve( __dirname )}`;
+const pluginPath = `${ path.resolve( __dirname ) }`;
 
 // Plugin paths
-const adminEntry = `${pluginPath}/assets/scripts/admin.js`;
-const output = `${pluginPath}/assets/dist`;
+const adminEntry = `${ pluginPath }/assets/scripts/admin.js`;
+const output = `${ pluginPath }/assets/dist`;
 
 // All loaders to use on assets.
 const allModules = {
     rules: [
-        {
-            enforce: 'pre',
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'eslint-loader',
-                options: {
-                    configFile: `${pluginPath}/.eslintrc.json`,
-                    fix: false,
-                    failOnWarning: false,
-                    failonError: true
-                }
-            }
-        },
         {
             test: /\.js$/,
             exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: {
-
-                    // Do not use the .babelrc configuration file.
+                // Do not use the .babelrc configuration file.
                     babelrc: false,
 
                     // The loader will cache the results of the loader in node_modules/.cache/babel-loader.
@@ -45,10 +33,12 @@ const allModules = {
                     // Enable latest JavaScript features.
                     presets: [ '@babel/preset-env' ],
 
-                    // Enable dynamic imports.
-                    plugins: [ '@babel/plugin-syntax-dynamic-import' ]
-                }
-            }
+                    plugins: [
+                        '@babel/plugin-syntax-dynamic-import', // Enable dynamic imports.
+                        '@babel/plugin-syntax-top-level-await', // Enable await functions on js context top level (in addition to async functions)
+                    ],
+                },
+            },
         },
         {
             test: /\.scss$/,
@@ -57,17 +47,23 @@ const allModules = {
                 {
                     loader: 'css-loader',
                     options: {
-                        sourceMap: true
-                    }
+                        sourceMap: true,
+                    },
+                },
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        sourceMap: true,
+                    },
                 },
                 {
                     loader: 'sass-loader',
                     options: {
-                        sourceMap: true
-                    }
-                }
-            ]
-        }
+                        sourceMap: true,
+                    },
+                },
+            ],
+        },
     ]
 };
 
@@ -79,47 +75,56 @@ const allOptimizations = {
             vendor: {
                 test: /[\\/]node_modules[\\/]/,
                 name: 'vendor',
-                chunks: 'all'
-            }
-        }
-    }
+                chunks: 'all',
+            },
+        },
+    },
 };
 
 // All plugins to use.
 const allPlugins = [
+    new ESLintPlugin( {
+        extensions: [ 'js' ],
+        exclude: 'node_modules',
+        context: pluginPath,
+        overrideConfigFile: `${ pluginPath }/.eslintrc.json`,
+        fix: false,
+        failOnWarning: false,
+        failOnError: false,
+    } ),
 
     // Convert JS to CSS.
-    new MiniCssExtractPlugin({
-        filename: '[name].css'
-    }),
+    new MiniCssExtractPlugin( {
+        filename: '[name].css',
+        chunkFilename: '[name]-[contenthash].css',
+    } ),
 
     // Provide jQuery instance for all modules.
-    new webpack.ProvidePlugin({
-        jQuery: 'jquery'
-    })
+    new webpack.ProvidePlugin( {
+        jQuery: 'jquery',
+    } ),
 ];
 
 allOptimizations.minimizer = [
 
     // Optimize for production build.
-    new TerserPlugin({
-        cache: true,
+    new TerserPlugin( {
         parallel: true,
-        sourceMap: true,
         terserOptions: {
             output: {
-                comments: false
+                comments: false,
             },
             compress: {
                 warnings: false,
-                drop_console: true // eslint-disable-line camelcase
-            }
-        }
-    })
+                drop_console: true, // eslint-disable-line camelcase
+            },
+        },
+    } ),
 ];
 
-// Delete distribution folder for production build.
-allPlugins.push( new CleanWebpackPlugin() );
+const experiments = {
+    topLevelAwait: true,
+};
 
 module.exports = [
     {
@@ -140,10 +145,15 @@ module.exports = [
 
         plugins: allPlugins,
 
+        experiments,
+
         externals: {
 
             // Set jQuery to be an external resource.
             jquery: 'jQuery'
         },
+
+        // Disable source maps for production build.
+        devtool: isProduction ? undefined : 'source-map',
     }
 ];

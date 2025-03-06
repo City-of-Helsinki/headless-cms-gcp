@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- HKIH-185-node: Node 20 upgrade.
+
 ## [Released]
 
 ## [1.25.0] - 2025-01-17
