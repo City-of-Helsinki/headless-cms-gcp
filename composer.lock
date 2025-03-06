@@ -9059,9 +9059,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-<<<<<<< HEAD
         "rarst/wps": 20,
-=======
         "devgeniem/hkih-cpt-collection": 20,
         "devgeniem/hkih-cpt-contact": 20,
         "devgeniem/hkih-cpt-landing-page": 20,
@@ -9070,7 +9068,6 @@
         "devgeniem/hkih-linkedevents": 20,
         "devgeniem/hkih-sportslocations": 20,
         "devgeniem/hkih-theme": 20,
->>>>>>> CSD-1542
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
