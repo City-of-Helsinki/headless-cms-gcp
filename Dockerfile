@@ -41,7 +41,7 @@ RUN composer install --prefer-dist --no-dev --no-scripts
 ARG SERVICE_NAME
 RUN echo "Building service: ${SERVICE_NAME}"
 
-RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
+RUN if [ "$SERVICE_NAME" == "app-staging" ]; then \
     composer update devgeniem/hkih-theme:dev-staging && \
     composer update devgeniem/hkih-cpt-collection:dev-staging && \
     composer update devgeniem/hkih-cpt-contact:dev-staging && \
