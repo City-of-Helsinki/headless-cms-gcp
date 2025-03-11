@@ -58,8 +58,6 @@
     "devgeniem/hkih-linkedevents": "dev-staging || ^1.0",
     "devgeniem/hkih-sportslocations": "dev-staging || ^1.0",
     "devgeniem/hkih-theme": "dev-staging || ^1.0",
-    "devgeniem/wp-define-more": "^1.0",
-    "devgeniem/wp-geniem-project-bells-and-whistles": "^1.7",
     "devgeniem/wp-geniem-roles": "^1.6.0",
     "devgeniem/wp-sanitize-accented-uploads": "^1.2.1",
     "filebird/filebird-pro": "^6.0.7",

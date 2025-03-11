@@ -1324,54 +1324,6 @@
             "time": "2025-03-06T14:32:05+00:00"
         },
         {
-            "name": "devgeniem/wp-define-more",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/devgeniem/wp-define-more.git",
-                "reference": "f00722ed262c73f388c0440aaea4aab554645830"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-define-more/zipball/f00722ed262c73f388c0440aaea4aab554645830",
-                "reference": "f00722ed262c73f388c0440aaea4aab554645830",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^v1.0.12",
-                "php": ">=5.3"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Onni Hakala",
-                    "email": "onni.hakala@geniem.com",
-                    "homepage": "https://github.com/onnimonni",
-                    "role": "developer"
-                }
-            ],
-            "description": "Adds useful definable constants which are missing from the WP Core.",
-            "homepage": "https://github.com/devgeniem/wp-define-more",
-            "keywords": [
-                "define",
-                "filesize",
-                "max",
-                "options",
-                "uploads",
-                "wordpress",
-                "wp"
-            ],
-            "support": {
-                "issues": "https://github.com/devgeniem/wp-define-more/issues",
-                "source": "https://github.com/devgeniem/wp-define-more/tree/master"
-            },
-            "time": "2017-07-17T11:04:33+00:00"
-        },
-        {
             "name": "devgeniem/wp-geniem-roles",
             "version": "1.6.1",
             "source": {
