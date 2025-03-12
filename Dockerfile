@@ -26,13 +26,12 @@ CMD ["/app/config/start.sh"]
 FROM base AS dev
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV CPPFLAGS="-DPNG_ARM_NEON_OPT=0"
-RUN apk --no-cache add nodejs npm
+RUN apk --no-cache add nodejs=20.8.1-r0 npm
 RUN apk --no-cache add python3 \
   build-base libc6-compat autoconf automake libtool \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
 
 FROM dev as root-composer
-ARG THEMEPATH_1
 WORKDIR /app
 COPY composer.json .
 COPY composer.lock .
@@ -56,9 +55,7 @@ COPY . .
 RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
 
-FROM node:${NODE_VERSION} AS theme-npm-1
 ARG THEMEPATH_1
-COPY --from=root-composer /app /app
 COPY .eslintrc.json /app/
 WORKDIR /app/${THEMEPATH_1}
 COPY ${THEMEPATH_1}/package.json .
@@ -68,9 +65,7 @@ COPY ${THEMEPATH_1}/assets assets
 COPY ${THEMEPATH_1}/webpack.config.js .
 RUN npm run build
 
-FROM node:${NODE_VERSION} AS plugin-npm-1
 ARG PLUGINPATH_1
-COPY --from=root-composer /app/${PLUGINPATH_1} /app/${PLUGINPATH_1}
 WORKDIR /app/${PLUGINPATH_1}
 COPY ${PLUGINPATH_1}/package.json .
 # COPY ${PLUGINPATH_1}/package-lock.json .
@@ -80,9 +75,7 @@ COPY ${PLUGINPATH_1}/webpack.config.js .
 COPY ${PLUGINPATH_1}/.eslintrc.json .
 RUN npm run build
 
-FROM node:${NODE_VERSION} AS plugin-npm-2
 ARG PLUGINPATH_2
-COPY --from=root-composer /app/${PLUGINPATH_2} /app/${PLUGINPATH_2}
 WORKDIR /app/${PLUGINPATH_2}
 COPY ${PLUGINPATH_2}/package.json .
 # COPY ${PLUGINPATH_2}/package-lock.json .
@@ -94,10 +87,4 @@ RUN npm run build
 
 FROM base as app
 COPY --from=root-composer /app /app
-ARG THEMEPATH_1
-COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
-ARG PLUGINPATH_1
-COPY --from=plugin-npm-1 /app/${PLUGINPATH_1}/assets ${PLUGINPATH_1}/assets
-ARG PLUGINPATH_2
-COPY --from=plugin-npm-2 /app/${PLUGINPATH_2}/assets ${PLUGINPATH_2}/assets
 RUN rm -rf /root/.composer
