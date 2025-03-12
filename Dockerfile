@@ -57,9 +57,9 @@ RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
 
 FROM node:${NODE_VERSION} AS theme-npm-1
+ARG THEMEPATH_1
 COPY --from=root-composer /app/${THEMEPATH_1} /app/${THEMEPATH_1}
 COPY .eslintrc.json /app/
-ARG THEMEPATH_1
 WORKDIR /app/${THEMEPATH_1}
 COPY ${THEMEPATH_1}/package.json .
 COPY ${THEMEPATH_1}/package-lock.json .
@@ -69,8 +69,8 @@ COPY ${THEMEPATH_1}/webpack.config.js .
 RUN npm run build
 
 FROM node:${NODE_VERSION} AS plugin-npm-1
-COPY --from=root-composer /app/${PLUGINPATH_1} /app/${PLUGINPATH_1}
 ARG PLUGINPATH_1
+COPY --from=root-composer /app/${PLUGINPATH_1} /app/${PLUGINPATH_1}
 WORKDIR /app/${PLUGINPATH_1}
 COPY ${PLUGINPATH_1}/package.json .
 # COPY ${PLUGINPATH_1}/package-lock.json .
@@ -81,8 +81,8 @@ COPY ${PLUGINPATH_1}/.eslintrc.json .
 RUN npm run build
 
 FROM node:${NODE_VERSION} AS plugin-npm-2
-COPY --from=root-composer /app/${PLUGINPATH_2} /app/${PLUGINPATH_2}
 ARG PLUGINPATH_2
+COPY --from=root-composer /app/${PLUGINPATH_2} /app/${PLUGINPATH_2}
 WORKDIR /app/${PLUGINPATH_2}
 COPY ${PLUGINPATH_2}/package.json .
 # COPY ${PLUGINPATH_2}/package-lock.json .
