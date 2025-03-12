@@ -26,7 +26,7 @@ CMD ["/app/config/start.sh"]
 FROM base AS dev
 ENV COMPOSER_ALLOW_SUPERUSER=1
 ENV CPPFLAGS="-DPNG_ARM_NEON_OPT=0"
-RUN apk --no-cache add nodejs=20.8.1-r0 npm
+RUN apk --no-cache add nodejs npm
 RUN apk --no-cache add python3 \
   build-base libc6-compat autoconf automake libtool \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
