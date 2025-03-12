@@ -58,7 +58,7 @@ RUN composer dump-autoload --no-dev --optimize
 
 FROM node:${NODE_VERSION} AS theme-npm-1
 ARG THEMEPATH_1
-COPY --from=root-composer /app/${THEMEPATH_1} /app/${THEMEPATH_1}
+COPY --from=root-composer /app /app
 COPY .eslintrc.json /app/
 WORKDIR /app/${THEMEPATH_1}
 COPY ${THEMEPATH_1}/package.json .
