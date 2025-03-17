@@ -1,11 +1,9 @@
 ARG ALPINE_VERSION="3.20"
 ARG PHP_VERSION="8.2"
 ARG GCSFUSE_VERSION="1.2.0"
-ARG NODE_VERSION="20"
 ARG THEMEPATH_1="web/app/themes/hkih"
 ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
 ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
-ARG SERVICE_NAME
 
 FROM golang:alpine${ALPINE_VERSION} AS gcsfuse
 ARG GCSFUSE_VERSION
@@ -37,6 +35,7 @@ COPY composer.json .
 COPY composer.lock .
 # RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
 RUN composer install --prefer-dist --no-dev --no-scripts
+RUN composer run-script post-install-cmd
 ARG SERVICE_NAME
 RUN echo "Building service: ${SERVICE_NAME}"
 
@@ -51,40 +50,26 @@ RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
     composer update devgeniem/hkih-sportslocations:dev-staging; \
 fi
 
-COPY . .
-RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
 
 ARG THEMEPATH_1
-COPY .eslintrc.json /app/
 WORKDIR /app/${THEMEPATH_1}
-COPY ${THEMEPATH_1}/package.json .
-COPY ${THEMEPATH_1}/package-lock.json .
 RUN npm i --no-audit
-COPY ${THEMEPATH_1}/assets assets
-COPY ${THEMEPATH_1}/webpack.config.js .
 RUN npm run build
 
 ARG PLUGINPATH_1
 WORKDIR /app/${PLUGINPATH_1}
-COPY ${PLUGINPATH_1}/package.json .
-# COPY ${PLUGINPATH_1}/package-lock.json .
 RUN npm i --no-audit
-COPY ${PLUGINPATH_1}/assets assets
-COPY ${PLUGINPATH_1}/webpack.config.js .
-COPY ${PLUGINPATH_1}/.eslintrc.json .
 RUN npm run build
 
 ARG PLUGINPATH_2
 WORKDIR /app/${PLUGINPATH_2}
-COPY ${PLUGINPATH_2}/package.json .
-# COPY ${PLUGINPATH_2}/package-lock.json .
 RUN npm i --no-audit
-COPY ${PLUGINPATH_2}/assets assets
-COPY ${PLUGINPATH_2}/webpack.config.js .
-COPY ${PLUGINPATH_2}/.eslintrc.json .
 RUN npm run build
+
+COPY . .
+
+RUN rm -rf /root/.composer
 
 FROM base as app
 COPY --from=root-composer /app /app
-RUN rm -rf /root/.composer
