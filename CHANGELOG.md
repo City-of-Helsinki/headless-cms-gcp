@@ -23,8 +23,15 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - CSD-1329: Add post_id to preview link.
 - CSD-1677: Nginx settings for /uploads/
 - CSD-1607: Increase results amount of the Event and Location search modules.
+- PIEN-9288: PHP vulnerability fix
+  - Update Alpine version
+  - Update WP stack from hiondev
 
 ## [Released]
+
+## [1.26.0] - 2025-03-06
+
+- HKIH-185-node: Node 20 upgrade.
 
 ## [1.25.0] - 2025-01-17
 

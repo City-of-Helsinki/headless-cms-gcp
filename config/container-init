@@ -5,6 +5,4 @@ if [ -n "$GCS_UPLOADS_BUCKET" ]; then
   gcsfuse -o allow_other --log-file /var/log/gcsfuse --uid $nginx --implicit-dirs --only-dir app/uploads $GCS_UPLOADS_BUCKET web/app/uploads
 fi
 
-export WP_REDIS_PREFIX=$K_REVISION
-
 exec "$@"
