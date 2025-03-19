@@ -63,7 +63,7 @@ COPY ${PLUGINPATH_2}/webpack.config.js .
 COPY ${PLUGINPATH_2}/.eslintrc.json .
 RUN npm run build
 
-FROM dev as root-composer
+FROM dev AS root-composer
 ARG THEMEPATH_1
 WORKDIR /app
 COPY composer.json .
