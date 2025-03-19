@@ -1,14 +1,14 @@
-ARG ALPINE_VERSION="3.18"
+ARG ALPINE_VERSION="3.21"
 ARG PHP_VERSION="8.2"
-ARG GCSFUSE_VERSION="1.2.0"
-ARG NODE_VERSION="20"
+ARG GCSFUSE_VERSION="2.4.0"
+
 ARG THEMEPATH_1="web/app/themes/hkih"
 ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
 ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
 
 FROM golang:alpine${ALPINE_VERSION} AS gcsfuse
 ARG GCSFUSE_VERSION
-RUN go install github.com/googlecloudplatform/gcsfuse@v${GCSFUSE_VERSION}
+RUN go install github.com/googlecloudplatform/gcsfuse/v2@v${GCSFUSE_VERSION}
 
 FROM php:${PHP_VERSION}-fpm-alpine${ALPINE_VERSION} AS base
 RUN apk add --no-cache nginx
@@ -80,5 +80,5 @@ ARG PLUGINPATH_2
 COPY --from=plugin-npm-2 /app/${PLUGINPATH_2}/assets ${PLUGINPATH_2}/assets
 RUN rm -rf /root/.composer
 
-FROM base as app
+FROM base AS app
 COPY --from=root-composer /app /app

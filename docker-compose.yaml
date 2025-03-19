@@ -1,19 +1,17 @@
-version: "3.8"
-
 services:
   hiondev:
     image: europe-docker.pkg.dev/hiondev/hiondev/cli
     environment:
-      - PROJECT_ID
-      - SQL_INSTANCE
-      - BUILD_TARGET
+      PROJECT_ID:
+      BUILD_TARGET:
+      COMPOSE_PROJECT_NAME:
+      HIONDEV_HOST_ROOT: ${HIONDEV_HOST_ROOT:-${PWD:-.}}
     volumes:
-      - .:/app
+      - ${HIONDEV_HOST_ROOT:-.}:/app
       - cloudsql:/cloudsql
       - config:/root/.config
-    depends_on:
-      - db
-      - sql_proxy
+      - hiondev-root:/root
+      - /var/run/docker.sock:/var/run/docker.sock
 
   dev:
     extends: app.base
@@ -25,11 +23,12 @@ services:
       DB_HOST: db
       WP_REDIS_HOST: redis
       PROXY_URL: localhost:8080
+      PS1: "[$COMPOSE_PROJECT_NAME $$HOSTNAME] [dev] \\w \\$ "
     ports:
       - 3000:3000
       - 3001:3001
     volumes:
-      - .:/app
+      - ${HIONDEV_HOST_ROOT:-.}:/app
     depends_on:
       - db
       - redis
@@ -41,6 +40,7 @@ services:
     environment:
       DB_HOST: db
       WP_REDIS_HOST: redis
+      PS1: "[$COMPOSE_PROJECT_NAME $$HOSTNAME] [app] \\w \\$ "
     depends_on:
       - db
       - redis
@@ -50,6 +50,8 @@ services:
   staging:
     extends: app.base.cloudsql
     env_file: .env.app.staging
+    environment:
+      PS1: "[$COMPOSE_PROJECT_NAME $$HOSTNAME] [staging] \\w \\$ "
     depends_on:
       - sql_proxy
     profiles:
@@ -58,6 +60,8 @@ services:
   production:
     extends: app.base.cloudsql
     env_file: .env.app.production
+    environment:
+      PS1: "[$COMPOSE_PROJECT_NAME $$HOSTNAME] [production] \\w \\$ "
     depends_on:
       - sql_proxy
     profiles:
@@ -67,6 +71,7 @@ services:
     image: mysql:8
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: true
+      PS1: "[$COMPOSE_PROJECT_NAME $$HOSTNAME] [db] \\w \\$ "
     volumes:
       - var-lib-mysql:/var/lib/mysql
 
@@ -84,6 +89,7 @@ services:
       OTEL_PHP_AUTOLOAD_ENABLED: true
       OTEL_EXPORTER_OTLP_ENDPOINT: http://jaeger:4318
       OTEL_SERVICE_NAME: dev-trace
+      PS1: "[$COMPOSE_PROJECT_NAME $$HOSTNAME] [dev-trace] \\w \\$ "
 
   sql_proxy:
     image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:latest
@@ -104,12 +110,15 @@ services:
       K_SERVICE: dev
       K_REVISION: dev-00001
       K_CONFIGURATION: dev
+      COMPOSE_PROJECT_NAME:
     ports:
       - 8080:8080
     privileged: true
     init: true
     volumes:
       - config:/root/.config
+      - app-base-root:/root
+      - /root/.vscode-server
     profiles:
       - app.base
 
@@ -127,6 +136,8 @@ volumes:
   var-lib-mysql:
   cloudsql:
   config:
+  hiondev-root:
+  app-base-root:
 # secrets:
 #  composer_auth:
 #    file: ./auth.json
