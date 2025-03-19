@@ -40,14 +40,14 @@ ARG SERVICE_NAME
 RUN echo "Building service: ${SERVICE_NAME}"
 
 RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
-    composer update devgeniem/hkih-theme:dev-staging && \
-    composer update devgeniem/hkih-cpt-collection:dev-staging && \
-    composer update devgeniem/hkih-cpt-contact:dev-staging && \
-    composer update devgeniem/hkih-cpt-landing-page:dev-staging && \
-    composer update devgeniem/hkih-cpt-release:dev-staging && \
-    composer update devgeniem/hkih-cpt-translation:dev-staging && \
-    composer update devgeniem/hkih-linkedevents:dev-staging && \
-    composer update devgeniem/hkih-sportslocations:dev-staging; \
+    composer update devgeniem/hkih-theme:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-collection:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-contact:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-landing-page:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-release:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-translation:dev-staging --no-dev && \
+    composer update devgeniem/hkih-linkedevents:dev-staging --no-dev && \
+    composer update devgeniem/hkih-sportslocations:dev-staging --no-dev; \
 fi
 
 RUN composer dump-autoload --no-dev --optimize
