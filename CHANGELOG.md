@@ -7,11 +7,13 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [Released]
+
+## [1.26.1] - 2025-03-19
+
 - PIEN-9288: PHP vulnerability fix
   - Update Alpine version
   - Update WP stack from hiondev
-
-## [Released]
 
 ## [1.26.0] - 2025-03-06
 
