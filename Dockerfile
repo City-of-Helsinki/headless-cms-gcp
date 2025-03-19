@@ -67,6 +67,8 @@ WORKDIR /app/${PLUGINPATH_2}
 RUN npm i --no-audit
 RUN npm run build
 
+WORKDIR /app
+
 COPY . .
 
 RUN rm -rf /root/.composer
