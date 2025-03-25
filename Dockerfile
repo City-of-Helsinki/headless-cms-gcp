@@ -1,11 +1,9 @@
-ARG ALPINE_VERSION="3.18"
+ARG ALPINE_VERSION="3.20"
 ARG PHP_VERSION="8.2"
 ARG GCSFUSE_VERSION="1.2.0"
-ARG NODE_VERSION="20"
 ARG THEMEPATH_1="web/app/themes/hkih"
 ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
 ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
-ARG SERVICE_NAME
 
 FROM golang:alpine${ALPINE_VERSION} AS gcsfuse
 ARG GCSFUSE_VERSION
@@ -32,69 +30,48 @@ RUN apk --no-cache add python3 \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
 
 FROM dev as root-composer
-ARG THEMEPATH_1
 WORKDIR /app
 COPY composer.json .
 COPY composer.lock .
 # RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
 RUN composer install --prefer-dist --no-dev --no-scripts
+RUN composer run-script post-install-cmd
 ARG SERVICE_NAME
 RUN echo "Building service: ${SERVICE_NAME}"
 
 RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
-    composer update devgeniem/hkih-theme:dev-staging && \
-    composer update devgeniem/hkih-cpt-collection:dev-staging && \
-    composer update devgeniem/hkih-cpt-contact:dev-staging && \
-    composer update devgeniem/hkih-cpt-landing-page:dev-staging && \
-    composer update devgeniem/hkih-cpt-release:dev-staging && \
-    composer update devgeniem/hkih-cpt-translation:dev-staging && \
-    composer update devgeniem/hkih-linkedevents:dev-staging && \
-    composer update devgeniem/hkih-sportslocations:dev-staging; \
+    composer update devgeniem/hkih-theme:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-collection:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-contact:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-landing-page:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-release:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-translation:dev-staging --no-dev && \
+    composer update devgeniem/hkih-linkedevents:dev-staging --no-dev && \
+    composer update devgeniem/hkih-sportslocations:dev-staging --no-dev; \
 fi
 
-COPY . .
-RUN composer run-script post-install-cmd
 RUN composer dump-autoload --no-dev --optimize
 
-FROM node:${NODE_VERSION} AS theme-npm-1
-COPY .eslintrc.json /app/
 ARG THEMEPATH_1
 WORKDIR /app/${THEMEPATH_1}
-COPY ${THEMEPATH_1}/package.json .
-COPY ${THEMEPATH_1}/package-lock.json .
 RUN npm i --no-audit
-COPY ${THEMEPATH_1}/assets assets
-COPY ${THEMEPATH_1}/webpack.config.js .
 RUN npm run build
 
-FROM node:${NODE_VERSION} AS plugin-npm-1
 ARG PLUGINPATH_1
 WORKDIR /app/${PLUGINPATH_1}
-COPY ${PLUGINPATH_1}/package.json .
-# COPY ${PLUGINPATH_1}/package-lock.json .
 RUN npm i --no-audit
-COPY ${PLUGINPATH_1}/assets assets
-COPY ${PLUGINPATH_1}/webpack.config.js .
-COPY ${PLUGINPATH_1}/.eslintrc.json .
 RUN npm run build
 
-FROM node:${NODE_VERSION} AS plugin-npm-2
 ARG PLUGINPATH_2
 WORKDIR /app/${PLUGINPATH_2}
-COPY ${PLUGINPATH_2}/package.json .
-# COPY ${PLUGINPATH_2}/package-lock.json .
 RUN npm i --no-audit
-COPY ${PLUGINPATH_2}/assets assets
-COPY ${PLUGINPATH_2}/webpack.config.js .
-COPY ${PLUGINPATH_2}/.eslintrc.json .
 RUN npm run build
+
+WORKDIR /app
+
+COPY . .
+
+RUN rm -rf /root/.composer
 
 FROM base as app
 COPY --from=root-composer /app /app
-ARG THEMEPATH_1
-COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
-ARG PLUGINPATH_1
-COPY --from=plugin-npm-1 /app/${PLUGINPATH_1}/assets ${PLUGINPATH_1}/assets
-ARG PLUGINPATH_2
-COPY --from=plugin-npm-2 /app/${PLUGINPATH_2}/assets ${PLUGINPATH_2}/assets
-RUN rm -rf /root/.composer
