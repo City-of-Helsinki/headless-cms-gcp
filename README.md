@@ -135,7 +135,7 @@ cd _dev/hkih-hkih-sportslocations
 composer install && npm install
 npm run build
 
-If theme and plugins does not get loaded from _dev folder restart enviroment.
+Restart enviroment if theme and plugins does not get loaded from _dev folder
 
 **DO NOT CHANGE FILES IN THE `web/app/themes` and `web/app/plugins` FOLDERS WHEN DEVELOPING, USE THE `_dev` FOLDER VERSIONS!**
 
