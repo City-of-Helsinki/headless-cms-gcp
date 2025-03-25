@@ -80,10 +80,6 @@ docker compose exec dev sh
 # Install Composer dependencies
 composer install
 
-# Build theme assets
-cd web/app/themes/hkih
-npm install
-npm run build
 # repeat the above for all child themes
 
 # Search-replace URLs
@@ -107,7 +103,7 @@ To release a build to servers we use the following schemes.
 
 | Destination | Git Tag Scheme        | Example             | Build log                  |
 |-------------|-----------------------|---------------------|----------------------------|
-| Staging     | {YYYYMMDD-HHmm}-stage | 20220131-1234-stage | [Open Log][log-stage]      |
+| Staging     | {YYYYMMDD-HHmm}-staging | 20220131-1234-staging | [Open Log][log-stage]      |
 | Production  | {semver}-production   | 1.2.3-production    | [Open Log][log-production] |
 
 ## Documentation
@@ -125,6 +121,21 @@ These repositories are **Open Source** and **developed in the open**. The code w
 
 To set up them for local development, please run `make dev`. It will clone the repositories to `_dev` folder and link
 them to Docker machine for faster development cycle.
+
+# Build theme and plugin assets
+cd _dev/hkih
+npm install
+npm run build
+
+cd _dev/hkih-linkedevents
+composer install && npm install
+npm run build
+
+cd _dev/hkih-hkih-sportslocations
+composer install && npm install
+npm run build
+
+If theme and plugins does not get loaded from _dev folder restart enviroment.
 
 **DO NOT CHANGE FILES IN THE `web/app/themes` and `web/app/plugins` FOLDERS WHEN DEVELOPING, USE THE `_dev` FOLDER VERSIONS!**
 
@@ -167,11 +178,11 @@ Each plugin and theme repository should have their code tagged and released as a
 
 For all the steps the build does, see [`Dockerfile`](Dockerfile)
 
-### Stage deployment
+### Staging deployment
 
 #### Theme and plugin staging deployment
 
-Merge development branches to `stage` branch and push it to GitHub
+Merge development branches to `staging` branch and push it to GitHub
 
 #### Project staging deployment
 
