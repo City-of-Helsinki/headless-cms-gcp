@@ -2,7 +2,6 @@ ARG ALPINE_VERSION="3.21"
 ARG PHP_VERSION="8.2"
 ARG NODE_VERSION="20"
 ARG GCSFUSE_VERSION="2.4.0"
-
 ARG THEMEPATH_1="web/app/themes/hkih"
 ARG PLUGINPATH_1="web/app/plugins/hkih-linkedevents"
 ARG PLUGINPATH_2="web/app/plugins/hkih-sportslocations"
@@ -31,54 +30,48 @@ RUN apk --no-cache add python3 \
   build-base libc6-compat autoconf automake libtool \
   pkgconf nasm libpng-dev zlib-dev libimagequant-dev
 
-FROM node:${NODE_VERSION} AS theme-npm-1
-COPY .eslintrc.json /app/
-ARG THEMEPATH_1
-WORKDIR /app/${THEMEPATH_1}
-COPY ${THEMEPATH_1}/package.json .
-COPY ${THEMEPATH_1}/package-lock.json .
-RUN npm i --no-audit
-COPY ${THEMEPATH_1}/assets assets
-COPY ${THEMEPATH_1}/webpack.config.js .
-RUN npm run build
-
-FROM node:${NODE_VERSION} AS plugin-npm-1
-ARG PLUGINPATH_1
-WORKDIR /app/${PLUGINPATH_1}
-COPY ${PLUGINPATH_1}/package.json .
-# COPY ${PLUGINPATH_1}/package-lock.json .
-RUN npm i --no-audit
-COPY ${PLUGINPATH_1}/assets assets
-COPY ${PLUGINPATH_1}/webpack.config.js .
-COPY ${PLUGINPATH_1}/.eslintrc.json .
-RUN npm run build
-
-FROM node:${NODE_VERSION} AS plugin-npm-2
-ARG PLUGINPATH_2
-WORKDIR /app/${PLUGINPATH_2}
-COPY ${PLUGINPATH_2}/package.json .
-# COPY ${PLUGINPATH_2}/package-lock.json .
-RUN npm i --no-audit
-COPY ${PLUGINPATH_2}/assets assets
-COPY ${PLUGINPATH_2}/webpack.config.js .
-COPY ${PLUGINPATH_2}/.eslintrc.json .
-RUN npm run build
-
-FROM dev AS root-composer
-ARG THEMEPATH_1
+FROM dev as root-composer
 WORKDIR /app
 COPY composer.json .
 COPY composer.lock .
 # RUN --mount=type=secret,id=composer_auth,target=auth.json composer install --prefer-dist --no-dev --no-autoloader --no-scripts
 RUN composer install --prefer-dist --no-dev --no-scripts
-COPY . .
 RUN composer run-script post-install-cmd
+ARG SERVICE_NAME
+RUN echo "Building service: ${SERVICE_NAME}"
+
+RUN if [ "$SERVICE_NAME" = "app-staging" ]; then \
+    composer update devgeniem/hkih-theme:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-collection:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-contact:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-landing-page:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-release:dev-staging --no-dev && \
+    composer update devgeniem/hkih-cpt-translation:dev-staging --no-dev && \
+    composer update devgeniem/hkih-linkedevents:dev-staging --no-dev && \
+    composer update devgeniem/hkih-sportslocations:dev-staging --no-dev; \
+fi
+
 RUN composer dump-autoload --no-dev --optimize
-COPY --from=theme-npm-1 /app/${THEMEPATH_1}/assets ${THEMEPATH_1}/assets
+
+ARG THEMEPATH_1
+WORKDIR /app/${THEMEPATH_1}
+RUN npm i --no-audit
+RUN npm run build
+
 ARG PLUGINPATH_1
-COPY --from=plugin-npm-1 /app/${PLUGINPATH_1}/assets ${PLUGINPATH_1}/assets
+WORKDIR /app/${PLUGINPATH_1}
+RUN npm i --no-audit
+RUN npm run build
+
 ARG PLUGINPATH_2
-COPY --from=plugin-npm-2 /app/${PLUGINPATH_2}/assets ${PLUGINPATH_2}/assets
+WORKDIR /app/${PLUGINPATH_2}
+RUN npm i --no-audit
+RUN npm run build
+
+WORKDIR /app
+
+COPY . .
+
 RUN rm -rf /root/.composer
 
 FROM base AS app

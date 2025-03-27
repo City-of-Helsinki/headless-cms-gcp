@@ -7,22 +7,16 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- CSD-1542: Separes theme and plugin development to own repositories.
 - CSD-1855-2: Add devgeniem/wp-gcp-cache-headers plugin.
   - Update WP and plugins.
   - Remove old plugins.
-- CSD-1855: Support setting WP_REDIS_TIMEOUT and WP_REDIS_READ_TIMEOUT via environment variables.
-- HKIH-160: Preview feature.
 - HKIH-171: Change description field from textarea to Wysiwyg in Steps module.
 - HKIH-172: TinyMCE table plugin and custom styles.
-- HKIH-162: Publishpress Revisions Pro plugin.
-- HKIH-207: Redirect urls to site settings.
-- HKIH-184: WPO 365 login.
-- HKIH-210: Alignment values to CardLayout.
 - HKIH-221: Adds fallback for SEO titles and descriptions.
 - HKIH-222: Enable html entity decoding.
 - CSD-1329: Add post_id to preview link.
 - CSD-1677: Nginx settings for /uploads/
-- CSD-1607: Increase results amount of the Event and Location search modules.
 - PIEN-9288: PHP vulnerability fix
   - Update Alpine version
   - Update WP stack from hiondev

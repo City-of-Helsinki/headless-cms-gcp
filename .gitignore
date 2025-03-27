@@ -8,6 +8,12 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
+_dev/*
+
+# HKIH Themes
+web/app/themes/hkih*
+web/app/plugins/hkih-*
+web/app/mu-plugins/hkih-*
 
 # WordPress
 web/wp
@@ -54,3 +60,7 @@ web/app/languages/*
 ##
 web/app/db-error.php
 web/app/install.php
+
+# NPM
+
+/node_modules/

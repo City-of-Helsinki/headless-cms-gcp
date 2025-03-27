@@ -16,6 +16,9 @@ services:
   dev:
     extends: app.base
     build:
+      context: .
+      args:
+        SERVICE_NAME: app-local
       target: dev
       # secrets:
       #  - composer_auth
@@ -29,6 +32,14 @@ services:
       - 3001:3001
     volumes:
       - ${HIONDEV_HOST_ROOT:-.}:/app
+      - ./_dev/hkih:/app/web/app/themes/hkih
+      - ./_dev/hkih-cpt-collection:/app/web/app/plugins/hkih-cpt-collection
+      - ./_dev/hkih-cpt-contact:/app/web/app/plugins/hkih-cpt-contact
+      - ./_dev/hkih-cpt-landing-page:/app/web/app/plugins/hkih-cpt-landing-page
+      - ./_dev/hkih-cpt-release:/app/web/app/plugins/hkih-cpt-release
+      - ./_dev/hkih-cpt-translation:/app/web/app/plugins/hkih-cpt-translation
+      - ./_dev/hkih-linkedevents:/app/web/app/plugins/hkih-linkedevents
+      - ./_dev/hkih-sportslocations:/app/web/app/plugins/hkih-sportslocations
     depends_on:
       - db
       - redis
