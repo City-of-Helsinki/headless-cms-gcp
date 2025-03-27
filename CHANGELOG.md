@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- CSD-1542: Separes theme and plugin development to own repositories.
+
 ## [Released]
 
 ## [1.26.1] - 2025-03-19

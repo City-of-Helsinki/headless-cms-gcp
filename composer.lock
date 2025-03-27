@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62f6edd0e80234e053bb89b19ff4d528",
+    "content-hash": "13e8490dcea86f9c4f709a8cba4df394",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -941,6 +941,391 @@
                 "source": "https://github.com/devgeniem/better-wp-install-dropin/tree/1.1"
             },
             "time": "2016-10-25T09:02:05+00:00"
+        },
+        {
+            "name": "devgeniem/hkih-cpt-collection",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/hkih-cpt-collection.git",
+                "reference": "378577872811c85f9ae3fc0b9e76fed36315fcb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/hkih-cpt-collection/zipball/378577872811c85f9ae3fc0b9e76fed36315fcb3",
+                "reference": "378577872811c85f9ae3fc0b9e76fed36315fcb3",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=v1.7.0",
+                "php": ">=7.4"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "HKIH\\CPT\\Collection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Viklund",
+                    "email": "ville.viklund@geniem.com",
+                    "homepage": "https://github.com/ville6000"
+                }
+            ],
+            "description": "Collection CPT",
+            "homepage": "http://geniem.com",
+            "keywords": [
+                "plugin",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/hkih-cpt-collection/issues",
+                "source": "https://github.com/devgeniem/hkih-cpt-collection/tree/1.0.0"
+            },
+            "time": "2025-02-11T10:53:59+00:00"
+        },
+        {
+            "name": "devgeniem/hkih-cpt-contact",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/hkih-cpt-contact.git",
+                "reference": "5b38e3d427b2d6b8b6cc583cd3e8ff9f886b8fbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/hkih-cpt-contact/zipball/5b38e3d427b2d6b8b6cc583cd3e8ff9f886b8fbb",
+                "reference": "5b38e3d427b2d6b8b6cc583cd3e8ff9f886b8fbb",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=v1.7.0",
+                "php": ">=7.4"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "HKIH\\CPT\\Contact\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Viklund",
+                    "email": "ville.viklund@geniem.com",
+                    "homepage": "https://github.com/ville6000"
+                }
+            ],
+            "description": "Contact CPT",
+            "homepage": "http://geniem.com",
+            "keywords": [
+                "plugin",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/hkih-cpt-contact/issues",
+                "source": "https://github.com/devgeniem/hkih-cpt-contact/tree/1.0.0"
+            },
+            "time": "2025-02-11T10:57:08+00:00"
+        },
+        {
+            "name": "devgeniem/hkih-cpt-landing-page",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/hkih-cpt-landing-page.git",
+                "reference": "53eb121749cb1a7b8810edb309f4a423531387e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/hkih-cpt-landing-page/zipball/53eb121749cb1a7b8810edb309f4a423531387e0",
+                "reference": "53eb121749cb1a7b8810edb309f4a423531387e0",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=v1.7.0",
+                "php": ">=7.1"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "HKIH\\CPT\\LandingPage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Viklund",
+                    "email": "ville.viklund@geniem.com",
+                    "homepage": "https://github.com/ville6000"
+                }
+            ],
+            "description": "Landing Page CPT",
+            "homepage": "http://geniem.com",
+            "keywords": [
+                "plugin",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/hkih-cpt-landing-page/issues",
+                "source": "https://github.com/devgeniem/hkih-cpt-landing-page/tree/1.0.0"
+            },
+            "time": "2025-02-11T10:59:15+00:00"
+        },
+        {
+            "name": "devgeniem/hkih-cpt-release",
+            "version": "dev-staging",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/hkih-cpt-release.git",
+                "reference": "e80542ffc5e787dab74c5ad0cdc17e8f149f318e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/hkih-cpt-release/zipball/e80542ffc5e787dab74c5ad0cdc17e8f149f318e",
+                "reference": "e80542ffc5e787dab74c5ad0cdc17e8f149f318e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=v1.7.0",
+                "php": ">=7.1"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "HKIH\\CPT\\Release\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Viklund",
+                    "email": "ville.viklund@geniem.com",
+                    "homepage": "https://github.com/ville6000"
+                }
+            ],
+            "description": "Release CPT",
+            "homepage": "http://geniem.com",
+            "keywords": [
+                "plugin",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/hkih-cpt-release/issues",
+                "source": "https://github.com/devgeniem/hkih-cpt-release/tree/main"
+            },
+            "time": "2025-02-11T11:01:28+00:00"
+        },
+        {
+            "name": "devgeniem/hkih-cpt-translation",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/hkih-cpt-translation.git",
+                "reference": "89adfba91faa2a7154b5eb5ee439099930e96700"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/hkih-cpt-translation/zipball/89adfba91faa2a7154b5eb5ee439099930e96700",
+                "reference": "89adfba91faa2a7154b5eb5ee439099930e96700",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=v1.7.0",
+                "php": ">=7.3|^8"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "HKIH\\CPT\\Translation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ismo Vuorinen",
+                    "email": "ismo.vuorinen@geniem.com",
+                    "homepage": "https://github.com/ivuorinen"
+                }
+            ],
+            "description": "Translation CPT",
+            "homepage": "http://geniem.com",
+            "keywords": [
+                "plugin",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/hkih-cpt-translation/issues",
+                "source": "https://github.com/devgeniem/hkih-cpt-translation/tree/1.0.0"
+            },
+            "time": "2025-02-11T11:04:07+00:00"
+        },
+        {
+            "name": "devgeniem/hkih-linkedevents",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/hkih-linkedevents.git",
+                "reference": "b3f3f54f896d27bf8e3c4f4be8cec873e5d74f44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/hkih-linkedevents/zipball/b3f3f54f896d27bf8e3c4f4be8cec873e5d74f44",
+                "reference": "b3f3f54f896d27bf8e3c4f4be8cec873e5d74f44",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=v1.7.0",
+                "php": ">=7.4"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Geniem\\ACF\\": "../../mu-plugins/acf-codifier/src/",
+                    "HKIH\\LinkedEvents\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Viklund",
+                    "email": "ville.viklund@geniem.com",
+                    "homepage": "https://github.com/ville6000"
+                }
+            ],
+            "description": "HKIH LinkedEvents related functionality",
+            "homepage": "http://geniem.com",
+            "keywords": [
+                "plugin",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/hkih-linkedevents/issues",
+                "source": "https://github.com/devgeniem/hkih-linkedevents/tree/1.0.2"
+            },
+            "time": "2025-03-06T14:16:20+00:00"
+        },
+        {
+            "name": "devgeniem/hkih-sportslocations",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/hkih-sportslocations.git",
+                "reference": "0b52f717b05f59990c01921c0427ce2dc3ac7a1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/hkih-sportslocations/zipball/0b52f717b05f59990c01921c0427ce2dc3ac7a1e",
+                "reference": "0b52f717b05f59990c01921c0427ce2dc3ac7a1e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=v1.7.0",
+                "ext-json": "*",
+                "php": ">=7.4|>=8"
+            },
+            "require-dev": {
+                "roave/security-advisories": "dev-latest"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Geniem\\ACF\\": "../../mu-plugins/acf-codifier/src/",
+                    "HKIH\\SportsLocations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ismo Vuorinen",
+                    "email": "ismo.vuorinen@geniem.com",
+                    "homepage": "https://github.com/ivuorinen"
+                }
+            ],
+            "description": "HKIH SportsLocations related functionality",
+            "homepage": "https://geniem.com",
+            "keywords": [
+                "plugin",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/hkih-sportslocations/issues",
+                "source": "https://github.com/devgeniem/hkih-sportslocations/tree/1.0.1"
+            },
+            "time": "2025-03-06T14:13:43+00:00"
+        },
+        {
+            "name": "devgeniem/hkih-theme",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devgeniem/hkih-theme.git",
+                "reference": "ea97308087fa8ebc73b9002ffc0f1a38ab149622"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devgeniem/hkih-theme/zipball/ea97308087fa8ebc73b9002ffc0f1a38ab149622",
+                "reference": "ea97308087fa8ebc73b9002ffc0f1a38ab149622",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": ">=v1.7.0",
+                "php": ">=7.4"
+            },
+            "type": "wordpress-theme",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ville Viklund",
+                    "email": "ville.viklund@geniem.com",
+                    "homepage": "https://github.com/ville6000"
+                }
+            ],
+            "description": "HKIH Theme",
+            "homepage": "http://geniem.com",
+            "keywords": [
+                "theme",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/devgeniem/hkih-theme/issues",
+                "source": "https://github.com/devgeniem/hkih-theme/tree/1.0.1"
+            },
+            "time": "2025-03-06T14:32:05+00:00"
         },
         {
             "name": "devgeniem/wp-define-more",
@@ -8530,6 +8915,14 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "devgeniem/hkih-cpt-collection": 20,
+        "devgeniem/hkih-cpt-contact": 20,
+        "devgeniem/hkih-cpt-landing-page": 20,
+        "devgeniem/hkih-cpt-release": 20,
+        "devgeniem/hkih-cpt-translation": 20,
+        "devgeniem/hkih-linkedevents": 20,
+        "devgeniem/hkih-sportslocations": 20,
+        "devgeniem/hkih-theme": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

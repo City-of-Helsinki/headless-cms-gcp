@@ -80,10 +80,6 @@ docker compose exec dev sh
 # Install Composer dependencies
 composer install
 
-# Build theme assets
-cd web/app/themes/hkih
-npm install
-npm run build
 # repeat the above for all child themes
 
 # Search-replace URLs
@@ -107,7 +103,7 @@ To release a build to servers we use the following schemes.
 
 | Destination | Git Tag Scheme        | Example             | Build log                  |
 |-------------|-----------------------|---------------------|----------------------------|
-| Staging     | {YYYYMMDD-HHmm}-stage | 20220131-1234-stage | [Open Log][log-stage]      |
+| Staging     | {YYYYMMDD-HHmm}-staging | 20220131-1234-staging | [Open Log][log-stage]      |
 | Production  | {semver}-production   | 1.2.3-production    | [Open Log][log-production] |
 
 ## Documentation
@@ -119,10 +115,33 @@ To release a build to servers we use the following schemes.
   - [LandingPage](docs/PostTypes/LandingPage.md)
   - [Page](docs/PostTypes/Page.md)
 
-## Plugins
+## Plugins and themes
+
+These repositories are **Open Source** and **developed in the open**. The code written there can be seen by ANYONE.
+
+To set up them for local development, please run `make dev`. It will clone the repositories to `_dev` folder and link
+them to Docker machine for faster development cycle.
+
+# Build theme and plugin assets
+cd _dev/hkih
+npm install
+npm run build
+
+cd _dev/hkih-linkedevents
+composer install && npm install
+npm run build
+
+cd _dev/hkih-hkih-sportslocations
+composer install && npm install
+npm run build
+
+Restart enviroment if theme and plugins does not get loaded from _dev folder
+
+**DO NOT CHANGE FILES IN THE `web/app/themes` and `web/app/plugins` FOLDERS WHEN DEVELOPING, USE THE `_dev` FOLDER VERSIONS!**
 
 | Plugin                                                         | Description                                    |
 |----------------------------------------------------------------|------------------------------------------------|
+| [hkih-theme](web/app/themes/hkih)                              | HKIH Theme                                     |
 | [hkih-cpt-collection](web/app/plugins/hkih-cpt-collection)     | ACF Flexible Layout Group                      |
 | [hkih-cpt-contact](web/app/plugins/hkih-cpt-contact)           | Contact information                            |
 | [hkih-cpt-landing-page](web/app/plugins/hkih-cpt-landing-page) | Landing Page, container for ACF                |
@@ -132,6 +151,51 @@ To release a build to servers we use the following schemes.
 | [hkih-sportslocations](web/app/plugins/hkih-sportslocations)   | WP Admin ACF to select events for API payloads |
 
 All plugins are build when Composer `post-install-cmd` event triggers, [read more here][composer-events].
+
+## Deployment
+
+The project has been split into open source repositories, and all development is done in public.
+
+This base repository should always be kept secret as it contains intellectual property that belongs to Hion.
+
+### Production deployment
+
+#### Theme and plugin production deployment
+
+- Merge development branches to master after code review
+- Update plugin / theme changelog with the next fitting version number (follow the pattern)
+- Create new release and tag with `X.Y.Z` pattern
+
+#### Project production deployment
+
+Each plugin and theme repository should have their code tagged and released as a new version before starting this.
+
+- `composer update devgeniem/hkih-theme` or - `composer update devgeniem/name-of-the-plugin`
+- Update [changelog](CHANGELOG.md) with the next fitting version number (follow the pattern)
+- Commit and tag with the version number with '-production' suffix, like this: `X.Y.Z-production`.
+- Push everything to main (tags included)
+- [Follow the production building process](https://console.cloud.google.com/cloud-build/builds;region=europe-west1?hl=fi&project=client-hkih&invt=Abs9Ag&rapt=AEjHL4MtXSKkvzXyEe9ydvRTn4DAL1MNTKopPNs7c6lEmAh-q7LvzDJuGKjTD84SMZvM7TnSYBcq7JPZdorEo9UxHI3O3ct82SEqSA3k5-P_zcHkwczWQEQ)
+
+For all the steps the build does, see [`Dockerfile`](Dockerfile)
+
+### Staging deployment
+
+#### Theme and plugin staging deployment
+
+Merge development branches to `staging` branch and push it to GitHub
+
+#### Project staging deployment
+
+Make sure all the changes you want to appear in the staging server has been pushed to `staging` branch in the external
+plugin and theme repositories. After you have verified everything is fine, do the following:
+
+- Change to `staging` branch in this repository
+- Create new `YYYYMMDD-HHMM-staging` style tag to this repository
+- Push everything to Github
+- [Follow the stage building process](https://console.cloud.google.com/cloud-build/builds;region=europe-west1?hl=fi&project=client-hkih&invt=Abs9Ag&rapt=AEjHL4MtXSKkvzXyEe9ydvRTn4DAL1MNTKopPNs7c6lEmAh-q7LvzDJuGKjTD84SMZvM7TnSYBcq7JPZdorEo9UxHI3O3ct82SEqSA3k5-P_zcHkwczWQEQ)
+
+For all the steps the build does, see [`Dockerfile`](Dockerfile).
+Note the step, especially when the SERVICE_NAME is app-staging, as it will install the theme and plugins from their staging branches.
 
 ## Settings
 
