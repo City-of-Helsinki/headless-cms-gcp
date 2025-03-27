@@ -9011,9 +9011,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-<<<<<<< HEAD
         "rarst/wps": 20,
-=======
         "devgeniem/hkih-cpt-collection": 20,
         "devgeniem/hkih-cpt-contact": 20,
         "devgeniem/hkih-cpt-landing-page": 20,
