@@ -7,6 +7,8 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- CSD-2097: Enable OTEL instrumentation
+
 ## [Released]
 
 ## [1.27.0] - 2025-03-27
