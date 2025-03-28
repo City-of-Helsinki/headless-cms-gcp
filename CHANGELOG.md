@@ -7,7 +7,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- CSD-1542: Separes theme and plugin development to own repositories.
+- CSD-2097: Enable OTEL instrumentation
 - CSD-1855-2: Add devgeniem/wp-gcp-cache-headers plugin.
   - Update WP and plugins.
   - Remove old plugins.
@@ -17,11 +17,19 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - HKIH-222: Enable html entity decoding.
 - CSD-1329: Add post_id to preview link.
 - CSD-1677: Nginx settings for /uploads/
+
+## [Released]
+
+## [1.27.0] - 2025-03-27
+
+- CSD-1542: Separes theme and plugin development to own repositories.
+
+## [1.26.1] - 2025-03-19
+
+>>>>>>> CSD-2097
 - PIEN-9288: PHP vulnerability fix
   - Update Alpine version
   - Update WP stack from hiondev
-
-## [Released]
 
 ## [1.26.0] - 2025-03-06
 
