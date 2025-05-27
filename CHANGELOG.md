@@ -17,16 +17,17 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - HKIH-222: Enable html entity decoding.
 - CSD-1329: Add post_id to preview link.
 - CSD-1677: Nginx settings for /uploads/
+- CSD-2370: Adds Regenerate Thumbnails plugin.
+  - WP plugin updates.
 
 ## [Released]
 
-## [1.27.0] - 2025-03-27
+## [1.26.2] - 2025-03-27
 
 - CSD-1542: Separes theme and plugin development to own repositories.
 
 ## [1.26.1] - 2025-03-19
 
->>>>>>> CSD-2097
 - PIEN-9288: PHP vulnerability fix
   - Update Alpine version
   - Update WP stack from hiondev

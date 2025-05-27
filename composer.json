@@ -87,6 +87,7 @@
     "wpackagist-plugin/duplicate-post": "^4.5",
     "wpackagist-plugin/query-monitor": "^3.15",
     "wpackagist-plugin/redis-cache": "^2.5.1",
+    "wpackagist-plugin/regenerate-thumbnails": "^3.1",
     "wpackagist-plugin/stream": "^4.0.0",
     "wpackagist-plugin/svg-support": "^2.5",
     "wpackagist-plugin/wordpress-importer": "^0.8.2",
