@@ -7,8 +7,7 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- CSD-2370: Adds Regenerate Thumbnails plugin.
-  - WP plugin updates.
+- CSD-2370-updates: WP plugin updates.
 
 ## [Released]
 
