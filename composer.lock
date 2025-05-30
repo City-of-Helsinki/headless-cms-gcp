@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c25e1d1d94737f60fad81da1a26bcf5",
+    "content-hash": "126c42c9f9c093ffe5a21d1788543e69",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
-            "version": "6.4.2",
+            "version": "6.2.9",
             "dist": {
                 "type": "tar",
-                "url": "https://satis.hion.dev/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-6.4.2.tar",
-                "shasum": "8321789c5f393ae899b8946052304a613520b827"
+                "url": "https://satis.hion.dev/dist/acf/advanced-custom-fields-pro/acf-advanced-custom-fields-pro-6.2.9.tar",
+                "shasum": "2e87a0c4a0b4f9b032590ae5658525ec59b3b81a"
             },
             "type": "wordpress-plugin"
         },
@@ -862,16 +862,16 @@
         },
         {
             "name": "devgeniem/acf-codifier",
-            "version": "1.41.4",
+            "version": "1.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/acf-codifier.git",
-                "reference": "2fc21a33deea76771208cdd6c63acef82ac1e478"
+                "reference": "67564c673fc0977efd5eb44dd0e19c8096d3b493"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/acf-codifier/zipball/2fc21a33deea76771208cdd6c63acef82ac1e478",
-                "reference": "2fc21a33deea76771208cdd6c63acef82ac1e478",
+                "url": "https://api.github.com/repos/devgeniem/acf-codifier/zipball/67564c673fc0977efd5eb44dd0e19c8096d3b493",
+                "reference": "67564c673fc0977efd5eb44dd0e19c8096d3b493",
                 "shasum": ""
             },
             "require": {
@@ -908,9 +908,9 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/acf-codifier/issues",
-                "source": "https://github.com/devgeniem/acf-codifier/tree/1.41.4"
+                "source": "https://github.com/devgeniem/acf-codifier/tree/1.40.0"
             },
-            "time": "2025-04-23T13:32:27+00:00"
+            "time": "2024-04-19T07:49:12+00:00"
         },
         {
             "name": "devgeniem/better-wp-install-dropin",
@@ -1385,16 +1385,16 @@
         },
         {
             "name": "devgeniem/wp-geniem-roles",
-            "version": "1.6.1",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/devgeniem/wp-geniem-roles.git",
-                "reference": "2fc422287e662989f7e34644406fc0f67db7ddfe"
+                "reference": "e9b4a719b5dc6dc7ae3387cbe6b2e5f83ec87dcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-geniem-roles/zipball/2fc422287e662989f7e34644406fc0f67db7ddfe",
-                "reference": "2fc422287e662989f7e34644406fc0f67db7ddfe",
+                "url": "https://api.github.com/repos/devgeniem/wp-geniem-roles/zipball/e9b4a719b5dc6dc7ae3387cbe6b2e5f83ec87dcc",
+                "reference": "e9b4a719b5dc6dc7ae3387cbe6b2e5f83ec87dcc",
                 "shasum": ""
             },
             "require": {
@@ -1425,9 +1425,9 @@
             ],
             "support": {
                 "issues": "https://github.com/devgeniem/wp-geniem-roles/issues",
-                "source": "https://github.com/devgeniem/wp-geniem-roles/tree/1.6.1"
+                "source": "https://github.com/devgeniem/wp-geniem-roles/tree/1.6.0"
             },
-            "time": "2024-05-21T07:09:21+00:00"
+            "time": "2024-01-31T09:50:51+00:00"
         },
         {
             "name": "devgeniem/wp-sanitize-accented-uploads",
@@ -1536,11 +1536,11 @@
         },
         {
             "name": "filebird/filebird-pro",
-            "version": "6.4.8",
+            "version": "6.0.7",
             "dist": {
                 "type": "tar",
-                "url": "https://satis.hion.dev/dist/filebird/filebird-pro/filebird-filebird-pro-6.4.8.tar",
-                "shasum": "2ceed4f6544a07b568f962ea3901f9b1e77f5ad2"
+                "url": "https://satis.hion.dev/dist/filebird/filebird-pro/filebird-filebird-pro-6.0.7.tar",
+                "shasum": "e63d01053c62468f539b5ebeaf7f6e25a4aa4c09"
             },
             "type": "wordpress-plugin"
         },
@@ -3156,16 +3156,16 @@
         },
         {
             "name": "oscarotero/env",
-            "version": "v2.1.1",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/env.git",
-                "reference": "9f7d85cc6890f06a65bad4fe0077c070d596e4a4"
+                "reference": "0da22cadc6924155fa9bbea2cdda2e84ab7cbdd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/env/zipball/9f7d85cc6890f06a65bad4fe0077c070d596e4a4",
-                "reference": "9f7d85cc6890f06a65bad4fe0077c070d596e4a4",
+                "url": "https://api.github.com/repos/oscarotero/env/zipball/0da22cadc6924155fa9bbea2cdda2e84ab7cbdd3",
+                "reference": "0da22cadc6924155fa9bbea2cdda2e84ab7cbdd3",
                 "shasum": ""
             },
             "require": {
@@ -3174,7 +3174,7 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": ">=7.0"
+                "phpunit/phpunit": "^7.0"
             },
             "type": "library",
             "autoload": {
@@ -3205,9 +3205,9 @@
             "support": {
                 "email": "oom@oscarotero.com",
                 "issues": "https://github.com/oscarotero/env/issues",
-                "source": "https://github.com/oscarotero/env/tree/v2.1.1"
+                "source": "https://github.com/oscarotero/env/tree/v2.1.0"
             },
-            "time": "2024-12-03T01:02:28+00:00"
+            "time": "2020-06-11T10:59:27+00:00"
         },
         {
             "name": "php-http/discovery",
@@ -3533,11 +3533,11 @@
         },
         {
             "name": "polylang/polylang-pro",
-            "version": "3.7.1",
+            "version": "3.6.1.1",
             "dist": {
                 "type": "tar",
-                "url": "https://satis.hion.dev/dist/polylang/polylang-pro/polylang-polylang-pro-3.7.1.tar",
-                "shasum": "d92fcd752b6d6a660fdb32ad431d13a25893d575"
+                "url": "https://satis.hion.dev/dist/polylang/polylang-pro/polylang-polylang-pro-3.6.1.1.tar",
+                "shasum": "340cca4317faab2e15b4540325cc80310af58dae"
             },
             "type": "wordpress-plugin"
         },
@@ -8303,25 +8303,25 @@
         },
         {
             "name": "wp_all_import/wp-all-import-pro",
-            "version": "4.9.3",
+            "version": "4.8.5",
             "dist": {
                 "type": "tar",
-                "url": "https://satis.hion.dev/dist/wp_all_import/wp-all-import-pro/wp_all_import-wp-all-import-pro-4.9.3.tar",
-                "shasum": "3bb8118eb0ce5c0803582c86975748e711b693c5"
+                "url": "https://satis.hion.dev/dist/wp_all_import/wp-all-import-pro/wp_all_import-wp-all-import-pro-4.8.5.tar",
+                "shasum": "6a28bbc9b33266f27e2ad1f524cc971194eccde7"
             },
             "type": "wordpress-plugin"
         },
         {
             "name": "wpackagist-plugin/autodescription",
-            "version": "5.1.2",
+            "version": "5.0.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "tags/5.1.2"
+                "reference": "tags/5.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.5.1.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/autodescription.5.0.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -8349,15 +8349,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.17.2",
+            "version": "3.16.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.17.2"
+                "reference": "tags/3.16.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.17.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.16.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -8367,15 +8367,15 @@
         },
         {
             "name": "wpackagist-plugin/redis-cache",
-            "version": "2.5.4",
+            "version": "2.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/2.5.4"
+                "reference": "tags/2.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.5.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.2.5.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -8402,16 +8402,34 @@
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
         },
         {
-            "name": "wpackagist-plugin/stream",
-            "version": "4.1.1",
+            "name": "wpackagist-plugin/spatie-ray",
+            "version": "1.7.5",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/4.1.1"
+                "url": "https://plugins.svn.wordpress.org/spatie-ray/",
+                "reference": "tags/1.7.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.4.1.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/spatie-ray.1.7.5.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/spatie-ray/"
+        },
+        {
+            "name": "wpackagist-plugin/stream",
+            "version": "4.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/stream/",
+                "reference": "tags/4.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/stream.4.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -8421,15 +8439,15 @@
         },
         {
             "name": "wpackagist-plugin/svg-support",
-            "version": "2.5.14",
+            "version": "2.5.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/svg-support/",
-                "reference": "tags/2.5.14"
+                "reference": "tags/2.5.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-support.2.5.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/svg-support.2.5.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -8439,15 +8457,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
-            "version": "0.8.4",
+            "version": "0.8.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-importer/",
-                "reference": "tags/0.8.4"
+                "reference": "tags/0.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.8.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.8.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

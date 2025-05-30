@@ -18,7 +18,6 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 - CSD-1329: Add post_id to preview link.
 - CSD-1677: Nginx settings for /uploads/
 - CSD-2370: Adds Regenerate Thumbnails plugin.
-  - WP plugin updates.
 
 ## [Released]
 
