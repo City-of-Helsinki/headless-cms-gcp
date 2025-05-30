@@ -74,7 +74,6 @@
     "roots/bedrock-disallow-indexing": "^2.0",
     "roots/wordpress": "^6.8.1",
     "roots/wp-config": "1.0.0",
-    "rtcamp/nginx-helper": "^2.2.6",
     "valu/wp-graphql-cache": "^0.1.0",
     "valu/wp-graphql-polylang": "^0.6.0",
     "vlucas/phpdotenv": "^5.5",
@@ -123,8 +122,6 @@
         "acf/advanced-custom-fields-pro",
         "devgeniem/wp-geniem-roles",
         "rarst/wps",
-        "rtcamp/nginx-helper",
-        "wpackagist-plugin/spatie-ray",
         "wpackagist-plugin/stream",
         "wpackagist-plugin/wp-graphql"
       ],

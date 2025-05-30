@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "459b4803fff02f814282babac70ef890",
+    "content-hash": "bc293cc16b5b2727a11459a4583774e6",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -3592,58 +3592,6 @@
                 "source": "https://github.com/roots/wp-config/tree/master"
             },
             "time": "2018-08-10T14:18:38+00:00"
-        },
-        {
-            "name": "rtcamp/nginx-helper",
-            "version": "2.2.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/devgeniem/nginx-helper.git",
-                "reference": "ba8086e3e71eb879a17e491a056244836c9bdcef"
-            },
-            "dist": {
-                "type": "tar",
-                "url": "https://satis.hion.dev/dist/rtcamp/nginx-helper/rtcamp-nginx-helper-ba8086e3e71eb879a17e491a056244836c9bdcef-zip-f40840.tar",
-                "reference": "ba8086e3e71eb879a17e491a056244836c9bdcef",
-                "shasum": "baba25fdf0cfaf0e9ef08ef88e60c8b44c5306a8"
-            },
-            "require": {
-                "composer/installers": "^1.0",
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "wpreadme2markdown/wpreadme2markdown": "*"
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "rtCamp",
-                    "email": "support@rtcamp.com",
-                    "homepage": "https://rtcamp.com"
-                }
-            ],
-            "description": "Cleans nginx's fastcgi/proxy cache or redis-cache whenever a post is edited/published. Also does a few more things.",
-            "homepage": "https://rtcamp.com/nginx-helper/",
-            "keywords": [
-                "cache",
-                "fastcgi",
-                "nginx",
-                "nginx-helper",
-                "plugin",
-                "redis",
-                "redis-cache",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/rtCamp/nginx-helper/issues",
-                "forum": "https://wordpress.org/support/plugin/nginx-helper",
-                "wiki": "https://github.com/rtCamp/nginx-helper/wiki",
-                "source": "https://github.com/rtCamp/nginx-helper/"
-            },
-            "time": "2022-08-31T06:34:34+00:00"
         },
         {
             "name": "seld/jsonlint",
