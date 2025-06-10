@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13e8490dcea86f9c4f709a8cba4df394",
+    "content-hash": "126c42c9f9c093ffe5a21d1788543e69",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
@@ -7388,6 +7388,24 @@
             "homepage": "https://wordpress.org/plugins/redis-cache/"
         },
         {
+            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "version": "3.1.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
+                "reference": "tags/3.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.3.1.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
             "name": "wpackagist-plugin/spatie-ray",
             "version": "1.7.5",
             "source": {
@@ -8930,6 +8948,6 @@
     "platform": {
         "php": ">=8.1"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
