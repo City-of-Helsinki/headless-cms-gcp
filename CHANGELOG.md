@@ -7,9 +7,11 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- CSD-2370-updates: WP and plugin updates.
-
 ## [Released]
+
+## [1.26.4] - 2025-06-10
+
+- CSD-2370-updates: WP and plugin updates.
 
 ## [1.26.3] - 2025-06-10
 
