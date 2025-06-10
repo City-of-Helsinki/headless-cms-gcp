@@ -7,9 +7,11 @@ to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-- CSD-2370: Adds Regenerate Thumbnails plugin.
-
 ## [Released]
+
+## [1.26.3] - 2025-06-10
+
+- CSD-2370: Adds Regenerate Thumbnails plugin.
 
 ## [1.26.2] - 2025-03-27
 
